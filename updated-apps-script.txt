@@ -1,0 +1,85 @@
+function doGet(e) {
+  return ContentService.createTextOutput("Apps Script is working!");
+}
+
+function doPost(e) {
+  try {
+    Logger.log('🚀 doPost called with parameters: ' + JSON.stringify(Object.keys(e.parameter)));
+    
+    const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Sheet1");
+    
+    // Handle contact form
+    if (e.parameter.name) {
+      Logger.log('📝 Processing contact form for: ' + e.parameter.name);
+      
+      sheet.appendRow([
+        new Date(),
+        "CONTACT_FORM",
+        e.parameter.name || "",
+        e.parameter.email || "",
+        e.parameter.phone || "",
+        e.parameter.course || "",
+        e.parameter.message || ""
+      ]);
+      
+      Logger.log('✅ Contact form data saved to sheet');
+      return ContentService.createTextOutput("Contact form submitted!");
+    }
+    
+    // Handle resume upload
+    if (e.parameter.resumeData) {
+      Logger.log('📄 Processing resume upload...');
+      
+      const resumeData = JSON.parse(e.parameter.resumeData);
+      Logger.log('📁 Resume data: ' + JSON.stringify({
+        name: resumeData.name,
+        size: resumeData.size,
+        type: resumeData.type
+      }));
+      
+      // Save to CORRECT Google Drive folder
+      const folder = DriveApp.getFolderById('1cF9JFj6tCjyEd4oBtHnOP1Rp8IZ1r_fd');
+      const blob = Utilities.newBlob(
+        Utilities.base64Decode(resumeData.data.split(',')[1]),
+        resumeData.type,
+        resumeData.name
+      );
+      
+      const file = folder.createFile(blob);
+      const fileUrl = file.getUrl();
+      
+      Logger.log('💾 File saved to Google Drive: ' + fileUrl);
+      
+      // Save to Google Sheet
+      sheet.appendRow([
+        new Date(),
+        "RESUME_UPLOAD",
+        resumeData.name,
+        fileUrl,
+        formatFileSize(resumeData.size),
+        "",
+        "Resume uploaded successfully"
+      ]);
+      
+      Logger.log('✅ Resume data saved to sheet');
+      return ContentService.createTextOutput("Resume uploaded!");
+    }
+    
+    Logger.log('❌ No data received');
+    return ContentService.createTextOutput("No data received");
+    
+  } catch(error) {
+    Logger.log('🔥 Error: ' + error.toString());
+    Logger.log('🔥 Stack: ' + error.stack);
+    return ContentService.createTextOutput("Error: " + error.toString());
+  }
+}
+
+// Helper function to format file size
+function formatFileSize(bytes) {
+  if (bytes === 0) return '0 Bytes';
+  const k = 1024;
+  const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+  const i = Math.floor(Math.log(bytes) / Math.log(k));
+  return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+}
