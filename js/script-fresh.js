@@ -110,7 +110,7 @@ document.querySelectorAll('.course-btn').forEach(btn => {
         const courseTitle = courseCard.querySelector('h3').textContent;
         const coursePrice = courseCard.querySelector('.price').textContent;
         
-        const whatsappNumber = '6397325703';
+        const whatsappNumber = '8810696963';
         const message = encodeURIComponent(
             `🎓 *Course Enrollment Inquiry*\n\n` +
             `📚 *Course:* ${courseTitle}\n` +
