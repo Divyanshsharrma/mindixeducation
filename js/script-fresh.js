@@ -103,27 +103,20 @@ if (contactForm) {
     });
 }
 
-// Course enrollment - WhatsApp direct
+// Course enrollment - Specific handling
 document.querySelectorAll('.course-btn').forEach(btn => {
     btn.addEventListener('click', function() {
         const courseCard = this.closest('.course-card');
         const courseTitle = courseCard.querySelector('h3').textContent;
-        const coursePrice = courseCard.querySelector('.price').textContent;
         
-        const whatsappNumber = '918810696963';
-        const message = encodeURIComponent(
-            `🎓 *Course Enrollment Inquiry*\n\n` +
-            `📚 *Course:* ${courseTitle}\n` +
-            `💰 *Price:* ${coursePrice}\n\n` +
-            `👋 Hello Mindix Education!\n` +
-            `I'm interested in this course. Please provide me with:\n` +
-            `• Course details\n` +
-            `• Batch timings\n` +
-            `• Enrollment process\n\n` +
-            `Thank you! 🙏`
-        );
-        
-        window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
+        // Check if it's the HR Executive course
+        if (courseTitle.includes('HR Executive with AI Integrated Tools')) {
+            // Redirect to the dedicated HR Executive course page
+            window.location.href = 'hr-executive-course.html';
+        } else {
+            // Show coming soon message for other courses
+            alert('🚀 Coming Soon!\n\nWe are working on something amazing! Enrollment will be available shortly.\n\nFor inquiries, please contact us:\n📞 WhatsApp: 8810696963\n📧 Email: info@mindixeducation.com');
+        }
     });
 });
 
