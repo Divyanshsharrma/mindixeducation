@@ -773,6 +773,7 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     <script>
         // Loading Screen Handler
         window.addEventListener('load', function() {
@@ -809,34 +810,91 @@
             });
         }
 
-        // Payment function
+        // Payment function with Razorpay integration
         function proceedToPayment() {
             // Show payment processing message
             const paymentBtn = document.querySelector('.payment-btn');
             const originalText = paymentBtn.innerHTML;
             
-            paymentBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+            paymentBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Initializing Payment...';
             paymentBtn.disabled = true;
             
-            // Simulate payment processing
-            setTimeout(() => {
-                // Redirect to WhatsApp for payment (you can replace with actual payment gateway)
-                const whatsappNumber = '8810696963';
-                const message = encodeURIComponent(
-                    `💳 *HR Executive Course Payment*\n\n` +
-                    `📚 *Course:* 60 Days HR Executive Job-Ready Program with AI Tools\n` +
-                    `💰 *Amount:* ₹9,999\n` +
-                    `👤 *Name:* [Your Name]\n\n` +
-                    `🔗 Please send payment confirmation and enrollment details.\n\n` +
-                    `Thank you! `
-                );
-                
-                window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
-                
-                // Reset button
+            // Initialize Razorpay payment
+            const options = {
+                key: 'rzp_live_SYZCBtmGqEsGjU', // Your live Razorpay key
+                amount: 999900, // Amount in paise (₹9,999 * 100)
+                currency: 'INR',
+                name: 'Mindix Education',
+                description: '60 Days HR Executive Job-Ready Program with AI Tools',
+                image: 'Made with insMind-WhatsApp_Image_2026-02-14_at_15.36.50-removebg-preview.png',
+                handler: function (response) {
+                    // Payment successful
+                    paymentBtn.innerHTML = '<i class="fas fa-check"></i> Payment Successful!';
+                    
+                    // Show success message
+                    alert('🎉 Payment Successful!\n\nThank you for enrolling in the HR Executive Program.\n\nWe will contact you soon with course details and login credentials.\n\nTransaction ID: ' + response.razorpay_payment_id + '\n\n📞 For support: 8810696963');
+                    
+                    // Send payment confirmation to WhatsApp
+                    setTimeout(() => {
+                        const whatsappNumber = '8810696963';
+                        const message = encodeURIComponent(
+                            `✅ *Payment Confirmation - HR Executive Course*\n\n` +
+                            `📚 *Course:* 60 Days HR Executive Job-Ready Program with AI Tools\n` +
+                            `💰 *Amount Paid:* ₹9,999\n` +
+                            `� *Transaction ID:* ${response.razorpay_payment_id}\n` +
+                            `📅 *Date:* ${new Date().toLocaleDateString()}\n\n` +
+                            `� *Student Details:* [Please provide your name and contact]\n\n` +
+                            `🚀 Next Steps:\n` +
+                            `• Course access details will be sent within 24 hours\n` +
+                            `• Join the student WhatsApp group\n` +
+                            `• Schedule your first counseling session\n\n` +
+                            `Thank you for choosing Mindix Education! 🙏`
+                        );
+                        
+                        window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
+                    }, 2000);
+                },
+                prefill: {
+                    name: '',
+                    email: '',
+                    contact: ''
+                },
+                notes: {
+                    course: 'HR Executive Job-Ready Program with AI Tools',
+                    duration: '60 Days',
+                    amount: '₹9,999'
+                },
+                theme: {
+                    color: '#667eea'
+                },
+                modal: {
+                    ondismiss: function() {
+                        // Payment modal closed
+                        paymentBtn.innerHTML = originalText;
+                        paymentBtn.disabled = false;
+                    },
+                    escape: true,
+                    backdropclose: true,
+                    handleback: true
+                }
+            };
+            
+            const rzp = new Razorpay(options);
+            
+            // Handle payment errors
+            rzp.on('payment.failed', function (response){
                 paymentBtn.innerHTML = originalText;
                 paymentBtn.disabled = false;
-            }, 2000);
+                
+                alert('❌ Payment Failed!\n\nSomething went wrong with the payment.\n\nError: ' + response.error.description + '\n\nPlease try again or contact support:\n📞 8810696963');
+            });
+            
+            // Open payment modal
+            setTimeout(() => {
+                rzp.open();
+                paymentBtn.innerHTML = originalText;
+                paymentBtn.disabled = false;
+            }, 1000);
         }
 
         // Smooth scroll for navigation links
