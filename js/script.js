@@ -5,25 +5,8 @@ const navMenu = document.querySelector('.nav-menu');
 const contactForm = document.getElementById('contactForm');
 const formMessage = document.getElementById('formMessage');
 
-// Loading Screen Handler - REMOVED FOR BETTER PERFORMANCE
-// window.addEventListener('load', function() {
-//     const loadingScreen = document.getElementById('loadingScreen');
-//     const body = document.body;
-//     
-//     // Add loading class initially
-//     body.classList.add('loading-active');
-//     
-//     // Hide loading screen after 2 seconds
-//     setTimeout(() => {
-//         loadingScreen.classList.add('fade-out');
-//         body.classList.remove('loading-active');
-//         
-//         // Remove loading screen completely after fade animation
-//         setTimeout(() => {
-//             loadingScreen.style.display = 'none';
-//         }, 800);
-//     }, 2000);
-// });
+// Loading Screen Handler - COMPLETELY REMOVED FOR BETTER PERFORMANCE
+// No loading screen - website loads instantly
 
 // FAQ Accordion functionality
 document.addEventListener('DOMContentLoaded', function() {
@@ -427,7 +410,7 @@ const courseBrochures = {
     }
 };
 
-// Auto-popup HR Executive course on page load - OPTIMIZED
+// Auto-popup HR Executive course on page load - HOSTING OPTIMIZED
 document.addEventListener('DOMContentLoaded', function() {
     console.log('🚀 Page loaded, checking for auto-popup...');
     
@@ -458,7 +441,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             console.log('❌ HR Executive course card not found');
         }
-    }, 1000); // Reduced from 2000ms to 1000ms for faster experience
+    }, 1500); // Increased to 1.5 seconds for hosting stability
 });
 
 // Function to show course brochure
