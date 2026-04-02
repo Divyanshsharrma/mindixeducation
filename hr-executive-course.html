@@ -812,12 +812,24 @@
 
         // Payment function with Razorpay integration
         function proceedToPayment() {
+            console.log('Payment function triggered'); // Debug log
+            
             // Show payment processing message
-            const paymentBtn = document.querySelector('.payment-btn');
+            const paymentBtn = event.target;
             const originalText = paymentBtn.innerHTML;
             
             paymentBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Initializing Payment...';
             paymentBtn.disabled = true;
+            
+            console.log('Initializing Razorpay...'); // Debug log
+            
+            // Check if Razorpay is loaded
+            if (typeof Razorpay === 'undefined') {
+                alert('❌ Payment system loading... Please try again in a few seconds.');
+                paymentBtn.innerHTML = originalText;
+                paymentBtn.disabled = false;
+                return;
+            }
             
             // Initialize Razorpay payment
             const options = {
@@ -828,6 +840,7 @@
                 description: '60 Days HR Executive Job-Ready Program with AI Tools',
                 image: 'Made with insMind-WhatsApp_Image_2026-02-14_at_15.36.50-removebg-preview.png',
                 handler: function (response) {
+                    console.log('Payment successful:', response); // Debug log
                     // Payment successful
                     paymentBtn.innerHTML = '<i class="fas fa-check"></i> Payment Successful!';
                     
@@ -841,9 +854,9 @@
                             `✅ *Payment Confirmation - HR Executive Course*\n\n` +
                             `📚 *Course:* 60 Days HR Executive Job-Ready Program with AI Tools\n` +
                             `💰 *Amount Paid:* ₹9,999\n` +
-                            `� *Transaction ID:* ${response.razorpay_payment_id}\n` +
+                            `💳 *Transaction ID:* ${response.razorpay_payment_id}\n` +
                             `📅 *Date:* ${new Date().toLocaleDateString()}\n\n` +
-                            `� *Student Details:* [Please provide your name and contact]\n\n` +
+                            `👤 *Student Details:* [Please provide your name and contact]\n\n` +
                             `🚀 Next Steps:\n` +
                             `• Course access details will be sent within 24 hours\n` +
                             `• Join the student WhatsApp group\n` +
@@ -869,6 +882,7 @@
                 },
                 modal: {
                     ondismiss: function() {
+                        console.log('Payment modal dismissed'); // Debug log
                         // Payment modal closed
                         paymentBtn.innerHTML = originalText;
                         paymentBtn.disabled = false;
@@ -879,16 +893,19 @@
                 }
             };
             
+            console.log('Creating Razorpay instance...'); // Debug log
             const rzp = new Razorpay(options);
             
             // Handle payment errors
             rzp.on('payment.failed', function (response){
+                console.log('Payment failed:', response); // Debug log
                 paymentBtn.innerHTML = originalText;
                 paymentBtn.disabled = false;
                 
                 alert('❌ Payment Failed!\n\nSomething went wrong with the payment.\n\nError: ' + response.error.description + '\n\nPlease try again or contact support:\n📞 8810696963');
             });
             
+            console.log('Opening payment modal...'); // Debug log
             // Open payment modal
             setTimeout(() => {
                 rzp.open();
