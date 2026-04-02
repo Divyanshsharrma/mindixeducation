@@ -5,25 +5,25 @@ const navMenu = document.querySelector('.nav-menu');
 const contactForm = document.getElementById('contactForm');
 const formMessage = document.getElementById('formMessage');
 
-// Loading Screen Handler
-window.addEventListener('load', function() {
-    const loadingScreen = document.getElementById('loadingScreen');
-    const body = document.body;
-    
-    // Add loading class initially
-    body.classList.add('loading-active');
-    
-    // Hide loading screen after 2 seconds
-    setTimeout(() => {
-        loadingScreen.classList.add('fade-out');
-        body.classList.remove('loading-active');
-        
-        // Remove loading screen completely after fade animation
-        setTimeout(() => {
-            loadingScreen.style.display = 'none';
-        }, 800);
-    }, 2000);
-});
+// Loading Screen Handler - REMOVED FOR BETTER PERFORMANCE
+// window.addEventListener('load', function() {
+//     const loadingScreen = document.getElementById('loadingScreen');
+//     const body = document.body;
+//     
+//     // Add loading class initially
+//     body.classList.add('loading-active');
+//     
+//     // Hide loading screen after 2 seconds
+//     setTimeout(() => {
+//         loadingScreen.classList.add('fade-out');
+//         body.classList.remove('loading-active');
+//         
+//         // Remove loading screen completely after fade animation
+//         setTimeout(() => {
+//             loadingScreen.style.display = 'none';
+//         }, 800);
+//     }, 2000);
+// });
 
 // FAQ Accordion functionality
 document.addEventListener('DOMContentLoaded', function() {
@@ -427,11 +427,11 @@ const courseBrochures = {
     }
 };
 
-// Auto-popup HR Executive course on page load
+// Auto-popup HR Executive course on page load - OPTIMIZED
 document.addEventListener('DOMContentLoaded', function() {
     console.log('🚀 Page loaded, checking for auto-popup...');
     
-    // Wait 2 seconds then auto-open HR Executive course brochure
+    // Reduced delay to 1 second for faster loading
     setTimeout(() => {
         console.log('⏰ Auto-opening HR Executive course brochure...');
         
@@ -458,7 +458,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             console.log('❌ HR Executive course card not found');
         }
-    }, 2000); // 2 seconds delay
+    }, 1000); // Reduced from 2000ms to 1000ms for faster experience
 });
 
 // Function to show course brochure
