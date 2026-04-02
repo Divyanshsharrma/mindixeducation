@@ -8,6 +8,13 @@ const formMessage = document.getElementById('formMessage');
 // Loading Screen Handler - COMPLETELY REMOVED FOR BETTER PERFORMANCE
 // No loading screen - website loads instantly
 
+// Remove any loading-active class that might be stuck
+document.addEventListener('DOMContentLoaded', function() {
+    // Remove loading-active class if it exists
+    document.body.classList.remove('loading-active');
+    console.log('✅ Loading classes removed, content visible');
+});
+
 // FAQ Accordion functionality
 document.addEventListener('DOMContentLoaded', function() {
     const faqQuestions = document.querySelectorAll('.faq-question');
