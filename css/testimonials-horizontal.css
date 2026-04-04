@@ -1,0 +1,329 @@
+/* Horizontal Scrolling Testimonials */
+.mindix-testimonial-section {
+    padding: 60px 0;
+    background: #f8f9fa;
+}
+
+.mindix-testimonial-grid {
+    display: flex;
+    gap: 20px;
+    margin-top: 40px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 10px;
+}
+
+.mindix-testimonial-grid::-webkit-scrollbar {
+    height: 6px;
+}
+
+.mindix-testimonial-grid::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.mindix-testimonial-grid::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 10px;
+}
+
+.mindix-testimonial-card {
+    min-width: 300px;
+    max-width: 300px;
+    flex-shrink: 0;
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e9ecef;
+}
+
+.mindix-testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.mindix-testimonial-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.mindix-testimonial-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 12px;
+    border: 2px solid #f0f0f0;
+}
+
+.mindix-testimonial-info {
+    flex: 1;
+}
+
+.mindix-testimonial-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #2d3436;
+    margin: 0 0 4px 0;
+}
+
+.mindix-testimonial-course {
+    font-size: 13px;
+    color: #636e72;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.mindix-testimonial-text {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #495057;
+    margin-bottom: 15px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.mindix-testimonial-linkedin {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: #0077b5;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
+
+.mindix-testimonial-linkedin:hover {
+    background: #005885;
+    color: white;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .mindix-testimonial-section {
+        padding: 40px 0;
+    }
+    
+    .mindix-testimonial-grid {
+        gap: 15px;
+        margin-top: 30px;
+    }
+    
+    .mindix-testimonial-card {
+        min-width: 280px;
+        max-width: 280px;
+        padding: 16px;
+    }
+    
+    .mindix-testimonial-image {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .mindix-testimonial-name {
+        font-size: 15px;
+    }
+    
+    .mindix-testimonial-course {
+        font-size: 12px;
+    }
+    
+    .mindix-testimonial-text {
+        font-size: 13px;
+    }
+    
+    .mindix-testimonial-linkedin {
+        font-size: 11px;
+        padding: 5px 10px;
+    }
+}
+
+/* Tablet Responsive */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .mindix-testimonial-card {
+        min-width: 290px;
+        max-width: 290px;
+    }
+}
+
+/* Desktop Responsive */
+@media (min-width: 1025px) {
+    .mindix-testimonial-card {
+        min-width: 300px;
+        max-width: 300px;
+    }
+}
+
+/* Testimonial Modal */
+.testimonial-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 5% auto;
+    padding: 0;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    animation: slideIn 0.3s ease;
+}
+
+.close-modal {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+    transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+    color: #000;
+}
+
+.testimonial-full {
+    padding: 30px;
+}
+
+.testimonial-full-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+
+.testimonial-full-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+    border: 3px solid #f0f0f0;
+}
+
+.testimonial-full-info h3 {
+    margin: 0 0 8px 0;
+    font-size: 24px;
+    color: #2d3436;
+    font-weight: 600;
+}
+
+.testimonial-full-position {
+    margin: 0 0 15px 0;
+    font-size: 16px;
+    color: #636e72;
+    font-weight: 500;
+}
+
+.testimonial-full-linkedin {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: #0077b5;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
+
+.testimonial-full-linkedin:hover {
+    background: #005885;
+    color: white;
+}
+
+.testimonial-full-content p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #495057;
+    margin: 0;
+    text-align: justify;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Mobile Responsive Modal */
+@media (max-width: 768px) {
+    .modal-content {
+        margin: 10% auto;
+        width: 95%;
+        max-height: 85vh;
+    }
+    
+    .testimonial-full {
+        padding: 20px;
+    }
+    
+    .testimonial-full-header {
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    .testimonial-full-image {
+        margin-right: 0;
+        margin-bottom: 15px;
+        width: 70px;
+        height: 70px;
+    }
+    
+    .testimonial-full-info h3 {
+        font-size: 20px;
+    }
+    
+    .testimonial-full-position {
+        font-size: 14px;
+    }
+    
+    .testimonial-full-content p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+    
+    .close-modal {
+        right: 15px;
+        top: 10px;
+        font-size: 24px;
+    }
+}
