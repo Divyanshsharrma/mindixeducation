@@ -434,10 +434,6 @@
 }
 
 /* Hide main content initially */
-body {
-    overflow-x: hidden;
-}
-
 body.loading-active {
     overflow: hidden;
 }
