@@ -722,6 +722,25 @@
             align-items: center;
         }
 
+        @media (max-width: 768px) {
+            .course-hero-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .course-hero-visual {
+                max-width: 100%;
+                margin: 0 auto;
+            }
+
+            .course-hero-visual img {
+                width: 100%;
+                height: auto;
+                border-radius: 15px;
+            }
+        }
+
         .course-badge {
             display: inline-flex;
             align-items: center;
@@ -1416,21 +1435,37 @@
             font-size: 0.9rem;
         }
 
+        .course-meta,
+        .schedule-info,
+        .outcomes-grid {
+            grid-template-columns: 1fr;
+        }
+
         @media (max-width: 768px) {
-            .course-hero-content,
-            .payment-content {
+            .course-hero-content {
                 grid-template-columns: 1fr;
-                gap: 40px;
+                gap: 30px;
+                text-align: center;
+                padding: 0 20px;
+            }
+
+            .course-hero-visual {
+                order: -1;
+                margin-bottom: 30px;
             }
 
             .course-hero h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
+                margin-bottom: 20px;
             }
 
-            .course-meta,
-            .schedule-info,
-            .outcomes-grid {
+            .course-hero-text {
+                text-align: center;
+            }
+
+            .payment-content {
                 grid-template-columns: 1fr;
+                gap: 40px;
             }
 
             .day-item {
