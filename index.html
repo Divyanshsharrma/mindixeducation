@@ -2627,18 +2627,35 @@ src="https://www.facebook.com/tr?id=970933495494749&ev=PageView&noscript=1"
                     body: new URLSearchParams(data)
                 });
                 
-                // Show success message
+                // Track Meta Pixel conversion
+                fbq('track', 'Lead', {
+                    content_name: 'Urgency Discount Form',
+                    content_category: 'Lead Generation'
+                });
+                
+                // Track Google Analytics conversion
+                gtag('event', 'conversion', {
+                    'send_to': 'GA_MEASUREMENT_ID/LEAD_ID',
+                    'value': 1,
+                    'currency': 'INR'
+                });
+                
+                // Show success message briefly
                 formMessage.className = 'form-message success';
-                formMessage.textContent = '🎉 Congratulations! Your discount has been claimed. Our team will contact you shortly.';
+                formMessage.textContent = 'Redirecting to confirmation page...';
                 formMessage.style.display = 'block';
                 
                 // Reset form
                 this.reset();
                 
-                // Close popup after 3 seconds
+                // Set access token for thank you page
+                sessionStorage.setItem('formSubmitted', 'true');
+                sessionStorage.setItem('formSubmitTime', Date.now().toString());
+                
+                // Redirect to thank you page after 1.5 seconds
                 setTimeout(function() {
-                    closeUrgencyPopup();
-                }, 3000);
+                    window.location.href = 'ty8k2m9x-success-confirmation.html';
+                }, 1500);
                 
             } catch (error) {
                 console.error('Form submission error:', error);
