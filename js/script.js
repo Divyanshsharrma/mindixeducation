@@ -153,10 +153,6 @@ if (contactForm) {
             // Reset form
             contactForm.reset();
             
-            // Set access token for thank you page
-            sessionStorage.setItem('formSubmitted', 'true');
-            sessionStorage.setItem('formSubmitTime', Date.now().toString());
-            
             // Redirect to thank you page after 1.5 seconds
             setTimeout(() => {
                 window.location.href = 'ty8k2m9x-success-confirmation.html';
