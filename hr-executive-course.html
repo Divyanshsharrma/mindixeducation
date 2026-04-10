@@ -122,7 +122,117 @@
                 </div>
                 
                 <div class="course-hero-visual">
-                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&h=400&fit=crop&crop=center" alt="HR Executive Training" class="hero-image">
+                    <div class="enrollment-form-container">
+                        <h3>LIMITED TIME OFFER</h3>
+                        <p class="offer-timer">Offer expires in: <span id="countdown">14:56</span></p>
+                        <p class="offer-subtitle">Get up to 30% OFF + Free Career Counseling!</p>
+                        
+                        <form id="hrCourseForm" class="course-enrollment-form">
+                            <input type="hidden" id="hrFormPurpose" name="purpose" value="hr_course_enrollment">
+                            <div class="form-group">
+                                <label for="hrName">Full Name</label>
+                                <input type="text" id="hrName" name="name" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="hrEmail">Email Address</label>
+                                <input type="email" id="hrEmail" name="email" placeholder="Enter your email address" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="hrPhone">Phone Number</label>
+                                <input type="tel" id="hrPhone" name="phone" placeholder="Enter your phone number" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="hrCourse">Select Course</label>
+                                <select id="hrCourse" name="course" required>
+                                    <option value="">Select a Course</option>
+                                    <!-- Marketing Courses -->
+                                    <option value="digital-marketing">Digital Marketing + AI Tools</option>
+                                    <option value="video-editing">Video Editing + AI Tools</option>
+                                    <option value="graphics-designing">Graphics Designing + AI Tools</option>
+                                    <!-- HR Courses -->
+                                    <option value="us-it-recruiter">US IT Recruiter + AI Tools</option>
+                                    <option value="hr-executive" selected>HR Executive + AI Tools</option>
+                                    <option value="hr-recruiter">HR Recruiter + AI Tools</option>
+                                    <option value="it-recruiter">IT Recruiter + AI Tools</option>
+                                    <option value="hr-admin">HR Admin + AI Tools</option>
+                                    <option value="hr-analyst">HR Analyst + AI Tools</option>
+                                    <option value="recruiting-coordinator">Recruiting Coordinator + AI Tools</option>
+                                    <option value="hr-coordinator">HR Coordinator + AI Tools</option>
+                                    <!-- IT Courses -->
+                                    <option value="front-end">Front-End + AI Tools</option>
+                                    <option value="business-analyst">Business Analyst + AI Tools</option>
+                                    <option value="data-analyst">Data Analyst + AI Tools</option>
+                                    <option value="cloud-computing">Cloud Computing</option>
+                                    <option value="automation-testing">Automation Testing + AI Tools</option>
+                                    <option value="bi-developer">BI Developer + AI Tools</option>
+                                    <option value="android-developer">Android Developer + AI Tools</option>
+                                    <option value="devops">DevOps + AI Tools</option>
+                                    <option value="full-stack">Full Stack + AI Tools</option>
+                                    <option value="web-developer">Web Developer + AI Tools</option>
+                                    <!-- Business Courses -->
+                                    <option value="entrepreneurship">Entrepreneurship Program</option>
+                                    <option value="business-development">Business Development + AI Tools</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="hrMessage">Message</label>
+                                <textarea id="hrMessage" name="message" placeholder="Tell us about your requirements..." rows="2"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-full enrollment-btn">
+                                <i class="fas fa-gift"></i>
+                                Claim Discount & Get Free Counseling
+                            </button>
+                            <div id="hrFormMessage" class="form-message"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Trainer -->
+    <section class="course-trainer">
+        <div class="container">
+            <div class="section-header">
+                <h2>Meet Your Trainer</h2>
+                <p>Learn from industry experts with real-world experience</p>
+            </div>
+            
+            <div class="trainer-profile">
+                <div class="trainer-image">
+                    <img src="https://media.licdn.com/dms/image/v2/D5603AQEs-0pcNtqPMw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1728805684720?e=1777507200&v=beta&t=ceJ7_WMsH1EWEI0U41iTDOXwoUBKO5yfj-c4wFuxt9I" alt="Ritik Prajapati - HR Course Trainer" />
+                </div>
+                <div class="trainer-info">
+                    <h3>Ritik Prajapati</h3>
+                    <p class="trainer-title">HR Executive Training Specialist</p>
+                    <p class="trainer-bio">
+                        Industry-experienced HR professional with expertise in recruitment, employee relations, and HR operations. 
+                        Passionate about teaching practical HR skills and helping students build successful careers in Human Resources.
+                    </p>
+                    <div class="trainer-expertise">
+                        <div class="expertise-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>5+ Years HR Industry Experience</span>
+                        </div>
+                        <div class="expertise-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Expert in Recruitment & Training</span>
+                        </div>
+                        <div class="expertise-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>AI Tools for HR Automation</span>
+                        </div>
+                        <div class="expertise-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Practical Case Study Approach</span>
+                        </div>
+                    </div>
+                    <div class="trainer-social">
+                        <a href="https://www.linkedin.com/in/ritik-prajapati-367136291/" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                            Connect on LinkedIn
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -160,464 +270,207 @@
     <section class="course-curriculum">
         <div class="container">
             <div class="section-header">
-                <h2>Comprehensive Curriculum</h2>
-                <p>8 weeks of intensive training covering all aspects of HR</p>
+                <h2>60-Day Learning Journey</h2>
+                <p>Transform into an HR professional with our structured program</p>
             </div>
             
-            <!-- Week 1 -->
-            <div class="week-module">
-                <div class="week-header">
-                    <div class="week-number">WEEK 1</div>
+            <div class="curriculum-grid">
+                <!-- Week 1 -->
+                <div class="curriculum-card week-1">
+                    <div class="week-badge">
+                        <span class="week-number">WEEK 1</span>
+                        <span class="week-icon">foundation</span>
+                    </div>
                     <h3>HR Foundation & Corporate Basics</h3>
-                </div>
-                <div class="week-content">
-                    <div class="day-item">
-                        <div class="day-number">Day 1</div>
-                        <div class="day-content">
-                            <h4>Introduction to HR Management, HR Roles & Career Path</h4>
-                            <p>Understanding the HR function and career opportunities</p>
-                        </div>
-                    </div>
-                    <div class="day-item">
-                        <div class="day-number">Day 2</div>
-                        <div class="day-content">
-                            <h4>Core HR Functions – Recruitment, Payroll, Training, Compliance</h4>
-                            <p>Deep dive into essential HR operations</p>
-                        </div>
-                    </div>
-                    <div class="day-item">
-                        <div class="day-number">Day 3</div>
-                        <div class="day-content">
-                            <h4>Corporate Culture, Ethics & Professional Conduct</h4>
-                            <p>Building professional workplace behavior</p>
-                        </div>
-                    </div>
-                    <div class="day-item">
-                        <div class="day-number">Day 4</div>
-                        <div class="day-content">
-                            <h4>HR Policies, SOPs & Documentation</h4>
-                            <p>Creating and managing HR documentation</p>
-                        </div>
-                    </div>
-                    <div class="day-item">
-                        <div class="day-number">Day 5</div>
-                        <div class="day-content">
-                            <h4>HR Letters – Offer, Appointment, Warning Letters</h4>
-                            <p>Professional communication and documentation</p>
-                        </div>
-                    </div>
-                    <div class="day-item assignment">
-                        <div class="day-number">Day 6</div>
-                        <div class="day-content">
-                            <h4>Assignment – HR Policy & Documentation</h4>
-                            <p>Practical application of learned concepts</p>
-                        </div>
-                    </div>
-                    <div class="day-item off">
-                        <div class="day-number">Day 7</div>
-                        <div class="day-content">
-                            <h4>Sunday: Off</h4>
-                            <p>Rest and revision</p>
-                        </div>
+                    <ul class="week-topics">
+                        <li><i class="fas fa-check"></i>HR Management & Career Paths</li>
+                        <li><i class="fas fa-check"></i>Core HR Functions Overview</li>
+                        <li><i class="fas fa-check"></i>Corporate Culture & Ethics</li>
+                        <li><i class="fas fa-check"></i>HR Policies & Documentation</li>
+                        <li><i class="fas fa-check"></i>Professional HR Letters</li>
+                        <li><i class="fas fa-tasks"></i>Practical Assignment</li>
+                    </ul>
+                    <div class="week-outcome">
+                        <i class="fas fa-trophy"></i>
+                        <span>Build strong HR foundation</span>
                     </div>
                 </div>
-            </div>
 
-            <!-- Week 2 -->
-            <div class="week-module">
-                <div class="week-header">
-                    <div class="week-number">WEEK 2</div>
+                <!-- Week 2 -->
+                <div class="curriculum-card week-2">
+                    <div class="week-badge">
+                        <span class="week-number">WEEK 2</span>
+                        <span class="week-icon">recruitment</span>
+                    </div>
                     <h3>Recruitment & Talent Acquisition</h3>
-                </div>
-                <div class="week-content">
-                    <div class="day-item">
-                        <div class="day-number">Day 8</div>
-                        <div class="day-content">
-                            <h4>End-to-End Recruitment Lifecycle</h4>
-                            <p>Complete recruitment process management</p>
-                        </div>
-                    </div>
-                    <div class="day-item">
-                        <div class="day-number">Day 9</div>
-                        <div class="day-content">
-                            <h4>Job Analysis & Job Description Writing</h4>
-                            <p>Creating effective job descriptions</p>
-                        </div>
-                    </div>
-                    <div class="day-item">
-                        <div class="day-number">Day 10</div>
-                        <div class="day-content">
-                            <h4>Sourcing Channels – Naukri, LinkedIn, Portals</h4>
-                            <p>Multi-channel candidate sourcing strategies</p>
-                        </div>
-                    </div>
-                    <div class="day-item">
-                        <div class="day-number">Day 11</div>
-                        <div class="day-content">
-                            <h4>Resume Screening & ATS Basics</h4>
-                            <p>Efficient candidate evaluation techniques</p>
-                        </div>
-                    </div>
-                    <div class="day-item">
-                        <div class="day-number">Day 12</div>
-                        <div class="day-content">
-                            <h4>Interview Scheduling & Coordination</h4>
-                            <p>Managing interview logistics</p>
-                        </div>
-                    </div>
-                    <div class="day-item assignment">
-                        <div class="day-number">Day 13</div>
-                        <div class="day-content">
-                            <h4>Assignment – JD & Resume Shortlisting</h4>
-                            <p>Hands-on recruitment practice</p>
-                        </div>
-                    </div>
-                    <div class="day-item off">
-                        <div class="day-number">Day 14</div>
-                        <div class="day-content">
-                            <h4>Sunday: Off</h4>
-                            <p>Rest and revision</p>
-                        </div>
+                    <ul class="week-topics">
+                        <li><i class="fas fa-check"></i>End-to-End Recruitment Lifecycle</li>
+                        <li><i class="fas fa-check"></i>Job Analysis & JD Writing</li>
+                        <li><i class="fas fa-check"></i>Multi-Channel Sourcing</li>
+                        <li><i class="fas fa-check"></i>Resume Screening & ATS</li>
+                        <li><i class="fas fa-check"></i>Interview Coordination</li>
+                        <li><i class="fas fa-tasks"></i>JD & Resume Assignment</li>
+                    </ul>
+                    <div class="week-outcome">
+                        <i class="fas fa-trophy"></i>
+                        <span>Master recruitment skills</span>
                     </div>
                 </div>
-            </div>
 
-            <!-- Week 3 -->
-            <div class="week-module">
-                <div class="week-header">
-                    <div class="week-number">WEEK 3</div>
+                <!-- Week 3 -->
+                <div class="curriculum-card week-3">
+                    <div class="week-badge">
+                        <span class="week-number">WEEK 3</span>
+                        <span class="week-icon">interviewing</span>
+                    </div>
                     <h3>Interviewing & Onboarding</h3>
-                </div>
-                <div class="week-content">
-                    <div class="day-item">
-                        <div class="day-number">Day 15</div>
-                        <div class="day-content">
-                            <h4>Interview Types – Telephonic, Virtual, F2F</h4>
-                            <p>Mastering different interview formats</p>
-                        </div>
-                    </div>
-                    <div class="day-item">
-                        <div class="day-number">Day 16</div>
-                        <div class="day-content">
-                            <h4>Behavioral & Technical Interview Techniques</h4>
-                            <p>Effective interviewing methodologies</p>
-                        </div>
-                    </div>
-                    <div class="day-item">
-                        <div class="day-number">Day 17</div>
-                        <div class="day-content">
-                            <h4>Candidate Evaluation & Feedback Process</h4>
-                            <p>Systematic candidate assessment</p>
-                        </div>
-                    </div>
-                    <div class="day-item">
-                        <div class="day-number">Day 18</div>
-                        <div class="day-content">
-                            <h4>Offer Rollout & Salary Negotiation</h4>
-                            <p>Managing job offers and compensation</p>
-                        </div>
-                    </div>
-                    <div class="day-item">
-                        <div class="day-number">Day 19</div>
-                        <div class="day-content">
-                            <h4>Employee Onboarding & Joining Formalities</h4>
-                            <p>Smooth employee integration process</p>
-                        </div>
-                    </div>
-                    <div class="day-item assignment">
-                        <div class="day-number">Day 20</div>
-                        <div class="day-content">
-                            <h4>Assignment – Mock Recruitment</h4>
-                            <p>Complete recruitment simulation</p>
-                        </div>
-                    </div>
-                    <div class="day-item off">
-                        <div class="day-number">Day 21</div>
-                        <div class="day-content">
-                            <h4>Sunday: Off</h4>
-                            <p>Rest and revision</p>
-                        </div>
+                    <ul class="week-topics">
+                        <li><i class="fas fa-check"></i>Interview Types & Techniques</li>
+                        <li><i class="fas fa-check"></i>Behavioral & Technical Interviews</li>
+                        <li><i class="fas fa-check"></i>Candidate Evaluation</li>
+                        <li><i class="fas fa-check"></i>Offer & Salary Negotiation</li>
+                        <li><i class="fas fa-check"></i>Employee Onboarding Process</li>
+                        <li><i class="fas fa-tasks"></i>Mock Recruitment Project</li>
+                    </ul>
+                    <div class="week-outcome">
+                        <i class="fas fa-trophy"></i>
+                        <span>Excel in interviewing process</span>
                     </div>
                 </div>
-            </div>
 
-            <!-- Week 4 -->
-            <div class="week-module">
-                <div class="week-header">
-                    <div class="week-number">WEEK 4</div>
+                <!-- Week 4 -->
+                <div class="curriculum-card week-4">
+                    <div class="week-badge">
+                        <span class="week-number">WEEK 4</span>
+                        <span class="week-icon">payroll</span>
+                    </div>
                     <h3>Payroll, Labour Law & Compliance</h3>
-                </div>
-                <div class="week-content">
-                    <div class="day-item">
-                        <div class="day-number">Day 22</div>
-                        <div class="day-content">
-                            <h4>Payroll Structure – CTC, Gross & Net Salary</h4>
-                            <p>Understanding salary components</p>
-                        </div>
-                    </div>
-                    <div class="day-item">
-                        <div class="day-number">Day 23</div>
-                        <div class="day-content">
-                            <h4>Statutory Compliance – PF, ESI, PT, TDS</h4>
-                            <p>Legal compliance essentials</p>
-                        </div>
-                    </div>
-                    <div class="day-item">
-                        <div class="day-number">Day 24</div>
-                        <div class="day-content">
-                            <h4>Indian Labour Laws Overview</h4>
-                            <p>Essential labor law knowledge</p>
-                        </div>
-                    </div>
-                    <div class="day-item">
-                        <div class="day-number">Day 25</div>
-                        <div class="day-content">
-                            <h4>Attendance & Leave Management</h4>
-                            <p>Managing employee attendance systems</p>
-                        </div>
-                    </div>
-                    <div class="day-item">
-                        <div class="day-number">Day 26</div>
-                        <div class="day-content">
-                            <h4>HR MIS & Reporting</h4>
-                            <p>Data management and reporting</p>
-                        </div>
-                    </div>
-                    <div class="day-item assignment">
-                        <div class="day-number">Day 27</div>
-                        <div class="day-content">
-                            <h4>Payroll & Compliance Assignment</h4>
-                            <p>Practical payroll processing</p>
-                        </div>
-                    </div>
-                    <div class="day-item off">
-                        <div class="day-number">Day 28</div>
-                        <div class="day-content">
-                            <h4>Sunday: Off</h4>
-                            <p>Rest and revision</p>
-                        </div>
+                    <ul class="week-topics">
+                        <li><i class="fas fa-check"></i>Payroll Structure & Components</li>
+                        <li><i class="fas fa-check"></i>Statutory Compliance (PF, ESI, PT)</li>
+                        <li><i class="fas fa-check"></i>Indian Labour Laws</li>
+                        <li><i class="fas fa-check"></i>Attendance & Leave Management</li>
+                        <li><i class="fas fa-check"></i>HR MIS & Reporting</li>
+                        <li><i class="fas fa-tasks"></i>Payroll Processing Assignment</li>
+                    </ul>
+                    <div class="week-outcome">
+                        <i class="fas fa-trophy"></i>
+                        <span>Handle payroll compliance</span>
                     </div>
                 </div>
-            </div>
 
-            <!-- Week 5 -->
-            <div class="week-module">
-                <div class="week-header">
-                    <div class="week-number">WEEK 5</div>
+                <!-- Week 5 -->
+                <div class="curriculum-card week-5">
+                    <div class="week-badge">
+                        <span class="week-number">WEEK 5</span>
+                        <span class="week-icon">engagement</span>
+                    </div>
                     <h3>Employee Engagement & HR Operations</h3>
-                </div>
-                <div class="week-content">
-                    <div class="day-item">
-                        <div class="day-number">Day 29</div>
-                        <div class="day-content">
-                            <h4>Employee Lifecycle Management</h4>
-                            <p>Complete employee journey management</p>
-                        </div>
-                    </div>
-                    <div class="day-item">
-                        <div class="day-number">Day 30</div>
-                        <div class="day-content">
-                            <h4>Employee Engagement & Retention</h4>
-                            <p>Strategies for employee satisfaction</p>
-                        </div>
-                    </div>
-                    <div class="day-item">
-                        <div class="day-number">Day 31</div>
-                        <div class="day-content">
-                            <h4>Performance Management System (PMS)</h4>
-                            <p>Managing employee performance</p>
-                        </div>
-                    </div>
-                    <div class="day-item">
-                        <div class="day-number">Day 32</div>
-                        <div class="day-content">
-                            <h4>Training & Development</h4>
-                            <p>Employee skill development programs</p>
-                        </div>
-                    </div>
-                    <div class="day-item">
-                        <div class="day-number">Day 33</div>
-                        <div class="day-content">
-                            <h4>Exit Process & Full & Final Settlement</h4>
-                            <p>Managing employee separations</p>
-                        </div>
-                    </div>
-                    <div class="day-item assignment">
-                        <div class="day-number">Day 34</div>
-                        <div class="day-content">
-                            <h4>HR Operations Case Study</h4>
-                            <p>Real-world HR scenarios</p>
-                        </div>
-                    </div>
-                    <div class="day-item off">
-                        <div class="day-number">Day 35</div>
-                        <div class="day-content">
-                            <h4>Sunday: Off</h4>
-                            <p>Rest and revision</p>
-                        </div>
+                    <ul class="week-topics">
+                        <li><i class="fas fa-check"></i>Employee Lifecycle Management</li>
+                        <li><i class="fas fa-check"></i>Engagement & Retention Strategies</li>
+                        <li><i class="fas fa-check"></i>Performance Management System</li>
+                        <li><i class="fas fa-check"></i>Training & Development</li>
+                        <li><i class="fas fa-check"></i>Exit Process & Settlement</li>
+                        <li><i class="fas fa-tasks"></i>HR Operations Case Study</li>
+                    </ul>
+                    <div class="week-outcome">
+                        <i class="fas fa-trophy"></i>
+                        <span>Manage employee relations</span>
                     </div>
                 </div>
-            </div>
 
-            <!-- Week 6 -->
-            <div class="week-module">
-                <div class="week-header">
-                    <div class="week-number">WEEK 6</div>
+                <!-- Week 6 -->
+                <div class="curriculum-card week-6">
+                    <div class="week-badge">
+                        <span class="week-number">WEEK 6</span>
+                        <span class="week-icon">ai-tools</span>
+                    </div>
                     <h3>AI Tools for Modern HR</h3>
-                </div>
-                <div class="week-content">
-                    <div class="day-item">
-                        <div class="day-number">Day 36</div>
-                        <div class="day-content">
-                            <h4>Introduction to AI in HR</h4>
-                            <p>Understanding AI applications in HR</p>
-                        </div>
-                    </div>
-                    <div class="day-item">
-                        <div class="day-number">Day 37</div>
-                        <div class="day-content">
-                            <h4>ChatGPT for HR – JD, Policies, Emails</h4>
-                            <p>AI-powered content creation</p>
-                        </div>
-                    </div>
-                    <div class="day-item">
-                        <div class="day-number">Day 38</div>
-                        <div class="day-content">
-                            <h4>AI-Based Recruitment & Resume Screening</h4>
-                            <p>Automated candidate evaluation</p>
-                        </div>
-                    </div>
-                    <div class="day-item">
-                        <div class="day-number">Day 39</div>
-                        <div class="day-content">
-                            <h4>ATS, HRMS & AI Tool Overview</h4>
-                            <p>Modern HR technology stack</p>
-                        </div>
-                    </div>
-                    <div class="day-item">
-                        <div class="day-number">Day 40</div>
-                        <div class="day-content">
-                            <h4>Excel + AI for HR Automation</h4>
-                            <p>Streamlining HR processes</p>
-                        </div>
-                    </div>
-                    <div class="day-item assignment">
-                        <div class="day-number">Day 41</div>
-                        <div class="day-content">
-                            <h4>AI-Based HR Assignment</h4>
-                            <p>Practical AI tool implementation</p>
-                        </div>
-                    </div>
-                    <div class="day-item off">
-                        <div class="day-number">Day 42</div>
-                        <div class="day-content">
-                            <h4>Sunday: Off</h4>
-                            <p>Rest and revision</p>
-                        </div>
+                    <ul class="week-topics">
+                        <li><i class="fas fa-check"></i>AI in HR Introduction</li>
+                        <li><i class="fas fa-check"></i>ChatGPT for HR Content</li>
+                        <li><i class="fas fa-check"></i>AI-Based Recruitment Tools</li>
+                        <li><i class="fas fa-check"></i>ATS & HRMS Overview</li>
+                        <li><i class="fas fa-check"></i>Excel + AI Automation</li>
+                        <li><i class="fas fa-tasks"></i>AI Tools Implementation</li>
+                    </ul>
+                    <div class="week-outcome">
+                        <i class="fas fa-trophy"></i>
+                        <span>Leverage AI in HR workflows</span>
                     </div>
                 </div>
-            </div>
 
-            <!-- Week 7 -->
-            <div class="week-module">
-                <div class="week-header">
-                    <div class="week-number">WEEK 7</div>
+                <!-- Week 7 -->
+                <div class="curriculum-card week-7">
+                    <div class="week-badge">
+                        <span class="week-number">WEEK 7</span>
+                        <span class="week-icon">practical</span>
+                    </div>
                     <h3>Practical HR & Industry Exposure</h3>
+                    <ul class="week-topics">
+                        <li><i class="fas fa-check"></i>Conflict Resolution Strategies</li>
+                        <li><i class="fas fa-check"></i>HR Audit & Compliance</li>
+                        <li><i class="fas fa-check"></i>Professional Email Writing</li>
+                        <li><i class="fas fa-check"></i>HR Software Demonstration</li>
+                        <li><i class="fas fa-check"></i>HR Analytics & Metrics</li>
+                        <li><i class="fas fa-tasks"></i>Analytics Mini Project</li>
+                    </ul>
+                    <div class="week-outcome">
+                        <i class="fas fa-trophy"></i>
+                        <span>Gain real-world HR exposure</span>
+                    </div>
                 </div>
-                <div class="week-content">
-                    <div class="day-item">
-                        <div class="day-number">Day 43</div>
-                        <div class="day-content">
-                            <h4>Handling HR Issues & Conflicts</h4>
-                            <p>Conflict resolution strategies</p>
-                        </div>
+
+                <!-- Final Week -->
+                <div class="curriculum-card final-week">
+                    <div class="week-badge">
+                        <span class="week-number">FINAL 5 DAYS</span>
+                        <span class="week-icon">placement</span>
                     </div>
-                    <div class="day-item">
-                        <div class="day-number">Day 44</div>
-                        <div class="day-content">
-                            <h4>HR Audit & Compliance Checks</h4>
-                            <p>Ensuring regulatory compliance</p>
-                        </div>
-                    </div>
-                    <div class="day-item">
-                        <div class="day-number">Day 45</div>
-                        <div class="day-content">
-                            <h4>Corporate Email Writing for HR</h4>
-                            <p>Professional communication skills</p>
-                        </div>
-                    </div>
-                    <div class="day-item">
-                        <div class="day-number">Day 46</div>
-                        <div class="day-content">
-                            <h4>HR Software & HRMS Demonstration</h4>
-                            <p>Hands-on software training</p>
-                        </div>
-                    </div>
-                    <div class="day-item">
-                        <div class="day-number">Day 47</div>
-                        <div class="day-content">
-                            <h4>HR Analytics & Metrics</h4>
-                            <p>Data-driven HR decision making</p>
-                        </div>
-                    </div>
-                    <div class="day-item assignment">
-                        <div class="day-number">Day 48</div>
-                        <div class="day-content">
-                            <h4>HR Analytics Mini Project</h4>
-                            <p>Practical data analysis project</p>
-                        </div>
-                    </div>
-                    <div class="day-item off">
-                        <div class="day-number">Day 49</div>
-                        <div class="day-content">
-                            <h4>Sunday: Off</h4>
-                            <p>Rest and revision</p>
-                        </div>
+                    <h3>Placement & Career Support</h3>
+                    <ul class="week-topics">
+                        <li><i class="fas fa-check"></i>ATS-Friendly Resume Building</li>
+                        <li><i class="fas fa-check"></i>LinkedIn Profile Optimization</li>
+                        <li><i class="fas fa-check"></i>Job Portal Profile Setup</li>
+                        <li><i class="fas fa-check"></i>Mock Interview Round 1</li>
+                        <li><i class="fas fa-check"></i>Advanced Interview Prep</li>
+                        <li><i class="fas fa-graduation-cap"></i>Job Readiness Assessment</li>
+                    </ul>
+                    <div class="week-outcome">
+                        <i class="fas fa-trophy"></i>
+                        <span>100% Job Ready!</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Placement Support -->
-            <div class="week-module placement-module">
-                <div class="week-header">
-                    <div class="week-number">LAST 5 DAYS</div>
-                    <h3>Placement & Career Support</h3>
+            <div class="curriculum-features">
+                <div class="feature-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <h4>6 Days/Week</h4>
+                        <p>Mon-Sat classes, Sunday for revision</p>
+                    </div>
                 </div>
-                <div class="week-content">
-                    <div class="day-item">
-                        <div class="day-number">Day 50</div>
-                        <div class="day-content">
-                            <h4>Resume Building – ATS Friendly</h4>
-                            <p>Professional resume creation</p>
-                        </div>
+                <div class="feature-item">
+                    <i class="fas fa-laptop"></i>
+                    <div>
+                        <h4>Practical Training</h4>
+                        <p>Hands-on assignments every week</p>
                     </div>
-                    <div class="day-item">
-                        <div class="day-number">Day 51</div>
-                        <div class="day-content">
-                            <h4>LinkedIn Profile Optimization</h4>
-                            <p>Professional branding on LinkedIn</p>
-                        </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-certificate"></i>
+                    <div>
+                        <h4>Industry Recognized</h4>
+                        <p>Certificate upon completion</p>
                     </div>
-                    <div class="day-item">
-                        <div class="day-number">Day 52</div>
-                        <div class="day-content">
-                            <h4>Naukri Profile Optimization</h4>
-                            <p>Job portal profile enhancement</p>
-                        </div>
-                    </div>
-                    <div class="day-item">
-                        <div class="day-number">Day 53</div>
-                        <div class="day-content">
-                            <h4>Mock Interview – Round 1</h4>
-                            <p>Interview practice and feedback</p>
-                        </div>
-                    </div>
-                    <div class="day-item">
-                        <div class="day-number">Day 54</div>
-                        <div class="day-content">
-                            <h4>Mock Interview – Round 2 & Salary Negotiation</h4>
-                            <p>Advanced interview preparation</p>
-                        </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-briefcase"></i>
+                    <div>
+                        <h4>Placement Support</h4>
+                        <p>Interview preparation & job assistance</p>
                     </div>
                 </div>
             </div>
@@ -1037,10 +890,29 @@
         }
 
         .course-price-section {
-            background: rgba(255, 255, 255, 0.1);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             padding: 30px;
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .course-price-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
         }
 
         .price-tag {
@@ -1048,18 +920,33 @@
             align-items: center;
             gap: 15px;
             margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
         }
 
         .price {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: #ffd700;
+            font-size: 3rem;
+            font-weight: 900;
+            color: #00ff88;
+            text-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+            background: linear-gradient(135deg, #00ff88, #00cc6a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
         }
 
         .original-price {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             text-decoration: line-through;
-            opacity: 0.7;
+            color: #ff6b6b;
+            opacity: 0.8;
+            font-weight: 600;
         }
 
         .discount {
@@ -1072,7 +959,7 @@
         }
 
         .course-schedule {
-            padding: 80px 0;
+            padding: 60px 0;
             background: #f8f9fa;
         }
 
@@ -1103,7 +990,303 @@
         }
 
         .course-curriculum {
-            padding: 80px 0;
+            padding: 60px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .curriculum-grid {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 50px;
+            overflow-x: auto;
+            padding-bottom: 8px;
+            -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
+        }
+
+        .curriculum-grid::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .curriculum-grid::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .curriculum-grid::-webkit-scrollbar-thumb {
+            background: #667eea;
+            border-radius: 10px;
+        }
+
+        .curriculum-grid::-webkit-scrollbar-thumb:hover {
+            background: #5a67d8;
+        }
+
+        .curriculum-card {
+            background: white;
+            border-radius: 12px;
+            padding: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            flex: 0 0 240px;
+            min-width: 240px;
+        }
+
+        .curriculum-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .week-badge {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .week-number {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 16px;
+            font-weight: 700;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .week-icon {
+            font-size: 0.9rem;
+            color: #667eea;
+            font-weight: 600;
+            text-transform: capitalize;
+        }
+
+        .curriculum-card h3 {
+            color: #333;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .week-topics {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 15px;
+        }
+
+        .week-topics li {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 6px;
+            color: #555;
+            font-size: 0.8rem;
+            line-height: 1.3;
+        }
+
+        .week-topics li i {
+            color: #28a745;
+            font-size: 0.7rem;
+            flex-shrink: 0;
+        }
+
+        .week-topics li:nth-child(even) i {
+            color: #667eea;
+        }
+
+        .week-outcome {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 6px;
+            font-weight: 600;
+            color: #667eea;
+            font-size: 0.8rem;
+        }
+
+        .week-outcome i {
+            color: #ffd700;
+            font-size: 0.8rem;
+        }
+
+        /* Week-specific themes */
+        .week-1 { border-top: 4px solid #667eea; }
+        .week-2 { border-top: 4px solid #28a745; }
+        .week-3 { border-top: 4px solid #ffc107; }
+        .week-4 { border-top: 4px solid #dc3545; }
+        .week-5 { border-top: 4px solid #17a2b8; }
+        .week-6 { border-top: 4px solid #6f42c1; }
+        .week-7 { border-top: 4px solid #fd7e14; }
+        .final-week { 
+            border-top: 4px solid #e83e8c;
+            background: linear-gradient(135deg, #fff, #f8f9fa);
+        }
+
+        .final-week .week-number {
+            background: linear-gradient(135deg, #e83e8c, #d63384);
+        }
+
+        .curriculum-features {
+            display: flex;
+            gap: 30px;
+            margin-top: 60px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            flex: 0 0 280px;
+            min-width: 280px;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .feature-item i {
+            font-size: 2.5rem;
+            color: #667eea;
+            width: 60px;
+            text-align: center;
+        }
+
+        .feature-item h4 {
+            color: #333;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .feature-item p {
+            color: #666;
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            .curriculum-grid {
+                gap: 12px;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .curriculum-card {
+                padding: 15px;
+                flex: 0 0 250px;
+                min-width: 250px;
+            }
+
+            .curriculum-card h3 {
+                font-size: 1.1rem;
+                margin-bottom: 12px;
+            }
+
+            .week-badge {
+                margin-bottom: 12px;
+                padding-bottom: 8px;
+            }
+
+            .week-number {
+                padding: 5px 10px;
+                font-size: 0.7rem;
+            }
+
+            .week-icon {
+                font-size: 0.9rem;
+            }
+
+            .week-topics {
+                margin-bottom: 15px;
+            }
+
+            .week-topics li {
+                font-size: 0.8rem;
+                margin-bottom: 6px;
+                gap: 6px;
+            }
+
+            .week-topics li i {
+                font-size: 0.7rem;
+            }
+
+            .week-outcome {
+                padding: 8px;
+                font-size: 0.8rem;
+                gap: 6px;
+            }
+
+            .week-outcome i {
+                font-size: 0.8rem;
+            }
+
+            .curriculum-features {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .feature-item {
+                padding: 15px;
+                gap: 15px;
+            }
+
+            .feature-item i {
+                font-size: 1.8rem;
+                width: 40px;
+            }
+
+            .feature-item h4 {
+                font-size: 1.1rem;
+            }
+
+            .feature-item p {
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .curriculum-grid {
+                gap: 10px;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            .curriculum-card {
+                padding: 12px;
+                flex: 0 0 220px;
+                min-width: 220px;
+            }
+
+            .curriculum-card h3 {
+                font-size: 1rem;
+                margin-bottom: 10px;
+            }
+
+            .week-topics li {
+                font-size: 0.75rem;
+                margin-bottom: 5px;
+            }
+
+            .week-outcome {
+                padding: 6px;
+                font-size: 0.75rem;
+            }
         }
 
         .week-module {
@@ -1192,24 +1375,48 @@
         }
 
         .program-outcomes {
-            padding: 80px 0;
+            padding: 60px 0;
             background: #f8f9fa;
         }
 
         .outcomes-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-            margin-top: 50px;
+            display: flex;
+            gap: 12px;
+            margin-top: 40px;
+            overflow-x: auto;
+            padding-bottom: 8px;
+            -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
+            justify-content: center;
+        }
+
+        .outcomes-grid::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .outcomes-grid::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .outcomes-grid::-webkit-scrollbar-thumb {
+            background: #667eea;
+            border-radius: 10px;
+        }
+
+        .outcomes-grid::-webkit-scrollbar-thumb:hover {
+            background: #5a67d8;
         }
 
         .outcome-item {
             background: white;
-            padding: 40px;
-            border-radius: 15px;
+            padding: 25px;
+            border-radius: 12px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
             transition: transform 0.3s ease;
+            flex: 0 0 240px;
+            min-width: 240px;
         }
 
         .outcome-item:hover {
@@ -1217,15 +1424,15 @@
         }
 
         .outcome-icon {
-            font-size: 3rem;
+            font-size: 2.2rem;
             color: #667eea;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .outcome-item h3 {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             font-weight: 700;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .payment-section {
@@ -1278,15 +1485,23 @@
         }
 
         .current-price {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: #28a745;
+            font-size: 3rem;
+            font-weight: 900;
+            color: #00ff88;
+            text-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+            background: linear-gradient(135deg, #00ff88, #00cc6a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: pulse 2s infinite;
         }
 
         .original-price {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             text-decoration: line-through;
-            color: #999;
+            color: #ff6b6b;
+            opacity: 0.8;
+            font-weight: 600;
         }
 
         .discount-badge {
@@ -1393,22 +1608,266 @@
         }
 
         .footer-section a {
-            color: white;
+            color: #fff;
             text-decoration: none;
-            opacity: 0.8;
-            transition: opacity 0.3s ease;
+            transition: color 0.3s ease;
         }
 
         .footer-section a:hover {
-            opacity: 1;
             color: #667eea;
         }
 
-        .footer-section ul li i {
-            margin-right: 10px;
-            color: #667eea;
-            width: 20px;
+        /* HR Course Enrollment Form Styles */
+        .enrollment-form-container {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .enrollment-form-container h3 {
+            color: white;
             text-align: center;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .offer-timer {
+            color: #ffd700;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .offer-subtitle {
+            color: white;
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .course-enrollment-form {
+            position: relative;
+            z-index: 1;
+        }
+
+        .course-enrollment-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        .course-enrollment-form label {
+            color: white;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .course-enrollment-form input,
+        .course-enrollment-form select,
+        .course-enrollment-form textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .course-enrollment-form input::placeholder,
+        .course-enrollment-form textarea::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .course-enrollment-form input:focus,
+        .course-enrollment-form select:focus,
+        .course-enrollment-form textarea:focus {
+            outline: none;
+            border-color: rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .course-enrollment-form select option {
+            background: #667eea;
+            color: white;
+        }
+
+        .enrollment-btn {
+            background: linear-gradient(135deg, #00ff88, #00cc6a);
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .enrollment-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 255, 136, 0.4);
+        }
+
+        .form-message {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .form-message.success {
+            background: rgba(40, 167, 69, 0.2);
+            color: #28a745;
+            border: 1px solid #28a745;
+        }
+
+        .form-message.error {
+            background: rgba(220, 53, 69, 0.2);
+            color: #dc3545;
+            border: 1px solid #dc3545;
+        }
+
+        .loading {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid #ffffff;
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Trainer Section Styles */
+        .course-trainer {
+            padding: 60px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .trainer-profile {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 40px;
+            align-items: center;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .trainer-image {
+            text-align: center;
+        }
+
+        .trainer-image img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #667eea;
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.25);
+            transition: transform 0.3s ease;
+        }
+
+        .trainer-image img:hover {
+            transform: scale(1.05);
+        }
+
+        .trainer-info h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .trainer-title {
+            font-size: 1.1rem;
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .trainer-bio {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .trainer-expertise {
+            margin-bottom: 20px;
+        }
+
+        .expertise-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .expertise-item i {
+            color: #28a745;
+            font-size: 1rem;
+        }
+
+        .trainer-social {
+            margin-top: 15px;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #0077b5, #005885);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .social-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 119, 181, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .trainer-profile {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 40px 20px;
+                text-align: center;
+            }
+
+            .trainer-info h3 {
+                font-size: 2rem;
+            }
+
+            .trainer-image img {
+                width: 150px;
+                height: 150px;
+            }
+
+            .expertise-item {
+                justify-content: center;
+            }
         }
 
         .footer-bottom {
@@ -1431,9 +1890,20 @@
             }
 
             .course-meta,
-            .schedule-info,
-            .outcomes-grid {
+            .schedule-info {
                 grid-template-columns: 1fr;
+            }
+
+            .outcomes-grid {
+                gap: 15px;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .outcome-item {
+                padding: 30px;
+                flex: 0 0 250px;
+                min-width: 250px;
             }
 
             .day-item {
@@ -1446,7 +1916,92 @@
                 text-align: center;
                 gap: 15px;
             }
+
+            .outcomes-grid {
+                gap: 12px;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            .outcome-item {
+                padding: 25px;
+                flex: 0 0 220px;
+                min-width: 220px;
+            }
         }
     </style>
+    
+    <script>
+        // HR Course Form Submission
+        document.addEventListener('DOMContentLoaded', function() {
+            const hrCourseForm = document.getElementById('hrCourseForm');
+            
+            if (hrCourseForm) {
+                hrCourseForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    
+                    const submitBtn = this.querySelector('button[type="submit"]');
+                    const formMessage = document.getElementById('hrFormMessage');
+                    
+                    // Show loading state
+                    submitBtn.innerHTML = '<span class="loading"></span> Sending...';
+                    submitBtn.disabled = true;
+                    
+                    // Get form data
+                    const formData = new FormData(this);
+                    const data = Object.fromEntries(formData);
+                    
+                    try {
+                        console.log('Submitting form with data:', data);
+                        
+                        // Send to same Google Sheet as other forms
+                        const response = await fetch('https://script.google.com/macros/s/AKfycbwRgfC8GlXEMzQ1nvExSMbqwaKZHRqAHrnJQnH12-DAmeO4Jby077FE_6eGe3nw1Atv/exec', {
+                            method: 'POST',
+                            mode: 'no-cors',
+                            headers: {
+                                'Content-Type': 'application/x-www-form-urlencoded',
+                            },
+                            body: new URLSearchParams(data)
+                        });
+                        
+                        console.log('Form submitted successfully');
+                        
+                        // Meta Pixel and Google Analytics tracking temporarily removed for debugging
+                        
+                        // Set access token for thank you page
+                        sessionStorage.setItem('formSubmitted', 'true');
+                        sessionStorage.setItem('formSubmitTime', Date.now().toString());
+                        
+                        // Show success message briefly
+                        formMessage.className = 'form-message success';
+                        formMessage.textContent = 'Redirecting to confirmation page...';
+                        formMessage.style.display = 'block';
+                        
+                        // Reset form
+                        this.reset();
+                        
+                        // Redirect to thank you page after 1.5 seconds
+                        setTimeout(() => {
+                            window.location.href = 'ty8k2m9x-success-confirmation.html';
+                        }, 1500);
+                        
+                    } catch (error) {
+                        console.error('Form submission error:', error);
+                        console.error('Error details:', error.message);
+                        console.error('Error stack:', error.stack);
+                        
+                        // Show error message with more details for debugging
+                        formMessage.className = 'form-message error';
+                        formMessage.textContent = 'Error: ' + error.message + '. Please try again or call us directly.';
+                        formMessage.style.display = 'block';
+                    } finally {
+                        // Reset button state
+                        submitBtn.innerHTML = '<i class="fas fa-gift"></i> Claim Discount & Get Free Counseling';
+                        submitBtn.disabled = false;
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
