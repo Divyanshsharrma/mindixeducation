@@ -697,6 +697,28 @@ src="https://www.facebook.com/tr?id=970933495494749&ev=PageView&noscript=1"
 
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
     <script>
+        // Loading Screen
+        window.addEventListener('load', function() {
+            // Hide loading screen after page loads
+            setTimeout(function() {
+                const loadingScreen = document.getElementById('loadingScreen');
+                if (loadingScreen) {
+                    loadingScreen.classList.add('fade-out');
+                    document.body.classList.remove('loading-active');
+                    
+                    // Remove loading screen after fade out
+                    setTimeout(function() {
+                        loadingScreen.style.display = 'none';
+                    }, 800);
+                }
+            }, 1500); // Show loading for 1.5 seconds
+        });
+
+        // Initialize loading screen
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.add('loading-active');
+        });
+
         // HR Course Form Submission
         document.addEventListener('DOMContentLoaded', function() {
             const hrCourseForm = document.getElementById('hrCourseForm');
