@@ -132,18 +132,31 @@ if (contactForm) {
             
             console.log('Form submitted successfully');
             
-            // Show success message
-            formMessage.innerHTML = '✅ Thank you for your message! We will get back to you soon.';
+            // Track Meta Pixel conversion
+            fbq('track', 'Lead', {
+                content_name: 'Contact Form',
+                content_category: 'Lead Generation'
+            });
+            
+            // Track Google Analytics conversion
+            gtag('event', 'conversion', {
+                'send_to': 'GA_MEASUREMENT_ID/LEAD_ID',
+                'value': 1,
+                'currency': 'INR'
+            });
+            
+            // Show success message briefly
+            formMessage.innerHTML = 'Redirecting to confirmation page...';
             formMessage.className = 'form-message success';
             formMessage.style.display = 'block';
             
             // Reset form
             contactForm.reset();
             
-            // Hide message after 5 seconds
+            // Redirect to thank you page after 1.5 seconds
             setTimeout(() => {
-                formMessage.style.display = 'none';
-            }, 5000);
+                window.location.href = 'thank-you.html';
+            }, 1500);
             
         } catch (error) {
             console.error('Form submission error:', error);
