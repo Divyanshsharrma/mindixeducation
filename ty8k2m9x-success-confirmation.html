@@ -43,30 +43,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/png" href="/favicon.png">
     
-    <script>
-        // Access protection - only allow access if form was submitted
-        (function() {
-            const hasAccess = sessionStorage.getItem('formSubmitted') === 'true';
-            const accessTime = sessionStorage.getItem('formSubmitTime');
-            const currentTime = Date.now();
-            
-            // Check if access is valid (within 10 minutes of form submission)
-            const isValidAccess = hasAccess && accessTime && (currentTime - parseInt(accessTime)) < 600000;
-            
-            if (!isValidAccess) {
-                // Redirect to home page if no valid access
-                window.location.href = 'index.html';
-                return;
-            }
-            
-            // Clear the access flag after loading
-            setTimeout(function() {
-                sessionStorage.removeItem('formSubmitted');
-                sessionStorage.removeItem('formSubmitTime');
-            }, 1000);
-        })();
-    </script>
-    
     <style>
         .thank-you-container {
             min-height: 100vh;
