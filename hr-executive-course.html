@@ -746,25 +746,6 @@
             align-items: center;
         }
 
-        @media (max-width: 768px) {
-            .course-hero-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
-                text-align: center;
-            }
-
-            .course-hero-visual {
-                max-width: 100%;
-                margin: 0 auto;
-            }
-
-            .course-hero-visual img {
-                width: 100%;
-                height: auto;
-                border-radius: 15px;
-            }
-        }
-
         .course-badge {
             display: inline-flex;
             align-items: center;
@@ -1455,8 +1436,15 @@
             }
 
             .course-hero-visual {
+                max-width: 100%;
+                margin: 0 auto;
                 order: -1;
-                margin-bottom: 30px;
+            }
+
+            .course-hero-visual img {
+                width: 100%;
+                height: auto;
+                border-radius: 15px;
             }
 
             .course-hero h1 {
