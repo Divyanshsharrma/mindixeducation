@@ -223,27 +223,77 @@ src="https://www.facebook.com/tr?id=970933495494749&ev=PageView&noscript=1"
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="contner">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Get Job-Ready Skills & Start Your Career in 45–90 Days</h1>
-                    <p>Live training, real projects, and placement support to help you land your first job faster.</p>
-                    <p class="urgent-text">Limited Seats Available – Next Batch Starting Soon</p>
-                    <div class="hero-buttons">
-                        <button class="btn btn-primary btn-large" onclick="exploreCourses()">Start Your Career Now</button>
+            <div class="hero-carousel">
+                <!-- Slide 1: Business Growth Focus -->
+                <div class="hero-slide active" data-slide="1">
+                    <div class="hero-content">
+                        <div class="hero-text">
+                            <h1>Scale Your Business with <span style="color: #ff6b00;">AI-Powered Teams</span></h1>
+                            <p>Transform your workforce with cutting-edge AI tools and automation. Increase productivity by 300%.</p>
+                            <p class="urgent-text">📈 500+ Companies Trust Our Training</p>
+                            <div class="hero-buttons">
+                                <button class="btn btn-primary btn-large" onclick="exploreCourses()">Transform Your Business</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="hero-image">
-                    <div class="hero-stats-overlay">
-                        <div class="hero-stat">
-                            <span class="hero-stat-number">50+</span>
-                            <span class="hero-stat-text">Available Courses</span>
-                        </div>
-                        <div class="hero-stat">
-                            <span class="hero-stat-number">5000+</span>
-                            <span class="hero-stat-text">Enrolled Students</span>
+
+                <!-- Slide 2: HR Executive with AI Tools -->
+                <div class="hero-slide" data-slide="2">
+                    <div class="hero-content">
+                        <div class="hero-text">
+                            <h1>Become an <span style="color: #ff6b00;">HR Executive</span> with AI Tools Mastery</h1>
+                            <p>Master modern HR processes with cutting-edge AI tools and get job-ready in just 60 days.</p>
+                            <p class="urgent-text">🔥 95% Placement Rate – Limited Seats Available</p>
+                            <div class="hero-buttons">
+                                <button class="btn btn-primary btn-large" onclick="exploreCourses()">Learn HR with AI Tools</button>
+                            </div>
                         </div>
                     </div>
-                    <img src="image-1070569856142608.jpeg" alt="Hero">
+                </div>
+
+                <!-- Slide 3: IT & Software Development -->
+                <div class="hero-slide" data-slide="3">
+                    <div class="hero-content">
+                        <div class="hero-text">
+                            <h1>Master <span style="color: #e8271a;">IT & Software Development</span> Skills</h1>
+                            <p>Build cutting-edge applications and systems. Learn programming, cloud computing, and modern tech stacks.</p>
+                            <p class="urgent-text">💻 100% Job Placement – Industry-Ready Skills</p>
+                            <div class="hero-buttons">
+                                <button class="btn btn-primary btn-large" onclick="exploreCourses()">Start IT Career</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 4: Cybersecurity & Business Protection -->
+                <div class="hero-slide" data-slide="4">
+                    <div class="hero-content">
+                        <div class="hero-text">
+                            <h1>Protect Your <span style="color: #e8271a;">Digital Empire</span> with Cybersecurity</h1>
+                            <p>Safeguard your business from cyber threats. Industry-certified experts teach real-world defense strategies.</p>
+                            <p class="urgent-text">🛡️ 100% Job Guarantee – Enterprise-Level Skills</p>
+                            <div class="hero-buttons">
+                                <button class="btn btn-primary btn-large" onclick="exploreCourses()">Secure Your Business</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Arrows -->
+                <button class="carousel-arrow carousel-prev" onclick="changeSlide(-1)">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-arrow carousel-next" onclick="changeSlide(1)">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+
+                <!-- Navigation Dots -->
+                <div class="carousel-dots">
+                    <span class="carousel-dot active" onclick="goToSlide(1)"></span>
+                    <span class="carousel-dot" onclick="goToSlide(2)"></span>
+                    <span class="carousel-dot" onclick="goToSlide(3)"></span>
+                    <span class="carousel-dot" onclick="goToSlide(4)"></span>
                 </div>
             </div>
         </div>
@@ -261,7 +311,7 @@ src="https://www.facebook.com/tr?id=970933495494749&ev=PageView&noscript=1"
                 <!-- Testimonial 1 -->
                 <div class="mindix-testimonial-card" onclick="showFullTestimonial('vansh')">
                     <div class="mindix-testimonial-header">
-                        <img src="https://media.licdn.com/dms/image/v2/D4D35AQHTVbafP5NRgg/profile-framedphoto-shrink_200_200/profile-framedphoto-shrink_200_200/0/1722837279451?e=1775944800&v=beta&t=DDDZs1eIC4AolznDwbplz3LD8ItsUBpRrN1KjMLA68M" alt="Vansh Sharma" class="mindix-testimonial-image">
+                        <img src="https://media.licdn.com/dms/image/v2/D4D35AQHTVbafP5NRgg/profile-framedphoto-shrink_200_200/profile-framedphoto-shrink_200_200/0/1722837279451?e=1776636000&v=beta&t=X-eBy4KRwm50wWQIIJq2s4ppDynHGm0O0Fp_8nDVsQ0" alt="Vansh Sharma" class="mindix-testimonial-image">
                         <div class="mindix-testimonial-info">
                             <h4 class="mindix-testimonial-name">Vansh Sharma</h4>
                             <p class="mindix-testimonial-course">Associate Software Engineer • TCS</p>
@@ -276,7 +326,7 @@ src="https://www.facebook.com/tr?id=970933495494749&ev=PageView&noscript=1"
                 <!-- Testimonial 2 -->
                 <div class="mindix-testimonial-card" onclick="showFullTestimonial('anisha')">
                     <div class="mindix-testimonial-header">
-                        <img src="https://media.licdn.com/dms/image/v2/D4E35AQGXt-kHbUeBWA/profile-framedphoto-shrink_200_200/B4EZpVWNYkKgAY-/0/1762368477119?e=1775944800&v=beta&t=Wpa6sklKiImAAviw0_AqOengCLPGu7sRCraMKT9rHy8" alt="Anisha Soreng" class="mindix-testimonial-image">
+                        <img src="https://media.licdn.com/dms/image/v2/D4E35AQGXt-kHbUeBWA/profile-framedphoto-shrink_200_200/B4EZpVWNYkKgAY-/0/1762368477119?e=1776636000&v=beta&t=pfdb3L-TT-52r7mZ-_AwQTEu0EMqNl1tcQrD53MGu7I" alt="Anisha Soreng" class="mindix-testimonial-image">
                         <div class="mindix-testimonial-info">
                             <h4 class="mindix-testimonial-name">Anisha Soreng</h4>
                             <p class="mindix-testimonial-course">Human Resources Trainee • SA Infrastructure</p>
@@ -306,7 +356,7 @@ src="https://www.facebook.com/tr?id=970933495494749&ev=PageView&noscript=1"
                 <!-- Testimonial 4 -->
                 <div class="mindix-testimonial-card" onclick="showFullTestimonial('priyam')">
                     <div class="mindix-testimonial-header">
-                        <img src="https://media.licdn.com/dms/image/v2/D5635AQFQhYuzJlg1lg/profile-framedphoto-shrink_200_200/profile-framedphoto-shrink_200_200/0/1722242051383?e=1775944800&v=beta&t=T9z-yuEtctYNJwJ5KlKrC73A7Z_mSK9bLtzboO_ESNw" alt="Priyam Sharma" class="mindix-testimonial-image">
+                        <img src="https://media.licdn.com/dms/image/v2/D5635AQFQhYuzJlg1lg/profile-framedphoto-shrink_200_200/profile-framedphoto-shrink_200_200/0/1722242051383?e=1776636000&v=beta&t=hUzkI5lhH9mIUJaZO1PDxM_ARq5UfaR1X9yt9ElT9sM" alt="Priyam Sharma" class="mindix-testimonial-image">
                         <div class="mindix-testimonial-info">
                             <h4 class="mindix-testimonial-name">Priyam Sharma</h4>
                             <p class="mindix-testimonial-course">Business Analyst • Accenture</p>
@@ -351,7 +401,7 @@ src="https://www.facebook.com/tr?id=970933495494749&ev=PageView&noscript=1"
                 <!-- Testimonial 7 -->
                 <div class="mindix-testimonial-card" onclick="showFullTestimonial('nitya')">
                     <div class="mindix-testimonial-header">
-                        <img src="https://media.licdn.com/dms/image/v2/D5635AQHKhMpkJe0OBQ/profile-framedphoto-shrink_200_200/B56ZvFelwsIUAY-/0/1768544689465?e=1775944800&v=beta&t=wZND-G8YDdMtrzTsewzMePKME2bPAAV3BENoHrS8uY4" alt="Nitya Dubey" class="mindix-testimonial-image">
+                        <img src="https://media.licdn.com/dms/image/v2/D5635AQHKhMpkJe0OBQ/profile-framedphoto-shrink_200_200/B56ZvFelwsIUAY-/0/1768544689465?e=1776636000&v=beta&t=HoDkUQP1bhDD7Lc_AjDe65Mu-1s4zCtURnFd1UPKMtA" alt="Nitya Dubey" class="mindix-testimonial-image">
                         <div class="mindix-testimonial-info">
                             <h4 class="mindix-testimonial-name">Nitya Dubey</h4>
                             <p class="mindix-testimonial-course">Data Analyst • Techplement</p>
@@ -374,39 +424,7 @@ src="https://www.facebook.com/tr?id=970933495494749&ev=PageView&noscript=1"
         </div>
     </div>
 
-    <!-- Statistics Section -->
-    <section class="statistics">
-        <div class="container">
-            <div class="stats-content">
-                <div class="stat-item">
-                    <i class="fas fa-users"></i>
-                    <span class="stat-number">5000</span>
-                    <span class="stat-label">Students Guided This Year</span>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-graduation-cap"></i>
-                    <span class="stat-number">1768+</span>
-                    <span class="stat-label">Enrollment This Year</span>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-chart-line"></i>
-                    <span class="stat-number">95%</span>
-                    <span class="stat-label">Placement Record</span>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-book-reader"></i>
-                    <span class="stat-number">500+</span>
-                    <span class="stat-label">Active Learners</span>
-                </div>
-                <div class="stat-item">
-                    <i class="fas fa-handshake"></i>
-                    <span class="stat-number">100</span>
-                    <span class="stat-label">Collaborated Companies</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    
     <!-- Eligibility Section -->
     <section class="eligibility">
         <div class="container">
@@ -2686,6 +2704,109 @@ src="https://www.facebook.com/tr?id=970933495494749&ev=PageView&noscript=1"
                 closeUrgencyPopup();
             }
         });
-    </script>
+    // Carousel Functionality
+let currentSlide = 1;
+let slideInterval;
+let isPaused = false;
+
+function showSlide(n) {
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots = document.querySelectorAll('.carousel-dot');
+    
+    // Hide all slides
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+    
+    // Show current slide
+    slides[n - 1].classList.add('active');
+    dots[n - 1].classList.add('active');
+    
+    currentSlide = n;
+}
+
+function changeSlide(direction) {
+    const totalSlides = 4;
+    let newSlide = currentSlide + direction;
+    
+    if (newSlide > totalSlides) newSlide = 1;
+    if (newSlide < 1) newSlide = totalSlides;
+    
+    showSlide(newSlide);
+    resetAutoSlide();
+}
+
+function goToSlide(n) {
+    showSlide(n);
+    resetAutoSlide();
+}
+
+function startAutoSlide() {
+    if (!isPaused) {
+        slideInterval = setInterval(() => {
+            changeSlide(1);
+        }, 2000); // Auto-slide every 2 seconds
+    }
+}
+
+function resetAutoSlide() {
+    clearInterval(slideInterval);
+    startAutoSlide();
+}
+
+// Pause on hover (desktop only)
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize first slide
+    showSlide(1);
+    
+    const carousel = document.querySelector('.hero-carousel');
+    
+    carousel.addEventListener('mouseenter', () => {
+        isPaused = true;
+        clearInterval(slideInterval);
+    });
+    
+    carousel.addEventListener('mouseleave', () => {
+        isPaused = false;
+        startAutoSlide();
+    });
+    
+    // Touch/swipe support for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    carousel.addEventListener('touchstart', (e) => {
+        touchStartX = e.touches[0].clientX;
+    });
+    
+    carousel.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].clientX;
+        const diff = touchStartX - touchEndX;
+        
+        if (Math.abs(diff) > 50) { // Minimum swipe distance
+            if (diff > 0) {
+                changeSlide(-1); // Swipe right, go to previous
+            } else {
+                changeSlide(1);  // Swipe left, go to next
+            }
+        }
+    });
+    
+    // Start auto-sliding
+    startAutoSlide();
+});
+
+// Function to explore courses
+function exploreCourses() {
+    // Scroll to courses section or redirect
+    const coursesSection = document.getElementById('courses');
+    if (coursesSection) {
+        coursesSection.scrollIntoView({ behavior: 'smooth' });
+    } else {
+        // Fallback: redirect to courses page
+        window.location.href = '#courses';
+    }
+}
+
+</script>
 </body>
 </html>
