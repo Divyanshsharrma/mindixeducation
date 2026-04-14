@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Free HR Webinar – Mindix Education</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--red:#e8271a;--orange:#ff6b00;--dark:#0f0f1a;--navy:#1a1a2e;--text:#1a1a2e;--light:#f8f9ff;--grad:linear-gradient(135deg,#e8271a,#ff6b00)}
+body{font-family:'Segoe UI',sans-serif;color:var(--text);background:#fff;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+
+/* STICKY BAR */
+.sticky-bar{position:fixed;bottom:0;left:0;right:0;background:var(--grad);z-index:999;padding:12px 20px;display:flex;align-items:center;justify-content:center;gap:16px;box-shadow:0 -4px 20px rgba(232,39,26,.4)}
+.sticky-bar span{color:#fff;font-weight:700;font-size:14px}
+.sticky-cta{background:#fff;color:var(--red);font-weight:800;padding:10px 28px;border-radius:50px;font-size:14px;cursor:pointer;border:none;white-space:nowrap;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
+
+/* NAV */
+nav{background:var(--navy);padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
+.logo{color:#fff;font-weight:800;font-size:22px;letter-spacing:.5px}
+.logo span{color:var(--orange)}
+.free-badge{background:var(--grad);color:#fff;padding:6px 16px;border-radius:50px;font-size:12px;font-weight:700}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,#0f0f1a 0%,#1a1a2e 50%,#16213e 100%);padding:60px 20px 40px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 50% 50%,rgba(255,107,0,.08) 0%,transparent 60%);pointer-events:none}
+.hero-badge{display:inline-block;background:rgba(255,107,0,.15);border:1px solid var(--orange);color:var(--orange);padding:6px 20px;border-radius:50px;font-size:13px;font-weight:600;margin-bottom:20px}
+.hero h1{color:#fff;font-size:clamp(24px,5vw,46px);font-weight:900;line-height:1.2;margin-bottom:18px;max-width:800px;margin-left:auto;margin-right:auto}
+.hero h1 span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{color:#b8c1cc;font-size:clamp(15px,2.5vw,19px);max-width:620px;margin:0 auto 28px}
+.hero-cta{background:var(--grad);color:#fff;font-size:18px;font-weight:800;padding:16px 40px;border-radius:50px;border:none;cursor:pointer;box-shadow:0 8px 30px rgba(232,39,26,.5);animation:pulse 2s infinite;display:inline-block}
+.urgency{margin-top:16px;color:#ff8c00;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;gap:8px}
+.urgency::before{content:'🔥'}
+
+/* COUNTDOWN */
+.countdown-wrap{background:rgba(255,255,255,.05);border:1px solid rgba(255,107,0,.3);border-radius:16px;display:inline-flex;gap:20px;padding:20px 30px;margin:28px auto 0;justify-content:center}
+.cd-box{text-align:center}
+.cd-num{color:#fff;font-size:36px;font-weight:900;line-height:1;display:block;min-width:60px}
+.cd-label{color:#888;font-size:11px;text-transform:uppercase;letter-spacing:1px}
+.cd-sep{color:var(--orange);font-size:30px;font-weight:900;align-self:center;margin-top:-10px}
+
+/* TRUST BADGES */
+.trust{background:#fff7f0;padding:20px;display:flex;flex-wrap:wrap;justify-content:center;gap:24px;border-bottom:2px solid #ffe0cc}
+.trust-item{display:flex;align-items:center;gap:8px;font-weight:700;font-size:14px;color:#333}
+.trust-item .icon{font-size:22px}
+
+/* SECTION COMMONS */
+section{padding:60px 20px}
+.container{max-width:900px;margin:0 auto}
+.sec-tag{display:inline-block;background:rgba(232,39,26,.08);color:var(--red);font-size:12px;font-weight:700;padding:4px 14px;border-radius:50px;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px}
+h2.sec-title{font-size:clamp(22px,4vw,36px);font-weight:900;margin-bottom:8px;line-height:1.2}
+.sec-sub{color:#666;font-size:16px;margin-bottom:40px}
+
+/* PAIN POINTS */
+.pain{background:var(--navy)}
+.pain .sec-tag{background:rgba(255,107,0,.15);color:var(--orange)}
+.pain h2.sec-title{color:#fff}
+.pain .sec-sub{color:#aaa}
+.pain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+.pain-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:28px 22px;text-align:center;transition:.3s}
+.pain-card:hover{border-color:var(--orange);transform:translateY(-4px)}
+.pain-card .emoji{font-size:36px;margin-bottom:12px}
+.pain-card h3{color:#fff;font-size:17px;font-weight:700;margin-bottom:8px}
+.pain-card p{color:#aaa;font-size:14px}
+
+/* LEARN */
+.learn-grid{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:10px}
+.learn-card{background:var(--light);border-left:4px solid var(--orange);border-radius:12px;padding:22px;min-width:280px;flex-shrink:0;scroll-snap-align:start}
+.learn-card h3{font-size:16px;font-weight:800;margin-bottom:6px;display:flex;gap:10px;align-items:flex-start}
+.learn-card h3 .num{background:var(--grad);color:#fff;border-radius:50%;width:26px;height:26px;display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0}
+.learn-card p{color:#555;font-size:14px;padding-left:36px}
+
+/* Horizontal Scrollbar Styling */
+.learn-grid::-webkit-scrollbar{height:8px}
+.learn-grid::-webkit-scrollbar-track{background:#f1f1f1;border-radius:10px}
+.learn-grid::-webkit-scrollbar-thumb{background:var(--orange);border-radius:10px}
+.learn-grid::-webkit-scrollbar-thumb:hover{background:#ff5500}
+
+/* WEBINAR DETAILS */
+.details{background:linear-gradient(135deg,#fff7f0,#fff)}
+.detail-cards{display:flex;flex-wrap:wrap;gap:20px;justify-content:center}
+.detail-card{background:#fff;border:2px solid #ffe0cc;border-radius:16px;padding:28px 24px;text-align:center;min-width:180px;flex:1}
+.detail-card .d-icon{font-size:36px;margin-bottom:10px}
+.detail-card h4{color:#999;font-size:12px;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.detail-card p{font-size:16px;font-weight:800;color:var(--text)}
+
+/* TRAINER */
+.trainer{background:var(--navy)}
+.trainer-inner{display:flex;flex-wrap:wrap;gap:36px;align-items:center}
+.trainer-img-wrap{flex-shrink:0;text-align:center}
+.trainer-img{width:170px;height:170px;border-radius:50%;border:4px solid var(--orange);object-fit:cover;display:block;margin:0 auto;overflow:hidden}
+.trainer-name-badge{background:var(--grad);color:#fff;padding:6px 18px;border-radius:50px;font-size:12px;font-weight:700;display:inline-block;margin-top:12px}
+.trainer-info{flex:1;min-width:260px}
+.trainer-info h3{color:#fff;font-size:26px;font-weight:900;margin-bottom:6px}
+.trainer-info .title{color:var(--orange);font-weight:600;font-size:15px;margin-bottom:16px}
+.trainer-info p{color:#aaa;font-size:15px;line-height:1.7;margin-bottom:20px}
+.cred-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+.cred-list li{display:flex;gap:10px;align-items:flex-start;color:#ddd;font-size:14px}
+.cred-list li::before{content:'✅';flex-shrink:0}
+
+/* MOBILE RESPONSIVENESS FIXES */
+@media (max-width: 768px) {
+  /* Base fixes */
+  * {box-sizing: border-box;}
+  
+  /* Layout fixes */
+  section {padding: 40px 15px;}
+  .container {padding: 0 10px;}
+  
+  /* Typography responsive */
+  .hero h1 {font-size: clamp(24px, 6vw, 32px);}
+  .hero p {font-size: clamp(14px, 3.5vw, 16px);}
+  h2.sec-title {font-size: clamp(20px, 5vw, 28px);}
+  .sec-sub {font-size: 14px; margin-bottom: 30px;}
+  
+  /* Grid layouts */
+  .pain-grid {grid-template-columns: 1fr; gap: 15px;}
+  .learn-grid {display: flex; gap: 15px; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; padding-bottom: 10px;}
+  .learn-card {min-width: 250px; flex-shrink: 0; scroll-snap-align: start;}
+  .benefits-grid {grid-template-columns: 1fr; gap: 15px;}
+  .detail-cards {flex-direction: column; align-items: center;}
+  .detail-card {min-width: auto; width: 100%; margin-bottom: 15px;}
+  
+  /* Trainer section */
+  .trainer-inner {flex-direction: column; text-align: center; gap: 20px;}
+  .trainer-info {min-width: auto; text-align: center; max-width: 100%;}
+  .trainer-img {width: 130px; height: 130px; object-fit: cover; -webkit-object-fit: cover; -moz-object-fit: cover; margin: 0 auto;}
+  
+  /* Countdown */
+  .countdown-wrap {padding: 15px 20px; gap: 15px;}
+  .cd-num {font-size: 28px; min-width: 50px;}
+  
+  /* Buttons */
+  .hero-cta {font-size: 16px; padding: 14px 24px; width: 100%; max-width: 280px;}
+  .sticky-cta {font-size: 12px; padding: 8px 20px;}
+  
+  /* Cards */
+  .pain-card {padding: 20px 15px;}
+  .learn-card {padding: 18px 15px;}
+  .benefit-card {padding: 20px 15px;}
+  
+  /* Sticky bar */
+  .sticky-bar {flex-direction: column; gap: 8px; padding: 8px 15px;}
+  .sticky-bar span {font-size: 12px; text-align: center;}
+}
+
+@media (max-width: 480px) {
+  section {padding: 30px 10px;}
+  .hero h1 {font-size: clamp(22px, 7vw, 28px);}
+  .countdown-wrap {padding: 12px 15px; gap: 10px;}
+  .cd-num {font-size: 24px; min-width: 40px;}
+  .trainer-img {width: 120px; height: 120px; margin: 0 auto;}
+  .pain-card, .learn-card, .benefit-card {padding: 15px 12px;}
+}
+
+/* Image responsiveness */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: inherit;
+}
+
+/* Button fixes */
+button, .hero-cta {
+  white-space: normal;
+  word-wrap: break-word;
+}
+
+/* Text overflow fixes */
+* {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* BENEFITS */
+.benefits-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.benefit-card{background:#fff;border-radius:16px;padding:28px 22px;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.07);transition:.3s}
+.benefit-card:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(232,39,26,.15)}
+.benefit-card .b-icon{font-size:40px;margin-bottom:14px}
+.benefit-card h3{font-size:16px;font-weight:800;margin-bottom:6px}
+.benefit-card p{color:#666;font-size:14px}
+
+/* TESTIMONIALS */
+.testi{background:var(--light)}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.testi-card{background:#fff;border-radius:16px;padding:28px;box-shadow:0 4px 20px rgba(0,0,0,.07);position:relative}
+.testi-card::before{content:'"';font-size:80px;color:#ffe0cc;position:absolute;top:10px;left:20px;line-height:1;font-family:Georgia}
+.stars{color:#ffc107;font-size:18px;margin-bottom:12px}
+.testi-card p{color:#444;font-size:15px;line-height:1.7;margin-bottom:20px;position:relative;z-index:1}
+.testi-author{display:flex;align-items:center;gap:12px}
+.testi-avatar{width:44px;height:44px;border-radius:50%;font-size:20px;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff}
+.testi-author h4{font-size:15px;font-weight:700}
+.testi-author span{font-size:12px;color:#888}
+
+/* REGISTRATION FORM */
+.reg-form{background:linear-gradient(135deg,#e8271a,#ff6b00);padding:60px 20px}
+.form-box{background:#fff;border-radius:24px;padding:40px 36px;max-width:520px;margin:0 auto;box-shadow:0 20px 60px rgba(0,0,0,.2)}
+.form-box h2{font-size:26px;font-weight:900;margin-bottom:6px;color:var(--text)}
+.form-box p{color:#666;margin-bottom:28px;font-size:15px}
+.form-field{margin-bottom:18px}
+.form-field label{display:block;font-weight:700;font-size:14px;margin-bottom:6px;color:#333}
+.form-field input{width:100%;padding:14px 16px;border:2px solid #eee;border-radius:12px;font-size:15px;outline:none;transition:.3s}
+.form-field input:focus{border-color:var(--orange)}
+.form-submit{width:100%;background:var(--grad);color:#fff;font-size:18px;font-weight:800;padding:16px;border-radius:50px;border:none;cursor:pointer;box-shadow:0 6px 20px rgba(232,39,26,.4);animation:pulse 2s infinite}
+.form-note{text-align:center;margin-top:12px;font-size:12px;color:#999}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:14px}
+.faq-item{background:var(--light);border-radius:14px;overflow:hidden}
+.faq-q{padding:18px 22px;font-weight:700;font-size:16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.faq-q:hover{background:#ffe8d6}
+.faq-arrow{color:var(--orange);font-size:20px;transition:.3s;flex-shrink:0}
+.faq-a{max-height:0;overflow:hidden;transition:.4s;padding:0 22px;color:#555;font-size:15px;line-height:1.7}
+.faq-item.open .faq-a{max-height:200px;padding:0 22px 18px}
+.faq-item.open .faq-arrow{transform:rotate(180deg)}
+
+/* FINAL CTA */
+.final-cta{background:var(--navy);padding:70px 20px;text-align:center}
+.final-cta h2{color:#fff;font-size:clamp(24px,5vw,42px);font-weight:900;margin-bottom:14px}
+.final-cta p{color:#aaa;font-size:17px;margin-bottom:32px}
+.final-btn{background:var(--grad);color:#fff;font-size:20px;font-weight:800;padding:18px 50px;border-radius:50px;border:none;cursor:pointer;box-shadow:0 8px 30px rgba(232,39,26,.5);animation:pulse 2s infinite;display:inline-block}
+
+/* FOOTER */
+footer{background:#080810;padding:24px 20px;text-align:center;color:#555;font-size:13px}
+footer span{color:var(--orange);font-weight:700}
+
+/* SCROLLBAR */
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:#111}
+::-webkit-scrollbar-thumb{background:var(--orange);border-radius:10px}
+</style>
+</head>
+<body>
+
+<!-- STICKY BAR -->
+<div class="sticky-bar">
+  <span>🔥 Limited Seats Left – Webinar Starts Soon!</span>
+  <button class="sticky-cta" onclick="scrollToForm()">Reserve My Seat FREE →</button>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">Mindix <span>Education</span></div>
+  <div class="free-badge">100% FREE WEBINAR</div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">🎓 FREE LIVE WEBINAR · LIMITED SEATS</div>
+  <h1>Still Not Getting HR Jobs?<br><span>Learn How to Become an HR Executive with AI Tools</span></h1>
+  <p>Join this FREE live webinar and discover how to get job-ready in 60 days — even without any prior experience</p>
+  <button class="hero-cta" onclick="scrollToForm()">🎯 Reserve Your Free Seat Now</button>
+  <div class="urgency">Only 200 Seats Available — Don't Miss Out!</div>
+
+  <!-- COUNTDOWN -->
+  <div class="countdown-wrap">
+    <div class="cd-box"><span class="cd-num" id="cd-d">03</span><span class="cd-label">Days</span></div>
+    <div class="cd-sep">:</div>
+    <div class="cd-box"><span class="cd-num" id="cd-h">14</span><span class="cd-label">Hours</span></div>
+    <div class="cd-sep">:</div>
+    <div class="cd-box"><span class="cd-num" id="cd-m">32</span><span class="cd-label">Mins</span></div>
+    <div class="cd-sep">:</div>
+    <div class="cd-box"><span class="cd-num" id="cd-s">00</span><span class="cd-label">Secs</span></div>
+  </div>
+</div>
+
+<!-- TRUST BADGES -->
+<div class="trust">
+  <div class="trust-item"><span class="icon">👥</span> 1000+ Students Trained</div>
+  <div class="trust-item"><span class="icon">🏆</span> Industry Expert Trainer</div>
+  <div class="trust-item"><span class="icon">💼</span> Real HR Placement Stories</div>
+  <div class="trust-item"><span class="icon">🤖</span> AI Tools Included</div>
+  <div class="trust-item"><span class="icon">🎁</span> Bonus Resources Worth ₹2000</div>
+</div>
+
+<!-- PAIN POINTS -->
+<section class="pain">
+  <div class="container" style="text-align:center">
+    <div class="sec-tag">Does This Sound Like You?</div>
+    <h2 class="sec-title" style="color:#fff">You're Stuck. And Here's Why 👇</h2>
+    <p class="sec-sub">Thousands of HR aspirants face these exact problems every day</p>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="emoji">😤</div>
+        <h3>"No Experience, No Job"</h3>
+        <p>Every job requires experience but nobody gives you the first chance</p>
+      </div>
+      <div class="pain-card">
+        <div class="emoji">📋</div>
+        <h3>Companies Want Practical Skills</h3>
+        <p>Your college degree isn't enough — companies want real HR skills from day one</p>
+      </div>
+      <div class="pain-card">
+        <div class="emoji">💔</div>
+        <h3>Rejections After Rejections</h3>
+        <p>You apply everywhere but keep getting rejected without understanding why</p>
+      </div>
+      <div class="pain-card">
+        <div class="emoji">😕</div>
+        <h3>Total Career Confusion</h3>
+        <p>You don't know what skills to learn, which tools to use, or where to start</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU'LL LEARN -->
+<section>
+  <div class="container" style="text-align:center">
+    <div class="sec-tag">Webinar Content</div>
+    <h2 class="sec-title">What You Will Learn in This <span style="color:var(--red)">FREE Webinar</span></h2>
+    <p class="sec-sub">Practical, job-ready knowledge — not just theory</p>
+    <div class="learn-grid" style="text-align:left">
+      <div class="learn-card">
+        <h3><span class="num">1</span>Complete HR Process</h3>
+        <p>From Recruitment & Onboarding to Performance Management & Exit — the full HR lifecycle explained simply</p>
+      </div>
+      <div class="learn-card">
+        <h3><span class="num">2</span>How Companies Actually Hire</h3>
+        <p>Insider secrets of how HR teams shortlist, interview, and select candidates — from a real HR professional</p>
+      </div>
+      <div class="learn-card">
+        <h3><span class="num">3</span>AI Tools Used in HR</h3>
+        <p>Resume screening with AI, automating HR tasks, using ChatGPT in HR workflows — stay ahead of 90% of freshers</p>
+      </div>
+      <div class="learn-card">
+        <h3><span class="num">4</span>Crack HR Interviews</h3>
+        <p>Most common HR interview questions, how to answer them, and what interviewers are really looking for</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WEBINAR DETAILS -->
+<section class="details">
+  <div class="container" style="text-align:center">
+    <div class="sec-tag">Event Details</div>
+    <h2 class="sec-title">Mark Your Calendar 📅</h2>
+    <p class="sec-sub">One session. Life-changing knowledge. Completely free.</p>
+    <div class="detail-cards">
+      <div class="detail-card">
+        <div class="d-icon">📅</div>
+        <h4>Date</h4>
+        <p>Saturday, 18 April 2026</p>
+      </div>
+      <div class="detail-card">
+        <div class="d-icon">⏰</div>
+        <h4>Time</h4>
+        <p>7:00 PM – 8:30 PM IST</p>
+      </div>
+      <div class="detail-card">
+        <div class="d-icon">⏱️</div>
+        <h4>Duration</h4>
+        <p>60–90 Minutes</p>
+      </div>
+      <div class="detail-card">
+        <div class="d-icon">💻</div>
+        <h4>Platform</h4>
+        <p>Google Meet (Link on WhatsApp)</p>
+      </div>
+      <div class="detail-card">
+        <div class="d-icon">💰</div>
+        <h4>Fee</h4>
+        <p style="color:var(--red)">Absolutely FREE</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRAINER -->
+<section class="trainer">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:30px">
+      <div class="sec-tag" style="background:rgba(255,107,0,.15);color:var(--orange)">Your Mentor</div>
+      <h2 class="sec-title" style="color:#fff">Meet Your Trainer</h2>
+    </div>
+    
+    <!-- Trainer Image (Centered) -->
+    <div style="text-align:center;margin-bottom:30px">
+      <div class="trainer-img-wrap">
+        <img src="https://media.licdn.com/dms/image/v2/D5603AQEs-0pcNtqPMw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1728805684720?e=1777507200&v=beta&t=mACgHb6FYqCuEKHP1gotm09kBoXerLlpje1nyNt6rwg" alt="Ritik Prajapati - HR Trainer" class="trainer-img">
+        <div class="trainer-name-badge">⭐ Verified HR Professional</div>
+      </div>
+    </div>
+    
+    <!-- Trainer Info (Name, Title, Description, CTA) -->
+    <div class="trainer-info" style="text-align:center; max-width: 600px; margin: 0 auto;">
+      <h3 style="margin-bottom:8px;">Ritik Prajapati</h3>
+      <div class="title" style="margin-bottom:20px;">HR Professional & Corporate Trainer · Mindix Education</div>
+      <p style="margin-bottom:24px;">Ritik is a practicing HR professional with hands-on experience in corporate recruitment, employee lifecycle management, and AI-powered HR processes. Having worked with real companies and placed hundreds of freshers into HR roles, he understands exactly what employers want — and what freshers are missing.</p>
+      
+      <ul class="cred-list" style="text-align:left; max-width: 500px; margin: 0 auto 24px;">
+        <li>Real industry HR experience across recruitment, onboarding & employee management</li>
+        <li>Deep practical knowledge of how top companies actually hire candidates</li>
+        <li>Expert in AI tools used in modern HR — ChatGPT, ATS systems & automation</li>
+        <li>Trained 1000+ students and helped them land their first HR jobs</li>
+        <li>Known for breaking down complex HR processes into simple, actionable steps</li>
+      </ul>
+      
+      <div style="margin-top:24px; text-align: center;">
+        <div style="margin-bottom: 16px;">
+          <strong style="color: var(--orange); font-size: 16px;">📱 +91 88106 96963</strong>
+        </div>
+        <a href="https://www.linkedin.com/in/ritik-prajapati-367136291?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="hero-cta" style="font-size:16px;padding:12px 32px; display: inline-block; margin: 0 8px;">
+          <i class="fab fa-linkedin"></i>
+          Connect on LinkedIn
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section>
+  <div class="container" style="text-align:center">
+    <div class="sec-tag">Why Attend</div>
+    <h2 class="sec-title">What You'll Walk Away With 🎁</h2>
+    <p class="sec-sub">Every minute of this webinar is packed with value</p>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="b-icon">💼</div>
+        <h3>Job-Ready Skills</h3>
+        <p>Learn the exact skills companies look for in freshers applying for HR roles</p>
+      </div>
+      <div class="benefit-card">
+        <div class="b-icon">🧭</div>
+        <h3>Career Clarity</h3>
+        <p>Get a clear roadmap — what to learn, how to apply, and how to grow in HR</p>
+      </div>
+      <div class="benefit-card">
+        <div class="b-icon">🙋</div>
+        <h3>Live Q&A Session</h3>
+        <p>Ask Ritik your personal career questions live and get honest answers</p>
+      </div>
+      <div class="benefit-card">
+        <div class="b-icon">📄</div>
+        <h3>Resume & Interview Tips</h3>
+        <p>Bonus: Exclusive tips to make your HR resume stand out and ace interviews</p>
+      </div>
+      <div class="benefit-card">
+        <div class="b-icon">🤖</div>
+        <h3>AI Tools Guide</h3>
+        <p>Free guide on top AI tools used in HR that will make you stand out immediately</p>
+      </div>
+      <div class="benefit-card">
+        <div class="b-icon">🎓</div>
+        <h3>Certificate of Attendance</h3>
+        <p>Receive a digital certificate to add to your LinkedIn & resume</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testi">
+  <div class="container" style="text-align:center">
+    <div class="sec-tag">Student Stories</div>
+    <h2 class="sec-title">Real Results from Real Students ❤️</h2>
+    <p class="sec-sub">Don't take our word for it</p>
+    <div class="testi-grid" style="text-align:left">
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>I was rejected 12 times before I joined Mindix's webinar. After learning about AI tools in HR and how the recruitment process really works, I got placed as an HR Executive in just 3 weeks. Ritik sir's guidance changed everything!</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#ff6b00,#e8271a)">P</div>
+          <div>
+            <h4>Priya Sharma</h4>
+            <span>HR Executive, Noida · B.Com Graduate</span>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>As a fresher from a small town, I had zero HR knowledge. The webinar gave me so much clarity. Within 45 days of following the roadmap, I landed my first HR job. Best decision I made — and it was completely free!</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#7b2ff7,#e8271a)">R</div>
+          <div>
+            <h4>Rahul Gupta</h4>
+            <span>HR Recruiter, Lucknow · BBA Graduate</span>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>I didn't even know what ATS was before this webinar. Ritik sir explained everything in simple Hindi-English so easy to understand. I now use ChatGPT in my daily HR work and my manager is impressed. 100% recommend!</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#00b09b,#ff6b00)">A</div>
+          <div>
+            <h4>Anjali Verma</h4>
+            <span>HR Coordinator, Delhi · MBA Fresher</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REGISTRATION FORM -->
+<section class="reg-form" id="reg-form">
+  <div class="form-box">
+    <h2>🎯 Reserve Your FREE Seat Now!</h2>
+    <p>Join 1000+ students already registered. Takes less than 30 seconds.</p>
+    <div class="form-field">
+      <label>👤 Full Name *</label>
+      <input type="text" placeholder="Enter your full name"/>
+    </div>
+    <div class="form-field">
+      <label>📱 WhatsApp Number *</label>
+      <input type="tel" placeholder="+91 Enter your WhatsApp number"/>
+    </div>
+    <div class="form-field">
+      <label>📧 Email Address *</label>
+      <input type="email" placeholder="Enter your email address"/>
+    </div>
+    <button class="form-submit" onclick="handleSubmit()">✅ Register for FREE Webinar Now</button>
+    <p class="form-note">🔒 Your info is safe. No spam. You'll receive the webinar link on WhatsApp.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="container">
+    <div style="text-align:center">
+      <div class="sec-tag">FAQs</div>
+      <h2 class="sec-title">Got Questions? We've Got Answers</h2>
+      <p class="sec-sub" style="margin-bottom:30px">Everything you need to know before you join</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Is this webinar really free? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">Yes, 100% free! There is absolutely no registration fee, no hidden charges. Just register and attend live. We only ask you to show up on time and bring your full attention.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Will I get a recording if I miss it? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">We strongly recommend attending live for the Q&A session. A recording may be shared for a limited time with registered participants, but live attendees get exclusive bonus tips and direct interaction with Ritik sir.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Is this webinar suitable for beginners? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">Absolutely! This webinar is designed specifically for freshers and beginners who have little or no HR knowledge. Everything is explained from scratch in simple, easy-to-understand language.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Do I need an HR background to join? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">No HR background needed at all! Whether you're a B.Com, BBA, MBA, or any graduate looking to get into HR — this webinar is designed just for you. Zero prior experience required.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What will I need to attend? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">Just a smartphone or laptop with internet. Once you register, you'll receive the Google Meet link on your WhatsApp before the webinar starts. That's it — no software to download.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="container">
+    <h2>🚀 Don't Miss This Opportunity!</h2>
+    <p>Seats are filling up fast. This is your chance to change your career — for FREE.</p>
+    <button class="final-btn" onclick="scrollToForm()">Join Free Webinar Now →</button>
+    <div style="margin-top:20px;color:#888;font-size:14px">🔥 Over 150 people registered in the last 24 hours</div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 <span>Mindix Education</span>. All rights reserved. | Empowering India's Next-Gen HR Professionals</p>
+  <p style="margin-top:8px">Questions? WhatsApp us at <span>+91 XXXXX XXXXX</span></p>
+</footer>
+
+<script>
+// COUNTDOWN TIMER - set target date (April 18, 2026, 7:00 PM IST)
+const target = new Date('April 18, 2026 19:00:00').getTime();
+function updateCountdown(){
+  const now = new Date().getTime();
+  const diff = target - now;
+  if(diff <= 0){document.querySelector('.countdown-wrap').innerHTML='<p style="color:#ff6b00;font-weight:800;font-size:20px">👉 "⚡ Webinar Starting Now!"</p>';return;}
+  const d = Math.floor(diff/(1000*60*60*24));
+  const h = Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+  const m = Math.floor((diff%(1000*60*60))/(1000*60));
+  const s = Math.floor((diff%60000)/1000);
+  document.getElementById('cd-d').textContent = String(d).padStart(2,'0');
+  document.getElementById('cd-h').textContent = String(h).padStart(2,'0');
+  document.getElementById('cd-m').textContent = String(m).padStart(2,'0');
+  document.getElementById('cd-s').textContent = String(s).padStart(2,'0');
+}
+setInterval(updateCountdown, 1000);
+updateCountdown();
+
+// SCROLL TO FORM
+function scrollToForm(){
+  document.getElementById('reg-form').scrollIntoView({behavior:'smooth'});
+}
+
+// FAQ TOGGLE
+function toggleFaq(el){
+  const item = el.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+  if(!isOpen) item.classList.add('open');
+}
+
+// FORM SUBMIT
+async function handleSubmit(){
+  const inputs = document.querySelectorAll('#reg-form input');
+  let valid = true;
+  let errorMessage = '';
+  
+  // Get form values
+  const name = document.querySelector('input[placeholder="Enter your full name"]').value.trim();
+  const phone = document.querySelector('input[placeholder="+91 Enter your WhatsApp number"]').value.trim();
+  const email = document.querySelector('input[placeholder="Enter your email address"]').value.trim();
+  
+  // Reset all borders
+  inputs.forEach(i=>i.style.borderColor='#28a745');
+  
+  // Validate name
+  if(!name){
+    document.querySelector('input[placeholder="Enter your full name"]').style.borderColor='red';
+    errorMessage = 'Please enter your full name';
+    valid = false;
+  }
+  
+  // Validate phone (must be 10 digits, start with 6-9)
+  const phoneRegex = /^[6-9]\d{9}$/;
+  if(!phone){
+    document.querySelector('input[placeholder="+91 Enter your WhatsApp number"]').style.borderColor='red';
+    errorMessage = 'Please enter your WhatsApp number';
+    valid = false;
+  } else if(!phoneRegex.test(phone)){
+    document.querySelector('input[placeholder="+91 Enter your WhatsApp number"]').style.borderColor='red';
+    errorMessage = 'Please enter a valid 10-digit WhatsApp number (starting with 6-9)';
+    valid = false;
+  }
+  
+  // Validate email
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if(!email){
+    document.querySelector('input[placeholder="Enter your email address"]').style.borderColor='red';
+    errorMessage = 'Please enter your email address';
+    valid = false;
+  } else if(!emailRegex.test(email)){
+    document.querySelector('input[placeholder="Enter your email address"]').style.borderColor='red';
+    errorMessage = 'Please enter a valid email address';
+    valid = false;
+  }
+  
+  if(!valid){
+    // Show error message
+    const formNote = document.querySelector('.form-note');
+    formNote.textContent = '❌ ' + errorMessage;
+    formNote.style.color = '#dc3545';
+    setTimeout(() => {
+      formNote.textContent = '🔒 Your info is safe. No spam. You\'ll receive the webinar link on WhatsApp.';
+      formNote.style.color = '#999';
+    }, 3000);
+    return;
+  }
+  
+  if(valid){
+    const btn = document.querySelector('.form-submit');
+    const originalText = btn.textContent;
+    const originalBg = btn.style.background;
+    
+    // Show loading state
+    btn.innerHTML = '<span style="display:inline-block;width:16px;height:16px;border:2px solid #fff;border-radius:50%;border-top-color:transparent;animation:spin 1s linear infinite;"></span> Registering...';
+    btn.disabled = true;
+    
+    // Get form data
+    const formData = {
+      name: document.querySelector('input[placeholder="Enter your full name"]').value,
+      phone: document.querySelector('input[placeholder="+91 Enter your WhatsApp number"]').value,
+      email: document.querySelector('input[placeholder="Enter your email address"]').value,
+      webinar: 'HR Webinar - April 18, 2026'
+    };
+    
+    try {
+      // Send to Google Sheet
+      const response = await fetch('https://script.google.com/macros/s/AKfycbwRgfC8GlXEMzQ1nvExSMbqwaKZHRqAHrnJQnH12-DAmeO4Jby077FE_6eGe3nw1Atv/exec', {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams(formData)
+      });
+      
+      // Show success state with WhatsApp link
+      const whatsappLink = `https://wa.me/918800123456?text=${encodeURIComponent('Hi! I registered for the HR Webinar on April 18, 2026. My name is ' + name + '. Please send me the webinar link.')}`;
+      
+      btn.textContent = '🎉 Registered! WhatsApp Link Sent';
+      btn.style.background = 'linear-gradient(135deg,#28a745,#20c997)';
+      btn.style.animation = 'none';
+      
+      // Update success message with WhatsApp link
+      const formNote = document.querySelector('.form-note');
+      formNote.innerHTML = `✅ Registration successful! <strong>Click here to get webinar link:</strong><br>
+        <a href="${whatsappLink}" target="_blank" style="color: #25d366; text-decoration: none; font-weight: bold; margin-top: 8px; display: inline-block;">
+          📱 Send WhatsApp Message for Webinar Link
+        </a><br>
+        <small style="color: #666; margin-top: 8px; display: block;">🔒 Your info is safe. No spam. Check your WhatsApp for the link.</small>`;
+      formNote.style.color = '#28a745';
+      
+      // Clear form
+      document.querySelectorAll('#reg-form input').forEach(input => input.value = '');
+      
+      // Track conversion (optional)
+      if(typeof fbq !== 'undefined') {
+        fbq('track', 'Lead', {
+          content_name: 'Webinar Registration',
+          content_category: 'Lead Generation'
+        });
+      }
+      
+    } catch (error) {
+      console.error('Form submission error:', error);
+      
+      // Show error state
+      btn.textContent = '❌ Error. Try Again';
+      btn.style.background = 'linear-gradient(135deg,#dc3545,#c82333)';
+      btn.disabled = false;
+      
+      // Reset after 3 seconds
+      setTimeout(() => {
+        btn.textContent = originalText;
+        btn.style.background = originalBg;
+        btn.disabled = false;
+      }, 3000);
+    }
+  }
+}
+
+// Add loading animation
+const style = document.createElement('style');
+style.textContent = `
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+`;
+document.head.appendChild(style);
+</script>
+</body>
+</html>
