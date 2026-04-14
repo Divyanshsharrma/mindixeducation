@@ -191,6 +191,17 @@ src="https://www.facebook.com/tr?id=970933495494749&ev=PageView&noscript=1"
         </div>
     </div>
 
+    <!-- Webinar Poster Modal -->
+    <div id="posterModal" class="poster-modal">
+        <div class="poster-overlay" onclick="closePosterModal()"></div>
+        <div class="poster-container">
+            <button class="poster-close" type="button">
+                <i class="fas fa-times"></i>
+            </button>
+            <img src="ritik Webinar poster.jpeg" alt="Webinar Poster" class="poster-image" onclick="redirectToHRPage()">
+        </div>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="contner">
@@ -2567,6 +2578,11 @@ src="https://www.facebook.com/tr?id=970933495494749&ev=PageView&noscript=1"
             const popup = document.getElementById('urgencyPopup');
             popup.classList.remove('show');
             clearInterval(countdownInterval);
+            
+            // Show poster modal after a short delay
+            setTimeout(function() {
+                showPosterModal();
+            }, 500);
         }
         
         function startCountdown() {
@@ -2703,6 +2719,56 @@ src="https://www.facebook.com/tr?id=970933495494749&ev=PageView&noscript=1"
             if (event.key === 'Escape') {
                 closeUrgencyPopup();
             }
+        });
+
+        // Poster Modal functionality
+        function showPosterModal() {
+            const posterModal = document.getElementById('posterModal');
+            posterModal.classList.add('show');
+            document.body.classList.add('poster-modal-open');
+        }
+
+        function closePosterModal() {
+            const posterModal = document.getElementById('posterModal');
+            posterModal.classList.remove('show');
+            document.body.classList.remove('poster-modal-open');
+        }
+
+        function redirectToHRPage() {
+            window.location.href = 'mindix_webinar.html';
+        }
+
+        // Add event listeners for poster modal
+        document.addEventListener('DOMContentLoaded', function() {
+            // Close button functionality
+            const posterCloseBtn = document.querySelector('.poster-close');
+            if (posterCloseBtn) {
+                posterCloseBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    closePosterModal();
+                });
+            }
+
+            // Close poster modal when clicking on overlay
+            const posterOverlay = document.querySelector('.poster-overlay');
+            if (posterOverlay) {
+                posterOverlay.addEventListener('click', function(e) {
+                    if (e.target === posterOverlay) {
+                        closePosterModal();
+                    }
+                });
+            }
+
+            // Close poster modal with Escape key
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape') {
+                    const posterModal = document.getElementById('posterModal');
+                    if (posterModal.classList.contains('show')) {
+                        closePosterModal();
+                    }
+                }
+            });
         });
     // Carousel Functionality
 let currentSlide = 1;
