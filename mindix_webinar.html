@@ -711,10 +711,8 @@ async function handleSubmit(){
         });
       }
       
-      // Redirect to success page after 2 seconds
-      setTimeout(() => {
-        window.location.href = 'ty8k2m9x-success-confirmation.html';
-      }, 2000);
+      // Redirect to success page immediately
+      window.location.href = 'ty8k2m9x-success-confirmation.html';
       
     } catch (error) {
       console.error('Form submission error:', error);
