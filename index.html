@@ -194,29 +194,28 @@ src="https://www.facebook.com/tr?id=970933495494749&ev=PageView&noscript=1"
     
     <!-- Navigation -->
     <nav class="navbar">
-        <div class="contner">
-            <div class="nav-content">
-                <div class="logo">
-                    <a href="#home" class="logo-link">
-                        <img src="Made with insMind-WhatsApp_Image_2026-02-14_at_15.36.50-removebg-preview.png" alt="Mindix Education" class="logo-img">
-                    </a>
-                </div>
-                <div class="nav-center">
-                    <div class="nav-menu">
-                        <ul>
-                            <li><a href="#home">Home</a></li>
-                            <li><a href="#courses">Courses</a></li>
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="#faq">FAQ</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+        <div class="nav-content">
+            <div class="logo">
+                <a href="#home" class="logo-link">
+                    <img src="Made with insMind-WhatsApp_Image_2026-02-14_at_15.36.50-removebg-preview(1).png" alt="Mindix Education" class="logo-img">
+                </a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="nav-buttons">
+                <button class="btn btn-primary btn-small" onclick="showUrgencyPopup()">Enroll Now</button>
+            </div>
+            <div class="hamburger" id="menu-toggle" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
     </nav>
@@ -255,95 +254,68 @@ src="https://www.facebook.com/tr?id=970933495494749&ev=PageView&noscript=1"
                     </div>
                 </div>
                 
-                <!-- Right Side: Illustration -->
+                <!-- Right Side: Form -->
                 <div class="hero-visual">
-                    <div class="hero-image">
-                        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Student learning with laptop" />
-                    </div>
-                    
-                    <!-- Floating Cards -->
-                    <div class="floating-card card-1">
-                        <i class="fas fa-project-diagram"></i>
-                        <h4>Live Projects</h4>
-                        <p>Work on real-world projects</p>
-                    </div>
-                    
-                    <div class="floating-card card-2">
-                        <i class="fas fa-briefcase"></i>
-                        <h4>Placement Support</h4>
-                        <p>100% job assistance</p>
-                    </div>
-                    
-                    <div class="floating-card card-3">
-                        <i class="fas fa-star"></i>
-                        <h4>4.8/5 Rating</h4>
-                        <p>From 5000+ students</p>
+                    <div class="hero-form">
+                        <h3>Start Your Journey Today</h3>
+                        <p>Get instant access to course details and career guidance</p>
+                        
+                        <form id="heroContactForm" class="contact-form">
+                            <div class="form-group">
+                                <label for="heroName">Full Name</label>
+                                <input type="text" id="heroName" name="name" placeholder="Enter your full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="heroEmail">Email Address</label>
+                                <input type="email" id="heroEmail" name="email" placeholder="Enter your email address" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="heroPhone">Phone Number</label>
+                                <input type="tel" id="heroPhone" name="phone" placeholder="Enter your phone number" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="heroCourse">Select Course</label>
+                                <select id="heroCourse" name="course" required>
+                                    <option value="">Select a Course</option>
+                                    <!-- Marketing Courses -->
+                                    <option value="digital-marketing">Digital Marketing + AI Tools</option>
+                                    <option value="video-editing">Video Editing + AI Tools</option>
+                                    <option value="graphics-designing">Graphics Designing + AI Tools</option>
+                                    <!-- HR Courses -->
+                                    <option value="us-it-recruiter">US IT Recruiter + AI Tools</option>
+                                    <option value="hr-executive">HR Executive + AI Tools</option>
+                                    <option value="hr-recruiter">HR Recruiter + AI Tools</option>
+                                    <option value="it-recruiter">IT Recruiter + AI Tools</option>
+                                    <option value="hr-admin">HR Admin + AI Tools</option>
+                                    <option value="hr-analyst">HR Analyst + AI Tools</option>
+                                    <option value="recruiting-coordinator">Recruiting Coordinator + AI Tools</option>
+                                    <option value="hr-coordinator">HR Coordinator + AI Tools</option>
+                                    <!-- IT Courses -->
+                                    <option value="front-end">Front-End + AI Tools</option>
+                                    <option value="business-analyst">Business Analyst + AI Tools</option>
+                                    <option value="data-analyst">Data Analyst + AI Tools</option>
+                                    <option value="cloud-computing">Cloud Computing</option>
+                                    <option value="automation-testing">Automation Testing + AI Tools</option>
+                                    <option value="bi-developer">BI Developer + AI Tools</option>
+                                    <option value="android-developer">Android Developer + AI Tools</option>
+                                    <option value="devops">DevOps + AI Tools</option>
+                                    <option value="full-stack">Full Stack + AI Tools</option>
+                                    <option value="web-developer">Web Developer + AI Tools</option>
+                                    <!-- Business Courses -->
+                                    <option value="entrepreneurship">Entrepreneurship Program</option>
+                                    <option value="business-development">Business Development + AI Tools</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-full btn-large">Get Started Now</button>
+                        </form>
                     </div>
                 </div>
-            </div>
+                
+                            </div>
         </div>
     </section>
 
-    <!-- Popular Courses Section -->
-    <section class="popular-courses">
-        <div class="container">
-            <div class="section-header">
-                <h2>Popular Courses</h2>
-                <p>Start your journey with our most sought-after programs</p>
-            </div>
-            
-            <div class="courses-grid">
-                <div class="course-card">
-                    <div class="course-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3>Full Stack Development</h3>
-                    <p>Master MERN stack and build modern web applications</p>
-                    <div class="course-meta">
-                        <span><i class="fas fa-clock"></i> 6 months</span>
-                        <span><i class="fas fa-signal"></i> Beginner</span>
-                    </div>
-                </div>
-                
-                <div class="course-card">
-                    <div class="course-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>HR Executive with AI</h3>
-                    <p>Learn modern HR processes with AI tools and automation</p>
-                    <div class="course-meta">
-                        <span><i class="fas fa-clock"></i> 2 months</span>
-                        <span><i class="fas fa-signal"></i> Beginner</span>
-                    </div>
-                </div>
-                
-                <div class="course-card">
-                    <div class="course-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Cybersecurity Essentials</h3>
-                    <p>Protect digital assets and learn ethical hacking</p>
-                    <div class="course-meta">
-                        <span><i class="fas fa-clock"></i> 4 months</span>
-                        <span><i class="fas fa-signal"></i> Intermediate</span>
-                    </div>
-                </div>
-                
-                <div class="course-card">
-                    <div class="course-icon">
-                        <i class="fas fa-cloud"></i>
-                    </div>
-                    <h3>Cloud Computing</h3>
-                    <p>Master AWS, Azure and cloud architecture</p>
-                    <div class="course-meta">
-                        <span><i class="fas fa-clock"></i> 5 months</span>
-                        <span><i class="fas fa-signal"></i> Intermediate</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    
     <!-- Our Placed Students Section -->
     <section id="placed-students" class="mindix-testimonial-section">
         <div class="container">
@@ -2869,6 +2841,160 @@ function talkToAdvisor() {
         window.open('https://wa.me/918810696963?text=Hi! I would like to talk to an advisor about your courses.', '_blank');
     }
 }
+
+// Backup function for inline onclick
+function toggleMobileMenu() {
+    console.log('Inline toggle called!');
+    const navMenu = document.getElementById('nav-menu');
+    if (navMenu) {
+        navMenu.classList.toggle('active');
+        console.log('Menu toggled via inline function:', navMenu.className);
+    }
+}
+
+// Hamburger Menu Toggle - SIMPLIFIED VERSION
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM Loaded - Setting up mobile menu...');
+    
+    const menuBtn = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    
+    console.log('Menu button:', menuBtn);
+    console.log('Nav menu:', navMenu);
+    
+    if (menuBtn && navMenu) {
+        menuBtn.addEventListener('click', function() {
+            console.log('Menu button clicked via addEventListener!');
+            navMenu.classList.toggle('active');
+            console.log('Menu classes after toggle:', navMenu.className);
+        });
+        
+        // Close menu when clicking links
+        const links = navMenu.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+                console.log('Menu closed via link click');
+            });
+        });
+    } else {
+        console.error('Mobile menu elements not found!');
+        console.log('Available elements with menu-toggle:', document.querySelectorAll('#menu-toggle'));
+        console.log('Available elements with nav-menu:', document.querySelectorAll('#nav-menu'));
+    }
+});
+
+// Hero Form Submission (same as popup form)
+document.addEventListener('DOMContentLoaded', function() {
+    const heroForm = document.getElementById('heroContactForm');
+    
+    if (heroForm) {
+        heroForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = this.querySelector('button[type="submit"]');
+            
+            // Show loading state
+            submitBtn.innerHTML = '<span class="loading"></span> Sending...';
+            submitBtn.disabled = true;
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Add purpose field
+            data.purpose = 'hero_enquiry';
+            
+            try {
+                // Send to same Google Sheet as main contact form
+                const response = await fetch('https://script.google.com/macros/s/AKfycbwRgfC8GlXEMzQ1nvExSMbqwaKZHRqAHrnJQnH12-DAmeO4Jby077FE_6eGe3nw1Atv/exec', {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: new URLSearchParams(data)
+                });
+                
+                // Track Meta Pixel conversion
+                fbq('track', 'Lead', {
+                    content_name: 'Hero Form',
+                    content_category: 'Lead Generation'
+                });
+                
+                // Track Google Analytics conversion
+                gtag('event', 'conversion', {
+                    'send_to': 'GA_MEASUREMENT_ID/LEAD_ID',
+                    'value': 1,
+                    'currency': 'INR'
+                });
+                
+                // Show success message briefly
+                const successDiv = document.createElement('div');
+                successDiv.className = 'form-message success';
+                successDiv.textContent = 'Redirecting to confirmation page...';
+                successDiv.style.cssText = 'display: block; text-align: center; margin-top: 1rem; color: #28a745; font-weight: 600;';
+                
+                this.appendChild(successDiv);
+                
+                // Reset form
+                this.reset();
+                
+                // Redirect to thank you page after 1.5 seconds
+                setTimeout(function() {
+                    window.location.href = 'ty8k2m9x-success-confirmation.html';
+                }, 1500);
+                
+            } catch (error) {
+                console.error('Form submission error:', error);
+                
+                // Show error message
+                const errorDiv = document.createElement('div');
+                errorDiv.className = 'form-message error';
+                errorDiv.textContent = 'Something went wrong. Please try again or call us directly.';
+                errorDiv.style.cssText = 'display: block; text-align: center; margin-top: 1rem; color: #dc3545; font-weight: 600;';
+                
+                this.appendChild(errorDiv);
+            } finally {
+                // Reset button
+                submitBtn.innerHTML = 'Get Started Now';
+                submitBtn.disabled = false;
+                
+                // Hide message after 5 seconds
+                setTimeout(() => {
+                    const messages = this.querySelectorAll('.form-message');
+                    messages.forEach(msg => msg.style.display = 'none');
+                }, 5000);
+            }
+        });
+    }
+});
+
+// Form Success Styles
+const formSuccessStyles = `
+    .form-success {
+        background: white;
+        border-radius: var(--border-radius);
+        padding: var(--padding-lg);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(102, 126, 234, 0.2);
+        text-align: center;
+        animation: fadeInUp 0.5s ease-out;
+    }
+    .form-success h4 {
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+        font-size: 1.3rem;
+    }
+    .form-success p {
+        color: #718096;
+        line-height: 1.6;
+    }
+`;
+
+const styleSheet = document.createElement('style');
+styleSheet.textContent = formSuccessStyles;
+document.head.appendChild(styleSheet);
 
 </script>
 </body>
