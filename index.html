@@ -191,17 +191,7 @@ src="https://www.facebook.com/tr?id=970933495494749&ev=PageView&noscript=1"
         </div>
     </div>
 
-    <!-- Webinar Poster Modal -->
-    <div id="posterModal" class="poster-modal">
-        <div class="poster-overlay" onclick="closePosterModal()"></div>
-        <div class="poster-container">
-            <button class="poster-close" type="button">
-                <i class="fas fa-times"></i>
-            </button>
-            <img src="ritik Webinar poster.jpeg" alt="Webinar Poster" class="poster-image" onclick="redirectToHRPage()">
-        </div>
-    </div>
-
+    
     <!-- Navigation -->
     <nav class="navbar">
         <div class="contner">
@@ -233,78 +223,122 @@ src="https://www.facebook.com/tr?id=970933495494749&ev=PageView&noscript=1"
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="contner">
-            <div class="hero-carousel">
-                <!-- Slide 1: Business Growth Focus -->
-                <div class="hero-slide active" data-slide="1">
-                    <div class="hero-content">
-                        <div class="hero-text">
-                            <h1>Scale Your Business with <span style="color: #ff6b00;">AI-Powered Teams</span></h1>
-                            <p>Transform your workforce with cutting-edge AI tools and automation. Increase productivity by 300%.</p>
-                            <p class="urgent-text">📈 500+ Companies Trust Our Training</p>
-                            <div class="hero-buttons">
-                                <button class="btn btn-primary btn-large" onclick="exploreCourses()">Transform Your Business</button>
+        <div class="container">
+            <div class="hero-grid">
+                <!-- Left Side: Content -->
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Learn. Build. Get Hired.</h1>
+                        <p class="hero-subheading">Master in-demand IT and software skills with practical training.</p>
+                        
+                        <!-- Trust Badges -->
+                        <div class="trust-badges">
+                            <div class="badge">
+                                <i class="fas fa-check-circle"></i>
+                                <span>100% Placement Support</span>
                             </div>
+                            <div class="badge">
+                                <i class="fas fa-laptop-code"></i>
+                                <span>Live Projects</span>
+                            </div>
+                            <div class="badge">
+                                <i class="fas fa-user-graduate"></i>
+                                <span>Beginner Friendly</span>
+                            </div>
+                        </div>
+                        
+                        <!-- CTA Buttons -->
+                        <div class="hero-buttons">
+                            <button class="btn btn-primary btn-large" onclick="exploreCourses()">Explore Courses</button>
+                            <button class="btn btn-outline btn-large" onclick="talkToAdvisor()">Talk to Advisor</button>
                         </div>
                     </div>
                 </div>
-
-                <!-- Slide 2: HR Executive with AI Tools -->
-                <div class="hero-slide" data-slide="2">
-                    <div class="hero-content">
-                        <div class="hero-text">
-                            <h1>Become an <span style="color: #ff6b00;">HR Executive</span> with AI Tools Mastery</h1>
-                            <p>Master modern HR processes with cutting-edge AI tools and get job-ready in just 60 days.</p>
-                            <p class="urgent-text">🔥 95% Placement Rate – Limited Seats Available</p>
-                            <div class="hero-buttons">
-                                <button class="btn btn-primary btn-large" onclick="exploreCourses()">Learn HR with AI Tools</button>
-                            </div>
-                        </div>
+                
+                <!-- Right Side: Illustration -->
+                <div class="hero-visual">
+                    <div class="hero-image">
+                        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Student learning with laptop" />
+                    </div>
+                    
+                    <!-- Floating Cards -->
+                    <div class="floating-card card-1">
+                        <i class="fas fa-project-diagram"></i>
+                        <h4>Live Projects</h4>
+                        <p>Work on real-world projects</p>
+                    </div>
+                    
+                    <div class="floating-card card-2">
+                        <i class="fas fa-briefcase"></i>
+                        <h4>Placement Support</h4>
+                        <p>100% job assistance</p>
+                    </div>
+                    
+                    <div class="floating-card card-3">
+                        <i class="fas fa-star"></i>
+                        <h4>4.8/5 Rating</h4>
+                        <p>From 5000+ students</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <!-- Slide 3: IT & Software Development -->
-                <div class="hero-slide" data-slide="3">
-                    <div class="hero-content">
-                        <div class="hero-text">
-                            <h1>Master <span style="color: #e8271a;">IT & Software Development</span> Skills</h1>
-                            <p>Build cutting-edge applications and systems. Learn programming, cloud computing, and modern tech stacks.</p>
-                            <p class="urgent-text">💻 100% Job Placement – Industry-Ready Skills</p>
-                            <div class="hero-buttons">
-                                <button class="btn btn-primary btn-large" onclick="exploreCourses()">Start IT Career</button>
-                            </div>
-                        </div>
+    <!-- Popular Courses Section -->
+    <section class="popular-courses">
+        <div class="container">
+            <div class="section-header">
+                <h2>Popular Courses</h2>
+                <p>Start your journey with our most sought-after programs</p>
+            </div>
+            
+            <div class="courses-grid">
+                <div class="course-card">
+                    <div class="course-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Full Stack Development</h3>
+                    <p>Master MERN stack and build modern web applications</p>
+                    <div class="course-meta">
+                        <span><i class="fas fa-clock"></i> 6 months</span>
+                        <span><i class="fas fa-signal"></i> Beginner</span>
                     </div>
                 </div>
-
-                <!-- Slide 4: Cybersecurity & Business Protection -->
-                <div class="hero-slide" data-slide="4">
-                    <div class="hero-content">
-                        <div class="hero-text">
-                            <h1>Protect Your <span style="color: #e8271a;">Digital Empire</span> with Cybersecurity</h1>
-                            <p>Safeguard your business from cyber threats. Industry-certified experts teach real-world defense strategies.</p>
-                            <p class="urgent-text">🛡️ 100% Job Guarantee – Enterprise-Level Skills</p>
-                            <div class="hero-buttons">
-                                <button class="btn btn-primary btn-large" onclick="exploreCourses()">Secure Your Business</button>
-                            </div>
-                        </div>
+                
+                <div class="course-card">
+                    <div class="course-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>HR Executive with AI</h3>
+                    <p>Learn modern HR processes with AI tools and automation</p>
+                    <div class="course-meta">
+                        <span><i class="fas fa-clock"></i> 2 months</span>
+                        <span><i class="fas fa-signal"></i> Beginner</span>
                     </div>
                 </div>
-
-                <!-- Navigation Arrows -->
-                <button class="carousel-arrow carousel-prev" onclick="changeSlide(-1)">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button class="carousel-arrow carousel-next" onclick="changeSlide(1)">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-
-                <!-- Navigation Dots -->
-                <div class="carousel-dots">
-                    <span class="carousel-dot active" onclick="goToSlide(1)"></span>
-                    <span class="carousel-dot" onclick="goToSlide(2)"></span>
-                    <span class="carousel-dot" onclick="goToSlide(3)"></span>
-                    <span class="carousel-dot" onclick="goToSlide(4)"></span>
+                
+                <div class="course-card">
+                    <div class="course-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Cybersecurity Essentials</h3>
+                    <p>Protect digital assets and learn ethical hacking</p>
+                    <div class="course-meta">
+                        <span><i class="fas fa-clock"></i> 4 months</span>
+                        <span><i class="fas fa-signal"></i> Intermediate</span>
+                    </div>
+                </div>
+                
+                <div class="course-card">
+                    <div class="course-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Cloud Computing</h3>
+                    <p>Master AWS, Azure and cloud architecture</p>
+                    <div class="course-meta">
+                        <span><i class="fas fa-clock"></i> 5 months</span>
+                        <span><i class="fas fa-signal"></i> Intermediate</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2578,11 +2612,6 @@ src="https://www.facebook.com/tr?id=970933495494749&ev=PageView&noscript=1"
             const popup = document.getElementById('urgencyPopup');
             popup.classList.remove('show');
             clearInterval(countdownInterval);
-            
-            // Show poster modal after a short delay
-            setTimeout(function() {
-                showPosterModal();
-            }, 500);
         }
         
         function startCountdown() {
@@ -2721,56 +2750,7 @@ src="https://www.facebook.com/tr?id=970933495494749&ev=PageView&noscript=1"
             }
         });
 
-        // Poster Modal functionality
-        function showPosterModal() {
-            const posterModal = document.getElementById('posterModal');
-            posterModal.classList.add('show');
-            document.body.classList.add('poster-modal-open');
-        }
-
-        function closePosterModal() {
-            const posterModal = document.getElementById('posterModal');
-            posterModal.classList.remove('show');
-            document.body.classList.remove('poster-modal-open');
-        }
-
-        function redirectToHRPage() {
-            window.location.href = 'mindix_webinar.html';
-        }
-
-        // Add event listeners for poster modal
-        document.addEventListener('DOMContentLoaded', function() {
-            // Close button functionality
-            const posterCloseBtn = document.querySelector('.poster-close');
-            if (posterCloseBtn) {
-                posterCloseBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    closePosterModal();
-                });
-            }
-
-            // Close poster modal when clicking on overlay
-            const posterOverlay = document.querySelector('.poster-overlay');
-            if (posterOverlay) {
-                posterOverlay.addEventListener('click', function(e) {
-                    if (e.target === posterOverlay) {
-                        closePosterModal();
-                    }
-                });
-            }
-
-            // Close poster modal with Escape key
-            document.addEventListener('keydown', function(event) {
-                if (event.key === 'Escape') {
-                    const posterModal = document.getElementById('posterModal');
-                    if (posterModal.classList.contains('show')) {
-                        closePosterModal();
-                    }
-                }
-            });
-        });
-    // Carousel Functionality
+            // Carousel Functionality
 let currentSlide = 1;
 let slideInterval;
 let isPaused = false;
@@ -2863,13 +2843,30 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Function to explore courses
 function exploreCourses() {
-    // Scroll to courses section or redirect
-    const coursesSection = document.getElementById('courses');
+    // Scroll to popular courses section
+    const coursesSection = document.querySelector('.popular-courses');
     if (coursesSection) {
         coursesSection.scrollIntoView({ behavior: 'smooth' });
     } else {
         // Fallback: redirect to courses page
         window.location.href = '#courses';
+    }
+}
+
+// Function to talk to advisor
+function talkToAdvisor() {
+    // Show urgency popup for consultation
+    const popup = document.getElementById('urgencyPopup');
+    if (popup) {
+        popup.classList.add('show');
+        // Update popup form purpose
+        const purposeField = document.getElementById('popupFormPurpose');
+        if (purposeField) {
+            purposeField.value = 'course_consultation';
+        }
+    } else {
+        // Fallback: open WhatsApp
+        window.open('https://wa.me/918810696963?text=Hi! I would like to talk to an advisor about your courses.', '_blank');
     }
 }
 
