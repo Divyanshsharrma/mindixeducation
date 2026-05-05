@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '970933495494749');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=970933495494749&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Mindix Education – Cyber Security & Ethical Hacking</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#04060f;--bg2:#080d1a;--bg3:#0c1225;
+  --blue:#00c8ff;--purple:#8b5cf6;--blue2:#0ea5e9;
+  --text:#e2e8f0;--muted:#94a3b8;--white:#fff;
+  --card:#0f1929;--border:#1e2d4a;
+  --radius:12px;--max:1200px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.6}
+a{color:inherit;text-decoration:none}
+
+/* NAV */
+nav{background:rgba(4,6,15,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;padding:14px 20px}
+.nav-inner{max-width:var(--max);margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.logo{font-size:1.2rem;font-weight:800;background:linear-gradient(90deg,var(--blue),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-cta{background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;border:none;padding:8px 20px;border-radius:8px;font-weight:600;font-size:.85rem;cursor:pointer;white-space:nowrap;transition:opacity .2s}
+.nav-cta:hover{opacity:.85}
+
+/* SECTION BASE */
+section{padding:60px 20px}
+.container{max-width:var(--max);margin:auto}
+.section-tag{display:inline-block;background:rgba(0,200,255,.1);border:1px solid rgba(0,200,255,.3);color:var(--blue);font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:12px}
+.section-title{font-size:clamp(1.5rem,3.5vw,2.2rem);font-weight:800;line-height:1.25}
+.section-title span{background:linear-gradient(90deg,var(--blue),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.section-sub{color:var(--muted);font-size:.95rem;margin-top:8px;max-width:560px}
+
+/* HERO */
+#hero{background:radial-gradient(ellipse 80% 60% at 60% 20%,rgba(0,200,255,.07) 0%,transparent 70%),var(--bg);padding:60px 20px 50px}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;max-width:var(--max);margin:auto}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(139,92,246,.12);border:1px solid rgba(139,92,246,.35);color:#c4b5fd;font-size:.75rem;font-weight:600;padding:5px 12px;border-radius:20px;margin-bottom:16px}
+.hero-badge span{width:7px;height:7px;border-radius:50%;background:#8b5cf6;animation:pulse 1.8s infinite}
+.hero-title{font-size:clamp(2rem,5vw,3.2rem);font-weight:900;line-height:1.15;margin-bottom:12px}
+.hero-title .accent{background:linear-gradient(90deg,var(--blue),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-sub{color:var(--muted);font-size:1rem;margin-bottom:8px}
+.hero-usp{display:flex;align-items:center;gap:8px;color:#7dd3fc;font-size:.88rem;font-weight:500;margin-bottom:24px}
+.hero-usp svg{flex-shrink:0}
+.btn-row{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:28px}
+.btn-primary{background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;border:none;padding:13px 28px;border-radius:10px;font-weight:700;font-size:.95rem;cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 0 20px rgba(0,200,255,.25)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 30px rgba(0,200,255,.4)}
+.btn-outline{background:transparent;color:var(--blue);border:1.5px solid var(--blue);padding:12px 28px;border-radius:10px;font-weight:700;font-size:.95rem;cursor:pointer;transition:all .2s}
+.btn-outline:hover{background:rgba(0,200,255,.08);box-shadow:0 0 16px rgba(0,200,255,.2)}
+.hero-stats{display:flex;gap:20px;flex-wrap:wrap}
+.stat{text-align:left}
+.stat-num{font-size:1.3rem;font-weight:800;color:var(--white)}
+.stat-label{font-size:.72rem;color:var(--muted);font-weight:500}
+
+/* HERO FORM CARD */
+.hero-form-card{background:linear-gradient(135deg,var(--card),rgba(15,25,41,.95));border:1px solid var(--border);border-radius:16px;padding:28px 24px;box-shadow:0 0 40px rgba(0,200,255,.07)}
+.form-title{font-size:1.1rem;font-weight:700;margin-bottom:4px}
+.form-sub{font-size:.8rem;color:var(--muted);margin-bottom:18px}
+.form-input{width:100%;background:#0a1525;border:1px solid var(--border);color:var(--text);padding:11px 14px;border-radius:9px;font-size:.9rem;margin-bottom:12px;outline:none;transition:border .2s;font-family:inherit}
+.form-input:focus{border-color:var(--blue)}
+.form-input::placeholder{color:#4a5568}
+.btn-form{width:100%;background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;border:none;padding:13px;border-radius:9px;font-weight:700;font-size:.95rem;cursor:pointer;transition:opacity .2s,transform .2s}
+.btn-form:hover{opacity:.88;transform:translateY(-1px)}
+.form-note{text-align:center;font-size:.72rem;color:var(--muted);margin-top:10px}
+.form-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.ftag{background:rgba(0,200,255,.08);border:1px solid rgba(0,200,255,.2);color:#7dd3fc;font-size:.7rem;padding:3px 9px;border-radius:20px}
+
+/* POPUP FORM */
+.urgency-popup{position:fixed;inset:0;display:none;z-index:1200}
+.urgency-popup.show{display:block}
+.urgency-overlay{position:absolute;inset:0;background:rgba(2,6,16,.7);backdrop-filter:blur(3px)}
+.urgency-modal{position:relative;z-index:2;max-width:520px;margin:6vh auto 0;background:linear-gradient(135deg,var(--card),rgba(15,25,41,.98));border:1px solid var(--border);border-radius:16px;padding:20px;box-shadow:0 18px 50px rgba(0,0,0,.45)}
+.urgency-header{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}
+.urgency-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(0,200,255,.1);border:1px solid rgba(0,200,255,.3);color:var(--blue);font-size:.72rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:5px 10px;border-radius:20px}
+.urgency-close{background:transparent;border:1px solid var(--border);color:var(--muted);width:32px;height:32px;border-radius:8px;cursor:pointer;font-size:1rem;line-height:1}
+.urgency-close:hover{color:var(--white);border-color:var(--blue)}
+.urgency-content h2{font-size:1.35rem;margin-bottom:5px}
+.urgency-content p{font-size:.9rem;color:var(--muted);margin-bottom:14px}
+.urgency-form .form-group{margin-bottom:10px}
+.urgency-form label{display:block;font-size:.78rem;color:#cbd5e1;margin-bottom:4px;font-weight:600}
+.popup-submit-btn{width:100%;background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;border:none;padding:12px;border-radius:9px;font-weight:700;font-size:.92rem;cursor:pointer}
+.popup-submit-btn:disabled{opacity:.75;cursor:not-allowed}
+.loading{display:inline-block;width:14px;height:14px;border:2px solid rgba(255,255,255,.35);border-top-color:#fff;border-radius:50%;animation:spin .8s linear infinite;vertical-align:middle;margin-right:7px}
+.form-message{display:none;margin-top:10px;font-size:.8rem;padding:9px 10px;border-radius:8px}
+.form-message.success{display:block;background:rgba(16,185,129,.14);border:1px solid rgba(16,185,129,.35);color:#86efac}
+.form-message.error{display:block;background:rgba(239,68,68,.14);border:1px solid rgba(239,68,68,.35);color:#fca5a5}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* FEATURES */
+#features{background:var(--bg2)}
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:32px}
+.feat-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px 20px;transition:transform .25s,box-shadow .25s,border-color .25s}
+.feat-card:hover{transform:translateY(-4px);box-shadow:0 0 24px rgba(0,200,255,.12);border-color:rgba(0,200,255,.3)}
+.feat-icon{width:42px;height:42px;border-radius:10px;background:linear-gradient(135deg,rgba(0,200,255,.15),rgba(139,92,246,.15));display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:14px}
+.feat-title{font-weight:700;font-size:.95rem;margin-bottom:5px}
+.feat-desc{font-size:.82rem;color:var(--muted)}
+
+/* ROADMAP */
+#roadmap{background:var(--bg)}
+.road-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:32px}
+.road-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:20px 18px;position:relative;overflow:hidden;transition:box-shadow .25s,border-color .25s}
+.road-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--purple))}
+.road-card:hover{box-shadow:0 0 20px rgba(139,92,246,.15);border-color:rgba(139,92,246,.3)}
+.road-num{font-size:.72rem;font-weight:700;color:var(--blue);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+.road-title{font-weight:700;font-size:.92rem;margin-bottom:5px}
+.road-desc{font-size:.78rem;color:var(--muted)}
+
+/* CURRICULUM */
+#curriculum{background:var(--bg2)}
+.acc-wrap{margin-top:32px;display:flex;flex-direction:column;gap:10px}
+.acc-item{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:border-color .2s}
+.acc-item.open{border-color:rgba(0,200,255,.3)}
+.acc-header{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;cursor:pointer;gap:12px;user-select:none}
+.acc-week{font-size:.7rem;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:.06em;white-space:nowrap}
+.acc-phase{font-weight:700;font-size:.92rem;flex:1}
+.acc-arrow{width:20px;height:20px;flex-shrink:0;transition:transform .3s;color:var(--muted)}
+.acc-item.open .acc-arrow{transform:rotate(180deg);color:var(--blue)}
+.acc-body{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.acc-item.open .acc-body{max-height:900px}
+.acc-inner{padding:0 20px 18px}
+.day-item{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:1px solid rgba(30,45,74,.6)}
+.day-item:last-child{border-bottom:none}
+.day-num{background:linear-gradient(135deg,var(--blue),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700;font-size:.8rem;min-width:46px;flex-shrink:0;margin-top:1px}
+.day-text{font-size:.85rem;color:var(--text)}
+
+/* TOOLS */
+#tools{background:var(--bg)}
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:16px;margin-top:32px}
+.tool-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:24px 16px;text-align:center;transition:all .25s;cursor:default}
+.tool-card:hover{border-color:var(--blue);box-shadow:0 0 20px rgba(0,200,255,.18),inset 0 0 30px rgba(0,200,255,.04);transform:translateY(-3px)}
+.tool-icon{font-size:2rem;margin-bottom:10px;display:block;filter:drop-shadow(0 0 8px rgba(0,200,255,.5))}
+.tool-name{font-weight:700;font-size:.88rem}
+.tool-desc{font-size:.73rem;color:var(--muted);margin-top:3px}
+
+/* WHY */
+#why{background:var(--bg2)}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:32px}
+.why-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:22px 20px;display:flex;gap:14px;align-items:flex-start;transition:border-color .25s,box-shadow .25s}
+.why-card:hover{border-color:rgba(139,92,246,.35);box-shadow:0 0 16px rgba(139,92,246,.1)}
+.why-icon{width:38px;height:38px;flex-shrink:0;border-radius:9px;background:linear-gradient(135deg,rgba(0,200,255,.15),rgba(139,92,246,.15));display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.why-title{font-weight:700;font-size:.9rem;margin-bottom:4px}
+.why-text{font-size:.8rem;color:var(--muted)}
+
+/* CTA SECTION */
+#cta-bottom{background:radial-gradient(ellipse 60% 80% at 50% 50%,rgba(139,92,246,.12) 0%,transparent 70%),var(--bg);padding:70px 20px;text-align:center}
+.cta-title{font-size:clamp(1.6rem,4vw,2.5rem);font-weight:900;margin-bottom:12px}
+.cta-sub{color:var(--muted);font-size:1rem;margin-bottom:30px;max-width:480px;margin-left:auto;margin-right:auto}
+.cta-btns{display:flex;justify-content:center;flex-wrap:wrap;gap:14px}
+
+/* FOOTER */
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:24px 20px;text-align:center;color:var(--muted);font-size:.8rem}
+footer strong{color:var(--blue)}
+
+/* ANIMATIONS */
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.5)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.fade-up{animation:fadeUp .6s ease both}
+
+/* MOBILE */
+@media(max-width:768px){
+  .hero-grid{grid-template-columns:1fr}
+  .btn-primary,.btn-outline,.btn-form{width:100%;text-align:center}
+  .btn-row{flex-direction:column}
+  .hero-stats{gap:16px}
+  section{padding:44px 16px}
+  .urgency-modal{margin:2.5vh 12px 0;padding:16px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="logo">⚡ Mindix Education</div>
+    <button class="nav-cta" onclick="openUrgencyPopup()">Enroll Now →</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid fade-up">
+    <!-- Left -->
+    <div>
+      <div class="hero-badge"><span></span> Limited Seats Available</div>
+      <h1 class="hero-title">Learn <span class="accent">Ethical Hacking</span> From Scratch</h1>
+      <p class="hero-sub">Cyber Security & Ethical Hacking – 45 Days Program</p>
+      <div class="hero-usp">
+        <svg width="15" height="15" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#00c8ff" stroke-width="2"/><path d="M8 12l3 3 5-5" stroke="#00c8ff" stroke-width="2" stroke-linecap="round"/></svg>
+        Hands-on training using Kali Linux & real-world tools
+      </div>
+      <div class="btn-row">
+        <button class="btn-primary" onclick="openUrgencyPopup()">🚀 Start Learning</button>
+        <button class="btn-outline" onclick="openUrgencyPopup()">View Curriculum</button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><div class="stat-num">45</div><div class="stat-label">Day Program</div></div>
+        <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Practical</div></div>
+        <div class="stat"><div class="stat-num">8</div><div class="stat-label">Phases</div></div>
+        <div class="stat"><div class="stat-num">10+</div><div class="stat-label">Tools</div></div>
+      </div>
+    </div>
+    <!-- Right: Inline Form -->
+    <div class="hero-form-card">
+      <div class="form-title">Get Free Counseling</div>
+      <div class="form-sub">Join 2,000+ students already enrolled 🔒</div>
+      <form id="form-main">
+        <input class="form-input" type="text" name="name" placeholder="Your Full Name" required/>
+        <input class="form-input" type="tel" name="phone" placeholder="Phone Number" required/>
+        <input class="form-input" type="email" name="email" placeholder="Email Address" required/>
+        <input type="hidden" name="course" value="Cyber Security &amp; Ethical Hacking"/>
+        <button type="submit" class="btn-form">🎯 Claim Your Free Seat</button>
+        <div id="formMainMessage" class="form-message"></div>
+      </form>
+      <div class="form-note">✅ No spam · Free counseling call included</div>
+      <div class="form-tags">
+        <span class="ftag">🛡 Kali Linux</span>
+        <span class="ftag">🌐 Ethical Hacking</span>
+        <span class="ftag">🔐 Cyber Security</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="container">
+    <div class="section-tag">Why This Course</div>
+    <h2 class="section-title">Everything You Need to <span>Break Into Cyber Security</span></h2>
+    <p class="section-sub">Built for real results — not just certificates.</p>
+    <div class="features-grid">
+      <div class="feat-card">
+        <div class="feat-icon">🟢</div>
+        <div class="feat-title">Beginner Friendly</div>
+        <div class="feat-desc">No prior experience needed. We start from zero and build to pro-level.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">💻</div>
+        <div class="feat-title">Practical Learning</div>
+        <div class="feat-desc">70% hands-on labs, 30% theory. Learn by doing, not just watching.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🔧</div>
+        <div class="feat-title">Real Tools Exposure</div>
+        <div class="feat-desc">Train with Nmap, Burp Suite, Metasploit & Wireshark used by real hackers.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🚀</div>
+        <div class="feat-title">Career Support</div>
+        <div class="feat-desc">Resume reviews, LinkedIn optimization, and mock interview prep included.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section id="roadmap">
+  <div class="container">
+    <div class="section-tag">Course Structure</div>
+    <h2 class="section-title">Your <span>45-Day Roadmap</span> to Becoming an Ethical Hacker</h2>
+    <p class="section-sub">8 carefully structured phases from foundations to job readiness.</p>
+    <div class="road-grid">
+      <div class="road-card"><div class="road-num">Phase 01 · Week 1</div><div class="road-title">Cyber Security Foundation</div><div class="road-desc">Hacker types, internet basics, Kali Linux setup & Linux commands.</div></div>
+      <div class="road-card"><div class="road-num">Phase 02 · Week 2</div><div class="road-title">Networking Skills</div><div class="road-desc">How the internet works, ports, protocols, and network scanning.</div></div>
+      <div class="road-card"><div class="road-num">Phase 03 · Week 3</div><div class="road-title">Ethical Hacking Entry</div><div class="road-desc">Footprinting, Google hacking, Nmap, and scanning techniques.</div></div>
+      <div class="road-card"><div class="road-num">Phase 04 · Week 4</div><div class="road-title">Web Security</div><div class="road-desc">How websites work, SQL injection, XSS, and live attack demos.</div></div>
+      <div class="road-card"><div class="road-num">Phase 05 · Week 5</div><div class="road-title">Tools & Techniques</div><div class="road-desc">Burp Suite, password attacks, tools overview, and mini project.</div></div>
+      <div class="road-card"><div class="road-num">Phase 06 · Week 6</div><div class="road-title">Practical Lab</div><div class="road-desc">Live practice, lab challenges, and guided lab assignments.</div></div>
+      <div class="road-card"><div class="road-num">Phase 07 · Week 7–8</div><div class="road-title">Real-World Hacking</div><div class="road-desc">Hands-on real scenarios, doubt solving sessions, and assessments.</div></div>
+      <div class="road-card"><div class="road-num">Phase 08 · Final Days</div><div class="road-title">Career Launch</div><div class="road-desc">Resume, LinkedIn, interview prep, and personalized career guidance.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CURRICULUM -->
+<section id="curriculum">
+  <div class="container">
+    <div class="section-tag">Day-Wise Curriculum</div>
+    <h2 class="section-title">Full <span>45-Day Curriculum</span> Breakdown</h2>
+    <p class="section-sub">Every day is planned. Click any week to expand the syllabus.</p>
+    <div class="acc-wrap" id="acc">
+
+      <!-- Week 1 -->
+      <div class="acc-item" data-idx="0">
+        <div class="acc-header" onclick="toggleAcc(0)">
+          <span class="acc-week">Week 1</span>
+          <span class="acc-phase">Cyber Security Foundation Phase</span>
+          <svg class="acc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="acc-body">
+          <div class="acc-inner">
+            <div class="day-item"><span class="day-num">Day 1</span><span class="day-text">What is Cyber Security, Types of hackers (White/Black/Grey Hat)</span></div>
+            <div class="day-item"><span class="day-num">Day 2</span><span class="day-text">Internet fundamentals – IP addresses, DNS, how websites work</span></div>
+            <div class="day-item"><span class="day-num">Day 3</span><span class="day-text">Kali Linux introduction – Installation & environment setup</span></div>
+            <div class="day-item"><span class="day-num">Day 4</span><span class="day-text">Linux command line skills – Essential hacking commands</span></div>
+            <div class="day-item"><span class="day-num">Day 5</span><span class="day-text">Practice session – Revision of Week 1 concepts & Q&A</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Week 2 -->
+      <div class="acc-item" data-idx="1">
+        <div class="acc-header" onclick="toggleAcc(1)">
+          <span class="acc-week">Week 2</span>
+          <span class="acc-phase">Networking Skills Phase</span>
+          <svg class="acc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="acc-body">
+          <div class="acc-inner">
+            <div class="day-item"><span class="day-num">Day 6</span><span class="day-text">How the internet works – OSI model, TCP/IP, data flow</span></div>
+            <div class="day-item"><span class="day-num">Day 7</span><span class="day-text">Ports & protocols – HTTP, HTTPS, FTP, SSH and more</span></div>
+            <div class="day-item"><span class="day-num">Day 8</span><span class="day-text">Network scanning introduction – Discovering live hosts</span></div>
+            <div class="day-item"><span class="day-num">Day 9</span><span class="day-text">Wireshark demo – Capturing and analyzing network traffic</span></div>
+            <div class="day-item"><span class="day-num">Day 10</span><span class="day-text">Practice session – Networking labs & concept revision</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Week 3 -->
+      <div class="acc-item" data-idx="2">
+        <div class="acc-header" onclick="toggleAcc(2)">
+          <span class="acc-week">Week 3</span>
+          <span class="acc-phase">Ethical Hacking Entry Phase</span>
+          <svg class="acc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="acc-body">
+          <div class="acc-inner">
+            <div class="day-item"><span class="day-num">Day 11</span><span class="day-text">Footprinting – Passive & active reconnaissance techniques</span></div>
+            <div class="day-item"><span class="day-num">Day 12</span><span class="day-text">Google hacking – Advanced dorks, finding exposed data</span></div>
+            <div class="day-item"><span class="day-num">Day 13</span><span class="day-text">Nmap – Port scanning, service detection, OS fingerprinting</span></div>
+            <div class="day-item"><span class="day-num">Day 14</span><span class="day-text">Scanning techniques – Enumeration, vulnerability scanning</span></div>
+            <div class="day-item"><span class="day-num">Day 15</span><span class="day-text">Practice session – Hacking lab challenges</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Week 4 -->
+      <div class="acc-item" data-idx="3">
+        <div class="acc-header" onclick="toggleAcc(3)">
+          <span class="acc-week">Week 4</span>
+          <span class="acc-phase">Web Security Phase</span>
+          <svg class="acc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="acc-body">
+          <div class="acc-inner">
+            <div class="day-item"><span class="day-num">Day 16</span><span class="day-text">How websites work – Requests, responses, cookies, sessions</span></div>
+            <div class="day-item"><span class="day-num">Day 17</span><span class="day-text">SQL Injection – Understanding & exploiting database vulnerabilities</span></div>
+            <div class="day-item"><span class="day-num">Day 18</span><span class="day-text">XSS (Cross-Site Scripting) – Types, payloads, and bypasses</span></div>
+            <div class="day-item"><span class="day-num">Day 19</span><span class="day-text">Demo attacks – Live exploitation on test environments (legal)</span></div>
+            <div class="day-item"><span class="day-num">Day 20</span><span class="day-text">Practice session – Web hacking challenges & CTF tasks</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Week 5 -->
+      <div class="acc-item" data-idx="4">
+        <div class="acc-header" onclick="toggleAcc(4)">
+          <span class="acc-week">Week 5</span>
+          <span class="acc-phase">Tools & Techniques Phase</span>
+          <svg class="acc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="acc-body">
+          <div class="acc-inner">
+            <div class="day-item"><span class="day-num">Day 21</span><span class="day-text">Burp Suite – Intercepting, modifying & replaying HTTP requests</span></div>
+            <div class="day-item"><span class="day-num">Day 22</span><span class="day-text">Password attacks – Brute force, dictionary attacks, hash cracking</span></div>
+            <div class="day-item"><span class="day-num">Day 23</span><span class="day-text">Tools overview – Metasploit framework introduction</span></div>
+            <div class="day-item"><span class="day-num">Day 24</span><span class="day-text">Practice session – Combined tools lab</span></div>
+            <div class="day-item"><span class="day-num">Day 25</span><span class="day-text">Mini Project – Full reconnaissance & vulnerability report</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Week 6 -->
+      <div class="acc-item" data-idx="5">
+        <div class="acc-header" onclick="toggleAcc(5)">
+          <span class="acc-week">Week 6</span>
+          <span class="acc-phase">Practical Lab Phase</span>
+          <svg class="acc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="acc-body">
+          <div class="acc-inner">
+            <div class="day-item"><span class="day-num">Day 26</span><span class="day-text">Live practice – Hands-on lab environment setup & warm-up</span></div>
+            <div class="day-item"><span class="day-num">Day 27</span><span class="day-text">Lab work – Guided lab exercises with mentor support</span></div>
+            <div class="day-item"><span class="day-num">Day 28</span><span class="day-text">Challenges – Timed CTF-style security challenges</span></div>
+            <div class="day-item"><span class="day-num">Day 29</span><span class="day-text">Advanced lab – Multi-step attack scenario simulations</span></div>
+            <div class="day-item"><span class="day-num">Day 30</span><span class="day-text">Consolidation – Review, doubt clearing, progress check</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Week 7 -->
+      <div class="acc-item" data-idx="6">
+        <div class="acc-header" onclick="toggleAcc(6)">
+          <span class="acc-week">Week 7–8 · Days 31–40</span>
+          <span class="acc-phase">Real-World Hacking Phase</span>
+          <svg class="acc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="acc-body">
+          <div class="acc-inner">
+            <div class="day-item"><span class="day-num">Day 31–33</span><span class="day-text">Hands-on practice – Real-world attack & defense simulation</span></div>
+            <div class="day-item"><span class="day-num">Day 34–36</span><span class="day-text">Real scenarios – Bug bounty style tasks on intentionally vulnerable apps</span></div>
+            <div class="day-item"><span class="day-num">Day 37–38</span><span class="day-text">Doubt solving – 1-on-1 mentor sessions & peer reviews</span></div>
+            <div class="day-item"><span class="day-num">Day 39–40</span><span class="day-text">Capstone – Full-scope ethical hacking project & report writing</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Career Phase -->
+      <div class="acc-item" data-idx="7">
+        <div class="acc-header" onclick="toggleAcc(7)">
+          <span class="acc-week">Final · Days 41–45</span>
+          <span class="acc-phase">Career Launch Phase 🎯</span>
+          <svg class="acc-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="acc-body">
+          <div class="acc-inner">
+            <div class="day-item"><span class="day-num">Day 41</span><span class="day-text">Resume building – Cyber security resume template & review</span></div>
+            <div class="day-item"><span class="day-num">Day 42</span><span class="day-text">LinkedIn optimization – Profile, headline, keywords for recruiters</span></div>
+            <div class="day-item"><span class="day-num">Day 43</span><span class="day-text">Interview preparation – Top 50 cyber security interview questions</span></div>
+            <div class="day-item"><span class="day-num">Day 44</span><span class="day-text">Mock interview – Live interview simulation with feedback</span></div>
+            <div class="day-item"><span class="day-num">Day 45</span><span class="day-text">Career guidance – Job portals, freelancing, bug bounty platforms</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section id="tools">
+  <div class="container">
+    <div class="section-tag">Tools You'll Master</div>
+    <h2 class="section-title">Industry-Standard <span>Hacking Tools</span></h2>
+    <p class="section-sub">The same tools used by professional penetration testers worldwide.</p>
+    <div class="tools-grid">
+      <div class="tool-card"><span class="tool-icon">🗺️</span><div class="tool-name">Nmap</div><div class="tool-desc">Network Mapper</div></div>
+      <div class="tool-card"><span class="tool-icon">🦈</span><div class="tool-name">Wireshark</div><div class="tool-desc">Packet Analyzer</div></div>
+      <div class="tool-card"><span class="tool-icon">🔥</span><div class="tool-name">Burp Suite</div><div class="tool-desc">Web Proxy Tool</div></div>
+      <div class="tool-card"><span class="tool-icon">💥</span><div class="tool-name">Metasploit</div><div class="tool-desc">Exploit Framework</div></div>
+      <div class="tool-card"><span class="tool-icon">🐉</span><div class="tool-name">Kali Linux</div><div class="tool-desc">Hacker's OS</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why">
+  <div class="container">
+    <div class="section-tag">Why Mindix</div>
+    <h2 class="section-title">Why Students <span>Choose Us</span></h2>
+    <p class="section-sub">We're not just another online course — we're your career launchpad.</p>
+    <div class="why-grid">
+      <div class="why-card"><div class="why-icon">🎯</div><div><div class="why-title">Practical Approach</div><div class="why-text">Every concept is paired with a live demo or lab exercise. Theory alone won't get you hired.</div></div></div>
+      <div class="why-card"><div class="why-icon">🟢</div><div><div class="why-title">Beginner Friendly</div><div class="why-text">No IT background needed. We guide you from absolute zero to confident ethical hacker.</div></div></div>
+      <div class="why-card"><div class="why-icon">🌍</div><div><div class="why-title">Real-World Training</div><div class="why-text">Work on intentionally vulnerable apps & real-world scenarios that mirror actual job tasks.</div></div></div>
+      <div class="why-card"><div class="why-icon">💼</div><div><div class="why-title">Job-Oriented Learning</div><div class="why-text">Resume, LinkedIn, mock interviews — we don't stop until you're job-ready.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BOTTOM -->
+<section id="cta-bottom">
+  <div class="container">
+    <div class="section-tag">Ready to Start?</div>
+    <h2 class="cta-title">Start Your <span style="background:linear-gradient(90deg,var(--blue),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent">Cyber Security</span> Journey Today</h2>
+    <p class="cta-sub">45 days. Real tools. Real skills. Real career. Join hundreds of students already learning.</p>
+    <div class="cta-btns">
+      <button class="btn-primary" onclick="openUrgencyPopup()">🚀 Learn Ethical Hacking</button>
+      <button class="btn-outline" onclick="openUrgencyPopup()">📋 View Curriculum</button>
+    </div>
+  </div>
+</section>
+
+<!-- POPUP FORM (same flow as index.html) -->
+<div id="urgencyPopup" class="urgency-popup">
+  <div class="urgency-overlay" onclick="closeUrgencyPopup()"></div>
+  <div class="urgency-modal">
+    <div class="urgency-header">
+      <div class="urgency-badge">Limited Time Offer</div>
+      <button class="urgency-close" type="button" onclick="closeUrgencyPopup()">x</button>
+    </div>
+    <div class="urgency-content">
+      <h2>Enroll for Free Counseling</h2>
+      <p>Submit your details to reserve your callback.</p>
+      <form id="form-popup" class="urgency-form">
+        <div class="form-group">
+          <label for="popupName">Full Name</label>
+          <input class="form-input" type="text" id="popupName" name="name" placeholder="Enter your full name" required/>
+        </div>
+        <div class="form-group">
+          <label for="popupEmail">Email Address</label>
+          <input class="form-input" type="email" id="popupEmail" name="email" placeholder="Enter your email address" required/>
+        </div>
+        <div class="form-group">
+          <label for="popupPhone">Phone Number</label>
+          <input class="form-input" type="tel" id="popupPhone" name="phone" placeholder="Enter your phone number" required/>
+        </div>
+        <input type="hidden" id="course" name="course" value="Cyber Security &amp; Ethical Hacking"/>
+        <button type="submit" class="popup-submit-btn">Claim Discount &amp; Get Free Counseling</button>
+        <div id="popupFormMessage" class="form-message"></div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <strong>Mindix Education</strong> · Cyber Security & Ethical Hacking – 45 Days Program<br/>
+  <span style="font-size:.72rem;margin-top:6px;display:block">© 2025 Mindix Education. All rights reserved. For educational purposes only.</span>
+</footer>
+
+<script>
+function openUrgencyPopup(){
+  const popup=document.getElementById('urgencyPopup');
+  popup.classList.add('show');
+  const nameInput=document.getElementById('popupName');
+  setTimeout(()=>nameInput.focus(),200);
+}
+function closeUrgencyPopup(){
+  const popup=document.getElementById('urgencyPopup');
+  popup.classList.remove('show');
+}
+function toggleAcc(idx){
+  const items=document.querySelectorAll('.acc-item');
+  items.forEach((item,i)=>{
+    if(i===idx){item.classList.toggle('open')}
+    else{item.classList.remove('open')}
+  });
+}
+// Fade-up on scroll
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)'}});
+},{threshold:.1});
+document.querySelectorAll('.feat-card,.road-card,.tool-card,.why-card,.acc-item').forEach(el=>{
+  el.style.opacity='0';el.style.transform='translateY(20px)';
+  el.style.transition='opacity .5s ease, transform .5s ease';
+  obs.observe(el);
+});
+
+document.addEventListener('DOMContentLoaded',function(){
+  const scriptURL='https://script.google.com/macros/s/AKfycbwRgfC8GlXEMzQ1nvExSMbqwaKZHRqAHrnJQnH12-DAmeO4Jby077FE_6eGe3nw1Atv/exec';
+  const forms=[
+    {el:document.getElementById('form-main'),messageId:'formMainMessage',defaultBtn:'🎯 Claim Your Free Seat'},
+    {el:document.getElementById('form-popup'),messageId:'popupFormMessage',defaultBtn:'Claim Discount & Get Free Counseling'}
+  ];
+
+  forms.forEach(cfg=>{
+    const form=cfg.el;
+    if(!form){return;}
+
+    form.addEventListener('submit',async function(e){
+      e.preventDefault();
+      const submitBtn=form.querySelector('button[type="submit"]');
+      const formMessage=document.getElementById(cfg.messageId);
+
+      submitBtn.innerHTML='<span class="loading"></span> Sending...';
+      submitBtn.disabled=true;
+
+      const data={
+        name:form.querySelector("[name='name']").value,
+        email:form.querySelector("[name='email']").value,
+        phone:form.querySelector("[name='phone']").value,
+        course:'Cyber Security & Ethical Hacking'
+      };
+
+      try{
+        await fetch(scriptURL,{
+          method:'POST',
+          mode:'no-cors',
+          headers:{'Content-Type':'application/x-www-form-urlencoded'},
+          body:new URLSearchParams(data)
+        });
+
+        formMessage.className='form-message success';
+        formMessage.textContent='Redirecting to confirmation page...';
+        formMessage.style.display='block';
+        form.reset();
+
+        setTimeout(()=>{window.location.href='ty8k2m9x-success-confirmation.html';},1500);
+      }catch(error){
+        console.error('Form submission error:',error);
+        formMessage.className='form-message error';
+        formMessage.textContent='❌ Something went wrong. Please try again or call us directly.';
+        formMessage.style.display='block';
+      }finally{
+        submitBtn.textContent=cfg.defaultBtn;
+        submitBtn.disabled=false;
+        setTimeout(()=>{formMessage.style.display='none';},5000);
+      }
+    });
+  });
+});
+
+window.addEventListener('click',function(event){
+  const popup=document.getElementById('urgencyPopup');
+  if(event.target===popup){closeUrgencyPopup();}
+});
+document.addEventListener('keydown',function(event){
+  if(event.key==='Escape'){closeUrgencyPopup();}
+});
+</script>
+</body>
+</html>
