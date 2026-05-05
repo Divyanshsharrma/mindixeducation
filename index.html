@@ -38,6 +38,69 @@ src="https://www.facebook.com/tr?id=970933495494749&ev=PageView&noscript=1"
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
+    <style>
+        .poster-popup {
+            position: fixed;
+            inset: 0;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            z-index: 2100;
+            opacity: 0;
+            transition: opacity 0.28s ease;
+        }
+        .poster-popup.show {
+            display: flex;
+            opacity: 1;
+        }
+        .poster-popup-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(4px);
+        }
+        .poster-popup-content {
+            position: relative;
+            width: min(92vw, 620px);
+            max-height: 90vh;
+            border-radius: 16px;
+            overflow: hidden;
+            background: #0e1322;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.45);
+            transform: scale(0.95);
+            transition: transform 0.28s ease;
+        }
+        .poster-popup.show .poster-popup-content {
+            transform: scale(1);
+        }
+        .poster-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 36px;
+            height: 36px;
+            border: 0;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            font-size: 22px;
+            line-height: 1;
+            cursor: pointer;
+            z-index: 2;
+        }
+        .poster-link {
+            display: block;
+            cursor: pointer;
+        }
+        .poster-link img {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+    </style>
 
     <!-- Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -91,6 +154,17 @@ src="https://www.facebook.com/tr?id=970933495494749&ev=PageView&noscript=1"
             <div class="loading-spinner">
                 <div class="spinner"></div>
             </div>
+        </div>
+    </div>
+
+    <!-- Ethical Hacking Poster Popup -->
+    <div id="posterPopup" class="poster-popup" aria-hidden="true">
+        <div class="poster-popup-overlay" onclick="closePosterPopup()"></div>
+        <div class="poster-popup-content">
+            <button class="poster-close" type="button" aria-label="Close popup" onclick="closePosterPopup()">&times;</button>
+            <a class="poster-link" href="cybersecurity_ethical_hacking.html">
+                <img src="ethical hacking poster.png" alt="Ethical Hacking with AI Integrated Tools poster">
+            </a>
         </div>
     </div>
 
@@ -160,6 +234,8 @@ src="https://www.facebook.com/tr?id=970933495494749&ev=PageView&noscript=1"
                             <!-- Business Courses -->
                             <option value="entrepreneurship">Entrepreneurship Program</option>
                             <option value="business-development">Business Development + AI Tools</option>
+                            <!-- Cybersecurity Courses -->
+                            <option value="ethical-hacking">Ethical Hacking + AI Tools</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -304,6 +380,8 @@ src="https://www.facebook.com/tr?id=970933495494749&ev=PageView&noscript=1"
                                     <!-- Business Courses -->
                                     <option value="entrepreneurship">Entrepreneurship Program</option>
                                     <option value="business-development">Business Development + AI Tools</option>
+                                    <!-- Cybersecurity Courses -->
+                                    <option value="ethical-hacking">Ethical Hacking + AI Tools</option>
                                 </select>
                             </div>
                             <button type="submit" class="btn btn-primary btn-full btn-large">Get Started Now</button>
@@ -815,6 +893,7 @@ src="https://www.facebook.com/tr?id=970933495494749&ev=PageView&noscript=1"
                 <button class="filter-btn" data-filter="hr">HR</button>
                 <button class="filter-btn" data-filter="it">IT</button>
                 <button class="filter-btn" data-filter="business">Business</button>
+                <button class="filter-btn" data-filter="cybersecurity">Cybersecurity</button>
             </div>
 
             <!-- Course Grid -->
@@ -1213,6 +1292,24 @@ src="https://www.facebook.com/tr?id=970933495494749&ev=PageView&noscript=1"
                         <button class="btn btn-primary course-btn">Enroll Now</button>
                     </div>
                 </div>
+
+                <!-- Cybersecurity Courses -->
+                <div class="course-card hidden" data-category="cybersecurity">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=300&h=200&fit=crop&crop=center" alt="Ethical Hacking Course">
+                        <span class="course-badge">Cybersecurity</span>
+                    </div>
+                    <div class="course-content">
+                        <h3><a href="cybersecurity_ethical_hacking.html">Ethical Hacking with AI Integrated Tools</a></h3>
+                        <p class="course-duration">45 Days</p>
+                        <p class="course-insights">Corporate Training</p>
+                        <div class="course-price">
+                            <span class="price">₹24,999</span>
+                            <span style="text-decoration:line-through; color:#999;">₹29,999</span>
+                        </div>
+                        <button class="btn btn-primary course-btn">Enroll Now</button>
+                    </div>
+                </div>
             </div>
 
             <!-- View All Button -->
@@ -1485,6 +1582,8 @@ src="https://www.facebook.com/tr?id=970933495494749&ev=PageView&noscript=1"
                                 <!-- Business Courses -->
                                 <option value="entrepreneurship">Entrepreneurship Program</option>
                                 <option value="business-development">Business Development + AI Tools</option>
+                                <!-- Cybersecurity Courses -->
+                                <option value="ethical-hacking">Ethical Hacking + AI Tools</option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -2573,6 +2672,23 @@ src="https://www.facebook.com/tr?id=970933495494749&ev=PageView&noscript=1"
         // Urgency Popup functionality
         let countdownInterval;
         let timeLeft = 900; // 15 minutes in seconds
+
+        function showPosterPopup() {
+            const popup = document.getElementById('posterPopup');
+            if (!popup) return;
+            popup.classList.add('show');
+            popup.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePosterPopup() {
+            const popup = document.getElementById('posterPopup');
+            if (!popup) return;
+            popup.classList.remove('show');
+            popup.setAttribute('aria-hidden', 'true');
+            localStorage.setItem('popupClosed', 'true');
+            document.body.style.overflow = 'auto';
+        }
         
         function showUrgencyPopup() {
             const popup = document.getElementById('urgencyPopup');
@@ -2608,6 +2724,12 @@ src="https://www.facebook.com/tr?id=970933495494749&ev=PageView&noscript=1"
         
         // Show popup after page loads
         window.addEventListener('load', function() {
+            setTimeout(function() {
+                if (localStorage.getItem('popupClosed') !== 'true') {
+                    showPosterPopup();
+                }
+            }, 1500); // Show poster after 1.5 seconds
+
             setTimeout(function() {
                 showUrgencyPopup();
             }, 3000); // Show after 3 seconds
