@@ -124,7 +124,7 @@ section{padding:60px 20px}
 .road-desc{font-size:.78rem;color:var(--muted)}
 
 /* CURRICULUM */
-#curriculum{background:var(--bg2)}
+#curriculum{background:var(--bg2);scroll-margin-top:90px}
 .acc-wrap{margin-top:32px;display:flex;flex-direction:column;gap:10px}
 .acc-item{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:border-color .2s}
 .acc-item.open{border-color:rgba(0,200,255,.3)}
@@ -209,7 +209,7 @@ footer strong{color:var(--blue)}
       </div>
       <div class="btn-row">
         <button class="btn-primary" onclick="openUrgencyPopup()">🚀 Start Learning</button>
-        <button class="btn-outline" onclick="openUrgencyPopup()">View Curriculum</button>
+        <button class="btn-outline" onclick="scrollToCurriculum()">View Curriculum</button>
       </div>
       <div class="hero-stats">
         <div class="stat"><div class="stat-num">45</div><div class="stat-label">Day Program</div></div>
@@ -484,7 +484,7 @@ footer strong{color:var(--blue)}
     <p class="cta-sub">45 days. Real tools. Real skills. Real career. Join hundreds of students already learning.</p>
     <div class="cta-btns">
       <button class="btn-primary" onclick="openUrgencyPopup()">🚀 Learn Ethical Hacking</button>
-      <button class="btn-outline" onclick="openUrgencyPopup()">📋 View Curriculum</button>
+      <button class="btn-outline" onclick="scrollToCurriculum()">📋 View Curriculum</button>
     </div>
   </div>
 </section>
@@ -537,6 +537,12 @@ function openUrgencyPopup(){
 function closeUrgencyPopup(){
   const popup=document.getElementById('urgencyPopup');
   popup.classList.remove('show');
+}
+function scrollToCurriculum(){
+  const section=document.getElementById('curriculum');
+  if(section){
+    section.scrollIntoView({behavior:'smooth',block:'start'});
+  }
 }
 function toggleAcc(idx){
   const items=document.querySelectorAll('.acc-item');
