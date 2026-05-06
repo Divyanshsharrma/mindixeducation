@@ -3118,30 +3118,6 @@ const styleSheet = document.createElement('style');
 styleSheet.textContent = formSuccessStyles;
 document.head.appendChild(styleSheet);
 
-// Course Button Click Handler
-document.addEventListener('DOMContentLoaded', function() {
-    // Handle all course button clicks
-    const courseButtons = document.querySelectorAll('.course-btn');
-    
-    courseButtons.forEach(button => {
-        button.addEventListener('click', function(event) {
-            // Check if button already has onclick handler (connected courses)
-            if (this.hasAttribute('onclick')) {
-                // Let connected courses navigate normally
-                return;
-            }
-            
-            // For unconnected courses, show coming soon alert
-            event.preventDefault();
-            event.stopPropagation();
-            
-            // Show coming soon message
-            const courseTitle = this.closest('.course-card').querySelector('h3').textContent;
-            alert(`Coming Soon: ${courseTitle}\n\nThis course is currently under development. Please contact us for more information.`);
-        });
-    });
-});
-
 </script>
 </body>
 </html>
