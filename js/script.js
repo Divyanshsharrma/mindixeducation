@@ -184,8 +184,10 @@ document.querySelectorAll('.course-btn').forEach(btn => {
         const courseCard = this.closest('.course-card');
         const courseTitle = courseCard.querySelector('h3').textContent;
         
-        // Check if it's the HR Executive course
-        if (courseTitle.includes('HR Executive with AI Integrated Tools')) {
+        // Redirect dedicated course pages
+        if (courseTitle.includes('Ethical Hacking with AI Integrated Tools')) {
+            window.location.href = 'cybersecurity_ethical_hacking.html';
+        } else if (courseTitle.includes('HR Executive with AI Integrated Tools')) {
             // Redirect to the dedicated HR Executive course page
             window.location.href = 'hr-executive-course.html';
         } else {
