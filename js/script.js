@@ -190,6 +190,10 @@ document.querySelectorAll('.course-btn').forEach(btn => {
         } else if (courseTitle.includes('HR Executive with AI Integrated Tools')) {
             // Redirect to the dedicated HR Executive course page
             window.location.href = 'hr-executive-course.html';
+        }
+        else if (courseTitle.includes('HR Analyst with AI Integrated Tools')) {
+            // Redirect to the dedicated HR Analyst course page
+            window.location.href = 'hr_analyst.html';
         } else {
             // Show coming soon message for other courses
             alert('🚀 Coming Soon!\n\nWe are working on something amazing! Enrollment will be available shortly.\n\nFor inquiries, please contact us:\n📞 WhatsApp: 8810696963\n📧 Email: info@mindixeducation.com');
