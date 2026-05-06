@@ -974,14 +974,14 @@ src="https://www.facebook.com/tr?id=970933495494749&ev=PageView&noscript=1"
                         <span class="course-badge">HR</span>
                     </div>
                     <div class="course-content">
-                        <h3>HR Executive with AI Integrated Tools</h3>
+                        <h3><a href="hr-executive-course.html">HR Executive with AI Integrated Tools</a></h3>
                         <p class="course-duration">6 Weeks</p>
                         <p class="course-insights">Corporate Training</p>
                         <div class="course-price">
                             <span class="price">₹9,999</span>
                             <span style="text-decoration:line-through; color:#999;">₹19,999</span>
                         </div>
-                        <button class="btn btn-primary course-btn">Enroll Now</button>
+                        <button class="btn btn-primary course-btn" onclick="window.location.href='hr-executive-course.html'">Enroll Now</button>
                     </div>
                 </div>
 
@@ -1042,14 +1042,14 @@ src="https://www.facebook.com/tr?id=970933495494749&ev=PageView&noscript=1"
                         <span class="course-badge">HR</span>
                     </div>
                     <div class="course-content">
-                        <h3>HR Analyst with AI Integrated Tools</h3>
+                        <h3><a href="hr_analyst.html">HR Analyst with AI Integrated Tools</a></h3>
                         <p class="course-duration">45 Days</p>
                         <p class="course-insights">Corporate Training</p>
                         <div class="course-price">
                             <span class="price">₹11,999</span>
                             <span style="text-decoration:line-through; color:#999;">₹23,999</span>
                         </div>
-                        <button class="btn btn-primary course-btn">Enroll Now</button>
+                        <button class="btn btn-primary course-btn" onclick="window.location.href='hr_analyst.html'">Enroll Now</button>
                     </div>
                 </div>
 
@@ -3117,6 +3117,30 @@ const formSuccessStyles = `
 const styleSheet = document.createElement('style');
 styleSheet.textContent = formSuccessStyles;
 document.head.appendChild(styleSheet);
+
+// Course Button Click Handler
+document.addEventListener('DOMContentLoaded', function() {
+    // Handle all course button clicks
+    const courseButtons = document.querySelectorAll('.course-btn');
+    
+    courseButtons.forEach(button => {
+        button.addEventListener('click', function(event) {
+            // Check if button already has onclick handler (connected courses)
+            if (this.hasAttribute('onclick')) {
+                // Let connected courses navigate normally
+                return;
+            }
+            
+            // For unconnected courses, show coming soon alert
+            event.preventDefault();
+            event.stopPropagation();
+            
+            // Show coming soon message
+            const courseTitle = this.closest('.course-card').querySelector('h3').textContent;
+            alert(`Coming Soon: ${courseTitle}\n\nThis course is currently under development. Please contact us for more information.`);
+        });
+    });
+});
 
 </script>
 </body>
