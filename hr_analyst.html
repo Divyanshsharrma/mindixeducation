@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '970933495494749');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=970933495494749&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>HR Analyst – 60 Days | Mindix Education</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#5C3EE8;--primary-light:#7B5EF0;--primary-soft:#EEF0FF;
+  --accent:#F97316;--text:#1A1A2E;--muted:#64748B;--border:#E2E8F0;
+  --card:#FFFFFF;--bg:#F8F9FF;--radius:14px;--shadow:0 2px 16px rgba(92,62,232,.08);
+}
+body{font-family:'Inter',sans-serif;color:var(--text);background:var(--bg);overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+/* NAVBAR */
+nav{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 1.5rem}
+.nav-inner{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-size:1.25rem;font-weight:700;color:var(--primary);letter-spacing:-.5px}
+.logo span{color:var(--accent)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-size:.9rem;font-weight:500;color:var(--muted);transition:.2s}
+.nav-links a:hover{color:var(--primary)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:.3s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{display:none;flex-direction:column;background:#fff;border-bottom:1px solid var(--border);padding:1rem 1.5rem;gap:.75rem}
+.mobile-menu.show{display:flex}
+.mobile-menu a{font-weight:500;color:var(--muted);padding:.5rem 0;border-bottom:1px solid var(--border)}
+.mobile-menu a:last-child{border:none}
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:.75rem 1.5rem;border-radius:50px;font-weight:600;font-size:.9rem;cursor:pointer;transition:.2s;border:none;gap:.4rem}
+.btn-primary{background:var(--primary);color:#fff}
+.btn-primary:hover{background:var(--primary-light);transform:translateY(-1px);box-shadow:0 6px 20px rgba(92,62,232,.3)}
+.btn-outline{background:transparent;color:var(--primary);border:2px solid var(--primary)}
+.btn-outline:hover{background:var(--primary-soft)}
+.btn-accent{background:var(--accent);color:#fff}
+.btn-accent:hover{background:#EA6B0D;transform:translateY(-1px)}
+/* HERO */
+.hero{background:linear-gradient(135deg,#F8F9FF 60%,#EEF0FF 100%);padding:4rem 1.5rem 3rem}
+.hero-inner{max-width:1200px;margin:auto;display:grid;grid-template-columns:1fr 420px;gap:3rem;align-items:start}
+.badge{display:inline-flex;align-items:center;gap:.4rem;background:#FFF0E8;color:var(--accent);font-size:.8rem;font-weight:600;padding:.4rem .9rem;border-radius:50px;margin-bottom:1.25rem;border:1px solid #FDDBC0}
+.badge::before{content:'●';font-size:.5rem;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;line-height:1.2;margin-bottom:1rem;letter-spacing:-.5px}
+.hero h1 span{color:var(--primary)}
+.hero p{color:var(--muted);font-size:1rem;margin-bottom:1.5rem;line-height:1.7}
+.usp-list{list-style:none;display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.75rem}
+.usp-list li{display:flex;align-items:center;gap:.4rem;background:#fff;border:1px solid var(--border);border-radius:50px;padding:.4rem .9rem;font-size:.82rem;font-weight:500}
+.usp-list li::before{content:'✓';color:var(--primary);font-weight:700}
+.hero-btns{display:flex;gap:.75rem;flex-wrap:wrap}
+/* ENROLL CARD */
+.enroll-card{background:#fff;border-radius:var(--radius);box-shadow:0 8px 40px rgba(92,62,232,.15);padding:2rem;border:1px solid var(--border)}
+.enroll-card h3{font-size:1.1rem;font-weight:700;margin-bottom:.25rem}
+.enroll-card .price-old{font-size:.85rem;color:var(--muted);text-decoration:line-through}
+.enroll-card .price-new{font-size:2rem;font-weight:700;color:var(--primary);margin:.25rem 0}
+.enroll-card .price-note{font-size:.78rem;color:var(--muted);margin-bottom:1.25rem}
+.enroll-card .features{list-style:none;margin-bottom:1.5rem;display:flex;flex-direction:column;gap:.6rem}
+.enroll-card .features li{font-size:.85rem;display:flex;align-items:center;gap:.5rem;color:var(--muted)}
+.enroll-card .features li::before{content:'✓';background:var(--primary-soft);color:var(--primary);width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:700;flex-shrink:0}
+.enroll-card .btn{width:100%;margin-bottom:.6rem}
+.seats-badge{text-align:center;font-size:.78rem;color:#E53E3E;font-weight:600}
+/* SECTION */
+section{padding:4rem 1.5rem}
+.section-inner{max-width:1200px;margin:auto}
+.section-tag{font-size:.78rem;font-weight:700;color:var(--primary);text-transform:uppercase;letter-spacing:1px;margin-bottom:.5rem}
+.section-title{font-size:clamp(1.5rem,3vw,2.1rem);font-weight:700;margin-bottom:.75rem;letter-spacing:-.3px}
+.section-sub{color:var(--muted);font-size:.95rem;max-width:580px;margin-bottom:2.5rem;line-height:1.7}
+/* HIGHLIGHTS */
+.highlights{background:#fff}
+.highlights-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1rem}
+.h-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem;text-align:center;transition:.2s}
+.h-card:hover{border-color:var(--primary);transform:translateY(-2px);box-shadow:var(--shadow)}
+.h-card .icon{font-size:1.8rem;margin-bottom:.5rem}
+.h-card strong{display:block;font-size:1.1rem;font-weight:700;color:var(--primary)}
+.h-card span{font-size:.8rem;color:var(--muted)}
+/* CURRICULUM */
+#curriculum{background:var(--bg)}
+.accordion{display:flex;flex-direction:column;gap:.75rem}
+.acc-item{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.acc-header{display:flex;align-items:center;justify-content:space-between;padding:1.1rem 1.5rem;cursor:pointer;user-select:none;transition:.2s}
+.acc-header:hover{background:var(--primary-soft)}
+.acc-header-left{display:flex;align-items:center;gap:.75rem}
+.week-badge{background:var(--primary-soft);color:var(--primary);font-size:.75rem;font-weight:700;padding:.25rem .7rem;border-radius:50px;white-space:nowrap}
+.acc-header h4{font-size:.95rem;font-weight:600}
+.acc-arrow{font-size:.75rem;color:var(--muted);transition:.3s}
+.acc-item.open .acc-arrow{transform:rotate(180deg)}
+.acc-body{display:none;padding:0 1.5rem 1.5rem}
+.acc-item.open .acc-body{display:block}
+.day-list{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+.day-list li{display:flex;gap:.75rem;font-size:.87rem;color:var(--muted);align-items:flex-start;line-height:1.6}
+.day-num{background:var(--primary-soft);color:var(--primary);font-size:.75rem;font-weight:700;padding:.15rem .5rem;border-radius:6px;flex-shrink:0;margin-top:1px}
+/* PLACEMENT */
+.placement{background:#fff}
+.placement-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.25rem}
+.p-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;text-align:center;transition:.2s}
+.p-card:hover{border-color:var(--primary);box-shadow:var(--shadow);transform:translateY(-2px)}
+.p-icon{width:52px;height:52px;background:var(--primary-soft);border-radius:14px;display:flex;align-items:center;justify-content:center;margin:0 auto .75rem;font-size:1.4rem}
+.p-card h4{font-size:.95rem;font-weight:700;margin-bottom:.25rem}
+.p-card p{font-size:.82rem;color:var(--muted);line-height:1.5}
+/* CAREERS */
+.careers{background:var(--bg)}
+.career-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem}
+.career-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem 1rem;text-align:center;transition:.2s}
+.career-card:hover{border-color:var(--primary);box-shadow:var(--shadow);transform:translateY(-2px)}
+.career-card .icon{font-size:1.6rem;margin-bottom:.5rem}
+.career-card h4{font-size:.9rem;font-weight:700;margin-bottom:.2rem}
+.career-card p{font-size:.78rem;color:var(--muted)}
+/* WHY MINDIX */
+.why{background:#fff}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem}
+.why-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;transition:.2s}
+.why-card:hover{border-color:var(--primary);transform:translateY(-2px)}
+.why-card .icon{font-size:1.4rem;margin-bottom:.75rem}
+.why-card h4{font-size:.95rem;font-weight:700;margin-bottom:.3rem}
+.why-card p{font-size:.82rem;color:var(--muted);line-height:1.6}
+/* TESTIMONIALS */
+.testimonials{background:var(--bg)}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem}
+.testi-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;transition:.2s}
+.testi-card:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
+.stars{color:#F59E0B;font-size:.9rem;margin-bottom:.75rem}
+.testi-card p{font-size:.87rem;color:var(--muted);line-height:1.7;margin-bottom:1rem;font-style:italic}
+.testi-author{display:flex;align-items:center;gap:.75rem}
+.avatar{width:40px;height:40px;border-radius:50%;background:var(--primary-soft);color:var(--primary);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.85rem;flex-shrink:0}
+.testi-author strong{display:block;font-size:.87rem;font-weight:600}
+.testi-author span{font-size:.78rem;color:var(--muted)}
+/* CTA */
+.cta-section{background:linear-gradient(135deg,var(--primary) 0%,#7B5EF0 100%);padding:4rem 1.5rem;text-align:center}
+.cta-section h2{color:#fff;font-size:clamp(1.5rem,3vw,2.2rem);font-weight:700;margin-bottom:.75rem}
+.cta-section p{color:rgba(255,255,255,.85);font-size:1rem;margin-bottom:2rem}
+.cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-white{background:#fff;color:var(--primary);border:none;padding:.85rem 2rem;border-radius:50px;font-weight:700;font-size:.95rem;cursor:pointer;transition:.2s}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.2)}
+.btn-ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.5);padding:.85rem 2rem;border-radius:50px;font-weight:600;font-size:.95rem;cursor:pointer;transition:.2s}
+.btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.1)}
+/* FOOTER */
+footer{background:#1A1A2E;color:#CBD5E0;padding:2.5rem 1.5rem}
+.footer-inner{max-width:1200px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:2rem}
+.footer-brand .logo{color:#fff;font-size:1.2rem;margin-bottom:.5rem}
+.footer-brand p{font-size:.83rem;line-height:1.7;color:#94A3B8}
+.footer-col h5{color:#fff;font-size:.9rem;font-weight:700;margin-bottom:.75rem}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.4rem}
+.footer-col ul li a{font-size:.83rem;color:#94A3B8;transition:.2s}
+.footer-col ul li a:hover{color:#fff}
+.footer-bottom{max-width:1200px;margin:2rem auto 0;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.1);display:flex;justify-content:space-between;align-items:center;font-size:.8rem;color:#64748B;flex-wrap:wrap;gap:.5rem}
+.social-links{display:flex;gap:.75rem}
+.social-links a{color:#64748B;transition:.2s}
+.social-links a:hover{color:#fff}
+/* MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:9999;display:flex;align-items:center;justify-content:center;padding:1rem;opacity:0;visibility:hidden;transition:.3s}
+.modal-overlay.show{opacity:1;visibility:visible}
+.modal-box{background:#fff;border-radius:20px;padding:2rem;width:100%;max-width:460px;position:relative;transform:translateY(20px);transition:.3s;max-height:90vh;overflow-y:auto}
+.modal-overlay.show .modal-box{transform:translateY(0)}
+.modal-close{position:absolute;top:1rem;right:1rem;width:32px;height:32px;border:none;background:var(--bg);border-radius:50%;cursor:pointer;font-size:1.1rem;color:var(--muted);display:flex;align-items:center;justify-content:center}
+.modal-close:hover{background:var(--border)}
+.modal-box h3{font-size:1.25rem;font-weight:700;margin-bottom:.25rem}
+.modal-box .sub{font-size:.85rem;color:var(--muted);margin-bottom:1.5rem}
+.form-group{margin-bottom:1rem}
+.form-group label{display:block;font-size:.83rem;font-weight:600;margin-bottom:.4rem;color:var(--text)}
+.form-group input{width:100%;padding:.75rem 1rem;border:1.5px solid var(--border);border-radius:10px;font-size:.9rem;font-family:inherit;outline:none;transition:.2s}
+.form-group input:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(92,62,232,.12)}
+.submit-btn{width:100%;padding:.9rem;background:var(--primary);color:#fff;border:none;border-radius:50px;font-size:1rem;font-weight:700;cursor:pointer;transition:.2s;margin-top:.5rem;font-family:inherit}
+.submit-btn:hover{background:var(--primary-light);transform:translateY(-1px)}
+.submit-btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.form-success{text-align:center;padding:1.5rem 0;display:none}
+.form-success .check{font-size:3rem;margin-bottom:.75rem}
+.form-success h4{font-size:1.1rem;font-weight:700;margin-bottom:.4rem;color:var(--primary)}
+.form-success p{font-size:.85rem;color:var(--muted)}
+/* MOBILE RESPONSIVE */
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;gap:2rem}
+  .footer-inner{grid-template-columns:1fr 1fr}
+  .footer-brand{grid-column:1/-1}
+}
+@media(max-width:600px){
+  nav{padding:0 1rem}
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .hero{padding:2.5rem 1rem 2rem}
+  section{padding:3rem 1rem}
+  .footer-inner{grid-template-columns:1fr}
+  .highlights-grid{display:flex;overflow-x:auto;gap:.75rem;padding-bottom:.5rem;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .highlights-grid::-webkit-scrollbar{display:none}
+  .h-card{min-width:150px;flex-shrink:0}
+  .hero-btns .btn{flex:1;min-width:140px}
+  .footer-bottom{justify-content:center;text-align:center}
+}
+/* ANIMATE ON SCROLL */
+.fade-in{opacity:0;transform:translateY(20px);transition:.6s}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-inner">
+    <div class="logo">Mindix <span>Education</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#curriculum">Curriculum</a></li>
+      <li><a href="#careers">Careers</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="hamburger" id="ham" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#" onclick="closeMenu()">Home</a>
+    <a href="#curriculum" onclick="closeMenu()">Curriculum</a>
+    <a href="#careers" onclick="closeMenu()">Careers</a>
+    <a href="#contact" onclick="closeMenu()">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content fade-in">
+      <div class="badge">🔴 Live Training Program</div>
+      <h1>Become a Job-Ready<br><span>HR Analyst</span></h1>
+      <p>Master HR, Excel, Power BI & HR Tools in just 60 Days — with live classes, real projects & placement support.</p>
+      <ul class="usp-list">
+        <li>Practical Learning</li>
+        <li>Live Classes</li>
+        <li>Placement Support</li>
+        <li>Beginner Friendly</li>
+      </ul>
+      <div class="hero-btns">
+        <button class="btn btn-primary" onclick="openModal()">🚀 Enroll Now</button>
+        <a href="#curriculum" class="btn btn-outline">View Curriculum</a>
+      </div>
+    </div>
+    <div class="enroll-card fade-in">
+      <h3>Start Your HR Analyst Journey</h3>
+      <p>Fill in your details below to get started with your free demo class.</p>
+      <form id="heroForm" onsubmit="return false;">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" id="heroName" name="name" placeholder="Enter your name" autocomplete="name" required/>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" id="heroEmail" name="email" placeholder="Enter your email" autocomplete="email" required/>
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" id="heroPhone" name="phone" placeholder="Enter your phone number" autocomplete="tel" required/>
+        </div>
+        <input type="hidden" id="heroCourse" name="course" value="HR Analyst Course">
+        <input type="hidden" id="heroPurpose" name="purpose" value="course_enquiry">
+        <input type="hidden" id="heroSource" name="source" value="hr_analyst_landing_page">
+        <button type="submit" class="btn btn-primary">Get Free Demo Class 🎓</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- HIGHLIGHTS -->
+<section class="highlights">
+  <div class="section-inner">
+    <div class="section-tag fade-in">Program Highlights</div>
+    <h2 class="section-title fade-in">Everything You Need to Succeed</h2>
+    <div class="highlights-grid fade-in">
+      <div class="h-card"><div class="icon">📅</div><strong>60 Days</strong><span>Full Program</span></div>
+      <div class="h-card"><div class="icon">🎓</div><strong>50 Days</strong><span>Core Training</span></div>
+      <div class="h-card"><div class="icon">💼</div><strong>10 Days</strong><span>Placement Support</span></div>
+      <div class="h-card"><div class="icon">🖥️</div><strong>Mon–Fri</strong><span>Live Classes</span></div>
+      <div class="h-card"><div class="icon">📝</div><strong>Sat</strong><span>Assignments</span></div>
+      <div class="h-card"><div class="icon">🌱</div><strong>Beginner</strong><span>Friendly</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CURRICULUM -->
+<section id="curriculum">
+  <div class="section-inner">
+    <div class="section-tag fade-in">Full Curriculum</div>
+    <h2 class="section-title fade-in">60-Day Learning Roadmap</h2>
+    <p class="section-sub fade-in">A structured day-by-day plan that takes you from HR basics to job-ready professional.</p>
+    <div class="accordion fade-in">
+
+      <div class="acc-item">
+        <div class="acc-header" onclick="toggleAcc(this)">
+          <div class="acc-header-left">
+            <span class="week-badge">Week 1</span>
+            <h4>HR Foundation Phase</h4>
+          </div>
+          <span class="acc-arrow">▼</span>
+        </div>
+        <div class="acc-body">
+          <ul class="day-list">
+            <li><span class="day-num">D1</span><span>Introduction to HR · HR roles & responsibilities</span></li>
+            <li><span class="day-num">D2</span><span>HR lifecycle · Recruitment overview</span></li>
+            <li><span class="day-num">D3</span><span>Employee onboarding process</span></li>
+            <li><span class="day-num">D4</span><span>Payroll basics</span></li>
+            <li><span class="day-num">D5</span><span>HR policies + Practice session</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <div class="acc-header" onclick="toggleAcc(this)">
+          <div class="acc-header-left">
+            <span class="week-badge">Week 2</span>
+            <h4>Recruitment & HR Operations</h4>
+          </div>
+          <span class="acc-arrow">▼</span>
+        </div>
+        <div class="acc-body">
+          <ul class="day-list">
+            <li><span class="day-num">D6</span><span>Recruitment process</span></li>
+            <li><span class="day-num">D7</span><span>Resume screening basics</span></li>
+            <li><span class="day-num">D8</span><span>Interview coordination</span></li>
+            <li><span class="day-num">D9</span><span>HR documentation</span></li>
+            <li><span class="day-num">D10</span><span>Practice + Assignment</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <div class="acc-header" onclick="toggleAcc(this)">
+          <div class="acc-header-left">
+            <span class="week-badge">Week 3</span>
+            <h4>Advanced Excel Skills</h4>
+          </div>
+          <span class="acc-arrow">▼</span>
+        </div>
+        <div class="acc-body">
+          <ul class="day-list">
+            <li><span class="day-num">D11</span><span>Excel formulas</span></li>
+            <li><span class="day-num">D12</span><span>Advanced formulas</span></li>
+            <li><span class="day-num">D13</span><span>Pivot Tables</span></li>
+            <li><span class="day-num">D14</span><span>Dashboards & Charts</span></li>
+            <li><span class="day-num">D15</span><span>Attendance & Payroll Sheets</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <div class="acc-header" onclick="toggleAcc(this)">
+          <div class="acc-header-left">
+            <span class="week-badge">Week 4</span>
+            <h4>HR Metrics & Reporting</h4>
+          </div>
+          <span class="acc-arrow">▼</span>
+        </div>
+        <div class="acc-body">
+          <ul class="day-list">
+            <li><span class="day-num">D16</span><span>Attrition rate analysis</span></li>
+            <li><span class="day-num">D17</span><span>Headcount analysis</span></li>
+            <li><span class="day-num">D18</span><span>Time to hire</span></li>
+            <li><span class="day-num">D19</span><span>Cost per hire</span></li>
+            <li><span class="day-num">D20</span><span>Employee turnover reporting</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <div class="acc-header" onclick="toggleAcc(this)">
+          <div class="acc-header-left">
+            <span class="week-badge">Week 5</span>
+            <h4>HR Tools Training</h4>
+          </div>
+          <span class="acc-arrow">▼</span>
+        </div>
+        <div class="acc-body">
+          <ul class="day-list">
+            <li><span class="day-num">D21</span><span>ATS & HRMS introduction</span></li>
+            <li><span class="day-num">D22</span><span>SAP SuccessFactors overview</span></li>
+            <li><span class="day-num">D23</span><span>Workday basics</span></li>
+            <li><span class="day-num">D24</span><span>Zoho People</span></li>
+            <li><span class="day-num">D25</span><span>Practical tool session</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <div class="acc-header" onclick="toggleAcc(this)">
+          <div class="acc-header-left">
+            <span class="week-badge">Week 6</span>
+            <h4>Power BI for HR</h4>
+          </div>
+          <span class="acc-arrow">▼</span>
+        </div>
+        <div class="acc-body">
+          <ul class="day-list">
+            <li><span class="day-num">D26</span><span>Power BI introduction</span></li>
+            <li><span class="day-num">D27</span><span>Data cleaning</span></li>
+            <li><span class="day-num">D28</span><span>Dashboard creation</span></li>
+            <li><span class="day-num">D29</span><span>KPI visualization</span></li>
+            <li><span class="day-num">D30</span><span>HR analytics dashboard practice</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <div class="acc-header" onclick="toggleAcc(this)">
+          <div class="acc-header-left">
+            <span class="week-badge">Week 7</span>
+            <h4>SQL for HR</h4>
+          </div>
+          <span class="acc-arrow">▼</span>
+        </div>
+        <div class="acc-body">
+          <ul class="day-list">
+            <li><span class="day-num">D31</span><span>SQL introduction</span></li>
+            <li><span class="day-num">D32</span><span>SELECT & WHERE clauses</span></li>
+            <li><span class="day-num">D33</span><span>GROUP BY queries</span></li>
+            <li><span class="day-num">D34</span><span>JOINS</span></li>
+            <li><span class="day-num">D35</span><span>HR database queries</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <div class="acc-header" onclick="toggleAcc(this)">
+          <div class="acc-header-left">
+            <span class="week-badge">Week 8–9</span>
+            <h4>Practical HR Training</h4>
+          </div>
+          <span class="acc-arrow">▼</span>
+        </div>
+        <div class="acc-body">
+          <ul class="day-list">
+            <li><span class="day-num">D36–50</span><span>Hands-on practice · Real HR scenarios · Reporting exercises · Excel & HR tools practice · Doubt solving sessions</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <div class="acc-header" onclick="toggleAcc(this)">
+          <div class="acc-header-left">
+            <span class="week-badge" style="background:#FFF0E8;color:var(--accent)">Final Phase</span>
+            <h4>Placement Support</h4>
+          </div>
+          <span class="acc-arrow">▼</span>
+        </div>
+        <div class="acc-body">
+          <ul class="day-list">
+            <li><span class="day-num">D51–60</span><span>Resume building · LinkedIn optimization · Mock interviews · Job support & career guidance</span></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PLACEMENT -->
+<section class="placement">
+  <div class="section-inner">
+    <div class="section-tag fade-in">Career Support</div>
+    <h2 class="section-title fade-in">Placement Support Included</h2>
+    <p class="section-sub fade-in">We don't just train you — we help you land the job.</p>
+    <div class="placement-grid fade-in">
+      <div class="p-card">
+        <div class="p-icon">📄</div>
+        <h4>Resume Building</h4>
+        <p>ATS-friendly resume crafted by HR professionals to get you shortlisted.</p>
+      </div>
+      <div class="p-card">
+        <div class="p-icon">🔗</div>
+        <h4>LinkedIn Optimization</h4>
+        <p>Profile review and keyword optimization to attract recruiters.</p>
+      </div>
+      <div class="p-card">
+        <div class="p-icon">🎤</div>
+        <h4>Mock Interviews</h4>
+        <p>Live mock sessions with expert feedback to boost your confidence.</p>
+      </div>
+      <div class="p-card">
+        <div class="p-icon">💼</div>
+        <h4>Job Support</h4>
+        <p>Job referrals, application help & career guidance until you're placed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAREERS -->
+<section class="careers" id="careers">
+  <div class="section-inner">
+    <div class="section-tag fade-in">Career Opportunities</div>
+    <h2 class="section-title fade-in">Roles You Can Land</h2>
+    <p class="section-sub fade-in">Graduates of this program qualify for high-demand HR roles across industries.</p>
+    <div class="career-grid fade-in">
+      <div class="career-card">
+        <div class="icon">📊</div>
+        <h4>HR Analyst</h4>
+        <p>₹3.5L–6L/yr</p>
+      </div>
+      <div class="career-card">
+        <div class="icon">👤</div>
+        <h4>HR Executive</h4>
+        <p>₹2.8L–5L/yr</p>
+      </div>
+      <div class="career-card">
+        <div class="icon">📈</div>
+        <h4>MIS Executive</h4>
+        <p>₹3L–5.5L/yr</p>
+      </div>
+      <div class="career-card">
+        <div class="icon">🔍</div>
+        <h4>Recruitment Analyst</h4>
+        <p>₹3L–5L/yr</p>
+      </div>
+      <div class="career-card">
+        <div class="icon">⚙️</div>
+        <h4>HR Operations Analyst</h4>
+        <p>₹3.5L–6L/yr</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY MINDIX -->
+<section class="why">
+  <div class="section-inner">
+    <div class="section-tag fade-in">Why Choose Us</div>
+    <h2 class="section-title fade-in">Why Choose Mindix Education?</h2>
+    <div class="why-grid fade-in">
+      <div class="why-card">
+        <div class="icon">🌱</div>
+        <h4>Beginner Friendly</h4>
+        <p>No prior HR experience needed. We start from the very basics and build up.</p>
+      </div>
+      <div class="why-card">
+        <div class="icon">🛠️</div>
+        <h4>Practical Training</h4>
+        <p>Real projects, HR scenarios, and tool-based learning you can show employers.</p>
+      </div>
+      <div class="why-card">
+        <div class="icon">🏢</div>
+        <h4>Industry-Focused</h4>
+        <p>Curriculum designed with current industry requirements and tools in mind.</p>
+      </div>
+      <div class="why-card">
+        <div class="icon">👨‍🏫</div>
+        <h4>Live Mentor Support</h4>
+        <p>Daily live sessions and doubt-solving with experienced HR professionals.</p>
+      </div>
+      <div class="why-card">
+        <div class="icon">🎯</div>
+        <h4>Career Assistance</h4>
+        <p>From resume to offer letter — we support you at every step.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="section-inner">
+    <div class="section-tag fade-in">Student Reviews</div>
+    <h2 class="section-title fade-in">What Our Students Say</h2>
+    <div class="testi-grid fade-in">
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"I had zero HR knowledge before joining. In 60 days, I got placed as an HR Analyst. The live classes and mock interviews made all the difference!"</p>
+        <div class="testi-author">
+          <div class="avatar">PK</div>
+          <div><strong>Priya Kapoor</strong><span>HR Analyst, Noida</span></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"The Excel + Power BI modules were incredible. My manager was impressed on day one because I could already build dashboards. Worth every rupee."</p>
+        <div class="testi-author">
+          <div class="avatar">RS</div>
+          <div><strong>Rahul Sharma</strong><span>MIS Executive, Delhi</span></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"Mindix gave me the confidence and the skills. The placement support is genuine — they helped me prep for 3 interviews and I cracked the third one!"</p>
+        <div class="testi-author">
+          <div class="avatar">AV</div>
+          <div><strong>Ankita Verma</strong><span>Recruitment Analyst, Gurgaon</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-section">
+  <h2>Start Your HR Career Today</h2>
+  <p>Learn practical skills that companies actually use — in just 60 days.</p>
+  <div class="cta-btns">
+    <button class="btn-white" onclick="openModal()">🚀 Enroll Now</button>
+    <button class="btn-ghost" onclick="openModal()">Talk to Advisor</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo">Mindix <span>Education</span></div>
+      <p style="margin-top:.5rem">Empowering students with practical, job-ready HR skills through live training and expert mentorship.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Quick Links</h5>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#curriculum">Curriculum</a></li>
+        <li><a href="#careers">Careers</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="mailto:info@mindixeducation.com">info@mindixeducation.com</a></li>
+        <li><a href="tel:+918810696963">+91 88106 96963</a></li>
+        <li><a href="#">WhatsApp Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Mindix Education. All rights reserved.</span>
+    <div class="social-links">
+      <a href="#">LinkedIn</a>
+      <a href="#">Instagram</a>
+      <a href="#">YouTube</a>
+    </div>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal" onclick="handleOverlayClick(event)">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <h3>Get Your Free Demo Class</h3>
+    <p class="sub">HR Analyst – 60 Days Career Roadmap · Fill in your details below</p>
+    <div id="formArea">
+      <form id="form" onsubmit="return false;">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name" autocomplete="name" required/>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" autocomplete="email" required/>
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" autocomplete="tel" required/>
+        </div>
+        <input type="hidden" id="course" name="course" value="HR Analyst Course">
+        <input type="hidden" id="purpose" name="purpose" value="course_enquiry">
+        <input type="hidden" id="source" name="source" value="hr_analyst_landing_page">
+        <button type="submit" class="submit-btn" id="submitBtn">Get Free Demo Class 🎓</button>
+      </form>
+    </div>
+    <div class="form-success" id="formSuccess">
+      <div class="check">🎉</div>
+      <h4>You're In!</h4>
+      <p>We've received your request. Our team will reach out on WhatsApp within 24 hours to schedule your free demo class.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+const scriptURL = 'https://script.google.com/macros/s/AKfycbwRgfC8GlXEMzQ1nvExSMbqwaKZHRqAHrnJQnH12-DAmeO4Jby077FE_6eGe3nw1Atv/exec';
+
+function openModal(){
+  document.getElementById('modal').classList.add('show');
+  document.body.style.overflow='hidden';
+  setTimeout(()=>document.getElementById('name').focus(),300);
+}
+function closeModal(){
+  document.getElementById('modal').classList.remove('show');
+  document.body.style.overflow='';
+}
+function handleOverlayClick(e){
+  if(e.target===document.getElementById('modal')) closeModal();
+}
+function toggleMenu(){
+  document.getElementById('ham').classList.toggle('open');
+  document.getElementById('mobileMenu').classList.toggle('show');
+}
+function closeMenu(){
+  document.getElementById('ham').classList.remove('open');
+  document.getElementById('mobileMenu').classList.remove('show');
+}
+function toggleAcc(header){
+  const item=header.closest('.acc-item');
+  const isOpen=item.classList.contains('open');
+  document.querySelectorAll('.acc-item.open').forEach(i=>i.classList.remove('open'));
+  if(!isOpen) item.classList.add('open');
+}
+
+// Handle form submissions properly
+document.addEventListener('DOMContentLoaded', function() {
+  console.log('DOM loaded, setting up form handlers');
+  
+  // Handle modal form
+  const modalForm = document.getElementById('form');
+  if (modalForm) {
+    console.log('Modal form found, adding submit listener');
+    modalForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      console.log('Modal form submit triggered');
+      await handleFormSubmit(this);
+    });
+  } else {
+    console.error('Modal form not found');
+  }
+  
+  // Handle hero form
+  const heroForm = document.getElementById('heroForm');
+  if (heroForm) {
+    console.log('Hero form found, adding submit listener');
+    heroForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      console.log('Hero form submit triggered');
+      await handleFormSubmit(this);
+    });
+  } else {
+    console.error('Hero form not found');
+  }
+});
+
+async function handleFormSubmit(form) {
+  console.log('Handling form submission');
+  
+  const btn = form.querySelector('button[type="submit"]');
+  const inputs = form.querySelectorAll('input[required]');
+  let valid = true;
+  
+  // Validate all required fields
+  inputs.forEach(input => {
+    if (!input.value.trim()) {
+      input.style.borderColor = '#e24b4a';
+      valid = false;
+    } else {
+      input.style.borderColor = '#f0a500';
+    }
+  });
+  
+  if (!valid) {
+    console.log('Form validation failed');
+    const originalText = btn.textContent;
+    btn.textContent = 'Please fill required fields *';
+    setTimeout(() => {
+      btn.textContent = originalText;
+      inputs.forEach(input => input.style.borderColor = '');
+    }, 2000);
+    return;
+  }
+  
+  // Show loading state
+  const originalText = btn.textContent;
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  console.log('Form validation passed, submitting...');
+  
+  // Get form data
+  const formData = new FormData(form);
+  const data = Object.fromEntries(formData);
+  console.log('Form data:', data);
+  
+  try {
+    // Send to Google Sheets (same as main site)
+    console.log('Sending to:', scriptURL);
+    
+    const response = await fetch(scriptURL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: new URLSearchParams(data)
+    });
+    
+    console.log('Response received:', response);
+    
+    // Track Meta Pixel conversion
+    if (typeof fbq !== 'undefined') {
+      fbq('track', 'Lead', {
+        content_name: 'HR Analyst Course',
+        content_category: 'Course Enrollment',
+        value: 1,
+        currency: 'INR'
+      });
+    }
+    
+    // Track Google Analytics conversion
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'conversion', {
+        'send_to': 'GA_MEASUREMENT_ID/LEAD_ID',
+        'value': 1,
+        'currency': 'INR',
+        'course_name': 'HR Analyst Course'
+      });
+    }
+    
+    // Success state
+    console.log('Form submitted successfully');
+    btn.textContent = 'Thank you! We\'ll contact you soon *';
+    btn.style.background = '#2ecc71';
+    
+    // Reset form after success
+    form.reset();
+    
+    // Show success message
+    document.getElementById('formArea').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+    
+    // Redirect to thank you page after 2 seconds
+    setTimeout(() => {
+      console.log('Redirecting to thank you page');
+      window.location.href = 'ty8k2m9x-success-confirmation.html';
+    }, 2000);
+    
+  } catch (error) {
+    console.error('Form submission error:', error);
+    
+    // Show error state
+    btn.textContent = 'Something went wrong. Try again';
+    btn.style.background = '#e74c3c';
+    
+    // Reset button after 3 seconds
+    setTimeout(() => {
+      btn.textContent = originalText;
+      btn.style.background = '';
+      btn.disabled = false;
+    }, 3000);
+  }
+}
+function showSuccess(){
+  document.getElementById('formArea').style.display='none';
+  document.getElementById('formSuccess').style.display='block';
+  setTimeout(()=>{
+    closeModal();
+    setTimeout(()=>{
+      document.getElementById('formArea').style.display='block';
+      document.getElementById('formSuccess').style.display='none';
+      document.getElementById('fname').value='';
+      document.getElementById('femail').value='';
+      document.getElementById('fphone').value='';
+      document.getElementById('submitBtn').disabled=false;
+      document.getElementById('submitBtn').textContent='Get Free Demo Class 🎓';
+    },400);
+  },4000);
+}
+// scroll animations
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
+},{threshold:.12});
+document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+// smooth scroll for curriculum link
+document.querySelectorAll('a[href="#curriculum"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    e.preventDefault();
+    document.getElementById('curriculum').scrollIntoView({behavior:'smooth'});
+  });
+});
+</script>
+</body>
+</html>
