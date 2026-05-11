@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Mindix Education – HR Recruiter Job-Ready Program</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --purple:#6C3EF4;--blue:#3B82F6;--grad:linear-gradient(135deg,#6C3EF4,#3B82F6);
+  --light:#F8F6FF;--text:#1a1a2e;--muted:#64748b;--white:#fff;
+  --radius:14px;--shadow:0 4px 24px rgba(108,62,244,.13);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;color:var(--text);background:#fff;overflow-x:hidden}
+
+/* ── NAVBAR ── */
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);border-bottom:1px solid #ede9ff;padding:0 20px}
+.nav-inner{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;height:62px}
+.logo{font-size:1.25rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.logo span{font-weight:400}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{text-decoration:none;color:var(--text);font-size:.88rem;font-weight:500;transition:.2s}
+.nav-links a:hover{color:var(--purple)}
+.nav-cta{background:var(--grad);color:#fff;border:none;padding:9px 22px;border-radius:8px;font-family:inherit;font-weight:600;font-size:.85rem;cursor:pointer;transition:.2s}
+.nav-cta:hover{opacity:.88;transform:translateY(-1px)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger span{width:24px;height:2.5px;background:var(--text);border-radius:2px;transition:.3s}
+.mobile-menu{display:none;position:fixed;top:62px;left:0;right:0;background:#fff;border-bottom:1px solid #ede9ff;padding:16px 20px;z-index:99}
+.mobile-menu.open{display:block}
+.mobile-menu a{display:block;padding:11px 0;font-size:.95rem;font-weight:500;color:var(--text);text-decoration:none;border-bottom:1px solid #f0eeff}
+.mobile-menu a:last-child{border:none}
+
+/* ── HERO ── */
+.hero{background:linear-gradient(135deg,#faf8ff 0%,#eef2ff 100%);padding:60px 20px}
+.hero-inner{max-width:1200px;margin:auto;display:grid;grid-template-columns:1fr 420px;gap:48px;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:7px;background:linear-gradient(135deg,#ede9ff,#dbeafe);color:var(--purple);font-size:.75rem;font-weight:700;padding:6px 14px;border-radius:20px;margin-bottom:18px;text-transform:uppercase;letter-spacing:.5px}
+.badge::before{content:"✦"}
+h1{font-size:clamp(1.8rem,4vw,2.7rem);font-weight:800;line-height:1.2;margin-bottom:14px}
+h1 span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-sub{font-size:1rem;color:var(--muted);margin-bottom:22px;line-height:1.6}
+.usp-list{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
+.usp-item{display:flex;align-items:center;gap:7px;font-size:.83rem;font-weight:600;color:var(--text);background:#fff;border:1.5px solid #ede9ff;border-radius:8px;padding:7px 13px}
+.usp-item::before{content:"✓";color:var(--purple);font-weight:800}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn-primary{background:var(--grad);color:#fff;border:none;padding:13px 28px;border-radius:10px;font-family:inherit;font-weight:700;font-size:.92rem;cursor:pointer;transition:.2s;box-shadow:0 4px 18px rgba(108,62,244,.3)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(108,62,244,.4)}
+.btn-outline{background:#fff;color:var(--purple);border:2px solid var(--purple);padding:12px 26px;border-radius:10px;font-family:inherit;font-weight:700;font-size:.92rem;cursor:pointer;transition:.2s}
+.btn-outline:hover{background:var(--light);transform:translateY(-2px)}
+
+/* Hero Form Card */
+.form-card{background:#fff;border-radius:var(--radius);padding:28px 24px;box-shadow:0 8px 40px rgba(108,62,244,.18);border:1.5px solid #ede9ff}
+.form-card h3{font-size:1.05rem;font-weight:700;margin-bottom:4px;text-align:center}
+.form-card p{font-size:.78rem;color:var(--muted);text-align:center;margin-bottom:20px}
+.form-card input{width:100%;padding:11px 14px;border:1.5px solid #e2e8f0;border-radius:9px;font-family:inherit;font-size:.88rem;margin-bottom:12px;outline:none;transition:.2s}
+.form-card input:focus{border-color:var(--purple);box-shadow:0 0 0 3px rgba(108,62,244,.1)}
+.form-card .btn-submit{width:100%;background:var(--grad);color:#fff;border:none;padding:13px;border-radius:9px;font-family:inherit;font-weight:700;font-size:.93rem;cursor:pointer;transition:.2s}
+.form-card .btn-submit:hover{opacity:.9;transform:translateY(-1px)}
+.form-note{font-size:.7rem;color:var(--muted);text-align:center;margin-top:10px}
+.success-msg{display:none;text-align:center;padding:16px;color:#15803d;background:#f0fdf4;border-radius:9px;font-weight:600;font-size:.9rem}
+
+/* ── SECTIONS ── */
+section{padding:60px 20px}
+.section-inner{max-width:1200px;margin:auto}
+.section-tag{font-size:.72rem;font-weight:700;color:var(--purple);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.section-title{font-size:clamp(1.4rem,3vw,2rem);font-weight:800;margin-bottom:10px}
+.section-sub{color:var(--muted);font-size:.93rem;max-width:560px}
+
+/* ── HIGHLIGHTS ── */
+.highlights{background:var(--light)}
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;margin-top:32px}
+.card{background:#fff;border-radius:var(--radius);padding:22px 18px;box-shadow:var(--shadow);border:1.5px solid #ede9ff;transition:.2s}
+.card:hover{transform:translateY(-4px);box-shadow:0 10px 32px rgba(108,62,244,.18)}
+.card-icon{font-size:1.7rem;margin-bottom:10px}
+.card h4{font-size:.93rem;font-weight:700;margin-bottom:5px}
+.card p{font-size:.78rem;color:var(--muted);line-height:1.5}
+
+/* ── TOOLS ── */
+.tools-scroll{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:14px;margin-top:28px}
+.tool-card{background:#fff;border:1.5px solid #ede9ff;border-radius:12px;padding:18px 14px;text-align:center;transition:.2s;cursor:default;box-shadow:0 2px 12px rgba(108,62,244,.07)}
+.tool-card:hover{border-color:var(--purple);box-shadow:0 4px 20px rgba(108,62,244,.15);transform:translateY(-3px)}
+.tool-icon{font-size:1.9rem;margin-bottom:8px}
+.tool-card span{font-size:.8rem;font-weight:600;color:var(--text)}
+
+/* ── CURRICULUM ── */
+#curriculum{background:var(--light)}
+.accordion{margin-top:28px;display:flex;flex-direction:column;gap:10px}
+.acc-item{background:#fff;border-radius:12px;border:1.5px solid #ede9ff;overflow:hidden;box-shadow:0 2px 10px rgba(108,62,244,.07)}
+.acc-header{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;cursor:pointer;user-select:none;transition:.2s}
+.acc-header:hover{background:var(--light)}
+.acc-week{font-size:.7rem;font-weight:700;color:var(--purple);text-transform:uppercase;letter-spacing:.8px;margin-bottom:2px}
+.acc-title{font-size:.95rem;font-weight:700}
+.acc-icon{font-size:1.1rem;color:var(--purple);transition:.3s;flex-shrink:0;margin-left:10px}
+.acc-body{display:none;padding:4px 20px 16px;border-top:1px solid #f0eeff}
+.acc-body.open{display:block}
+.acc-icon.open{transform:rotate(180deg)}
+.day-list{list-style:none;display:flex;flex-direction:column;gap:6px;margin-top:10px}
+.day-list li{display:flex;align-items:flex-start;gap:10px;font-size:.83rem;padding:8px 12px;border-radius:8px;background:var(--light)}
+.day-num{font-weight:700;color:var(--purple);min-width:40px;font-size:.78rem}
+.day-off{color:var(--muted);font-style:italic}
+
+/* ── OUTCOMES ── */
+.outcomes-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-top:28px}
+.outcome-card{background:linear-gradient(135deg,#faf8ff,#eef2ff);border:1.5px solid #ede9ff;border-radius:var(--radius);padding:22px 18px;transition:.2s}
+.outcome-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.outcome-icon{font-size:1.6rem;margin-bottom:10px}
+.outcome-card h4{font-size:.9rem;font-weight:700;margin-bottom:5px}
+.outcome-card p{font-size:.78rem;color:var(--muted)}
+
+/* ── WHY CHOOSE US ── */
+.why{background:var(--light)}
+.why-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-top:28px}
+.why-card{background:#fff;border-radius:var(--radius);padding:22px 18px;border:1.5px solid #ede9ff;box-shadow:var(--shadow);transition:.2s}
+.why-card:hover{border-color:var(--purple);transform:translateY(-3px)}
+.why-icon{width:42px;height:42px;border-radius:10px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:12px}
+.why-card h4{font-size:.9rem;font-weight:700;margin-bottom:5px}
+.why-card p{font-size:.78rem;color:var(--muted);line-height:1.5}
+
+/* ── CAREERS ── */
+.careers-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:14px;margin-top:28px}
+.career-card{background:var(--grad);color:#fff;border-radius:var(--radius);padding:20px 16px;text-align:center;transition:.2s;box-shadow:0 4px 16px rgba(108,62,244,.25)}
+.career-card:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(108,62,244,.35)}
+.career-card .c-icon{font-size:1.7rem;margin-bottom:10px}
+.career-card h4{font-size:.88rem;font-weight:700}
+
+/* ── TESTIMONIALS ── */
+.testimonials{background:var(--light)}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px;margin-top:28px}
+.testi-card{background:#fff;border-radius:var(--radius);padding:22px;border:1.5px solid #ede9ff;box-shadow:var(--shadow)}
+.testi-top{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.testi-avatar{width:46px;height:46px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:1rem;flex-shrink:0}
+.testi-name{font-weight:700;font-size:.9rem}
+.testi-role{font-size:.75rem;color:var(--muted)}
+.stars{color:#f59e0b;font-size:.85rem;margin-bottom:8px}
+.testi-card p{font-size:.83rem;color:#374151;line-height:1.6;font-style:italic}
+
+/* ── CTA ── */
+.cta-section{background:var(--grad);color:#fff;text-align:center;padding:60px 20px}
+.cta-section h2{font-size:clamp(1.4rem,3.5vw,2.1rem);font-weight:800;margin-bottom:10px}
+.cta-section p{opacity:.88;font-size:.95rem;margin-bottom:28px}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn-white{background:#fff;color:var(--purple);border:none;padding:13px 28px;border-radius:10px;font-family:inherit;font-weight:700;font-size:.92rem;cursor:pointer;transition:.2s}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,.15)}
+.btn-ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.6);padding:12px 26px;border-radius:10px;font-family:inherit;font-weight:700;font-size:.92rem;cursor:pointer;transition:.2s}
+.btn-ghost:hover{background:rgba(255,255,255,.1);border-color:#fff}
+
+/* ── FOOTER ── */
+footer{background:#0f0b1e;color:#cbd5e1;padding:40px 20px 20px}
+.footer-inner{max-width:1200px;margin:auto;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:36px;margin-bottom:28px}
+.footer-brand .logo{font-size:1.2rem}
+.footer-brand p{font-size:.8rem;margin-top:10px;line-height:1.6;color:#94a3b8}
+.footer-col h5{font-size:.85rem;font-weight:700;color:#fff;margin-bottom:12px}
+.footer-col a{display:block;font-size:.8rem;color:#94a3b8;text-decoration:none;margin-bottom:7px;transition:.2s}
+.footer-col a:hover{color:var(--purple)}
+.socials{display:flex;gap:10px;margin-top:12px}
+.social-btn{width:34px;height:34px;border-radius:8px;background:#1e1736;display:flex;align-items:center;justify-content:center;font-size:.85rem;cursor:pointer;transition:.2s;text-decoration:none}
+.social-btn:hover{background:var(--purple)}
+.footer-bottom{text-align:center;font-size:.75rem;color:#64748b;padding-top:20px;border-top:1px solid #1e1736}
+
+/* ── POPUP MODAL ── */
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:200;align-items:center;justify-content:center;padding:20px}
+.overlay.open{display:flex}
+.popup{background:#fff;border-radius:18px;padding:32px 28px;width:100%;max-width:420px;position:relative;animation:popIn .3s ease}
+@keyframes popIn{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}
+.popup-close{position:absolute;top:14px;right:16px;font-size:1.3rem;cursor:pointer;color:var(--muted);background:none;border:none;line-height:1}
+.popup h3{font-size:1.15rem;font-weight:800;margin-bottom:4px;text-align:center}
+.popup .popup-sub{font-size:.8rem;color:var(--muted);text-align:center;margin-bottom:22px}
+.popup input{width:100%;padding:12px 14px;border:1.5px solid #e2e8f0;border-radius:9px;font-family:inherit;font-size:.88rem;margin-bottom:12px;outline:none;transition:.2s}
+.popup input:focus{border-color:var(--purple);box-shadow:0 0 0 3px rgba(108,62,244,.1)}
+.popup .btn-submit{width:100%;background:var(--grad);color:#fff;border:none;padding:13px;border-radius:9px;font-family:inherit;font-weight:700;font-size:.93rem;cursor:pointer;transition:.2s}
+.popup .btn-submit:hover{opacity:.9}
+.popup-note{font-size:.7rem;color:var(--muted);text-align:center;margin-top:10px}
+.popup-success{display:none;text-align:center;padding:24px 16px}
+.popup-success .check{font-size:2.5rem;margin-bottom:10px}
+.popup-success h4{font-size:1.1rem;font-weight:700;margin-bottom:6px}
+.popup-success p{font-size:.85rem;color:var(--muted)}
+
+/* ── MOBILE ── */
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  .nav-links,.nav-cta{display:none}
+  .hamburger{display:flex}
+  .cards-grid,.tools-scroll{display:flex;overflow-x:auto;gap:12px;padding-bottom:8px;scroll-snap-type:x mandatory}
+  .cards-grid::-webkit-scrollbar,.tools-scroll::-webkit-scrollbar{height:4px}
+  .cards-grid::-webkit-scrollbar-track,.tools-scroll::-webkit-scrollbar-track{background:#f0eeff}
+  .cards-grid::-webkit-scrollbar-thumb,.tools-scroll::-webkit-scrollbar-thumb{background:var(--purple);border-radius:2px}
+  .card,.tool-card{min-width:200px;scroll-snap-align:start}
+  .tool-card{min-width:130px}
+  .hero-btns .btn-primary,.hero-btns .btn-outline{width:100%}
+  .footer-inner{grid-template-columns:1fr}
+}
+
+/* Fade-in */
+.fade-in{opacity:0;transform:translateY(20px);transition:.6s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-inner">
+    <div class="logo">Mindix <span>Education</span></div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#curriculum">Curriculum</a></li>
+      <li><a href="#careers">Careers</a></li>
+      <li><a href="#footer">Contact</a></li>
+    </ul>
+    <button class="nav-cta" onclick="openPopup()">Enroll Now</button>
+    <div class="hamburger" onclick="toggleMenu()" id="ham">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#" onclick="closeMenu()">Home</a>
+  <a href="#curriculum" onclick="closeMenu()">Curriculum</a>
+  <a href="#careers" onclick="closeMenu()">Careers</a>
+  <a href="#footer" onclick="closeMenu()">Contact</a>
+  <a href="#" onclick="openPopup();closeMenu()" style="color:var(--purple);font-weight:700">Enroll Now →</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content fade-in">
+      <div class="badge">AI Integrated Program</div>
+      <h1>Become a <span>Job-Ready HR Recruiter</span></h1>
+      <p class="hero-sub">Master Recruitment, ATS, Sourcing & AI Recruitment Tools in 60 Days</p>
+      <div class="usp-list">
+        <div class="usp-item">Live Practical Training</div>
+        <div class="usp-item">AI Tools Included</div>
+        <div class="usp-item">Placement Assistance</div>
+        <div class="usp-item">Beginner Friendly</div>
+      </div>
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="openPopup()">🚀 Enroll Now</button>
+        <button class="btn-outline" onclick="scrollTo('curriculum')">📋 View Curriculum</button>
+      </div>
+    </div>
+    <div class="form-card fade-in">
+      <h3>Get Free Demo Class</h3>
+      <p>Join 500+ students already enrolled</p>
+      <div id="heroFormWrap">
+        <input type="text" id="hName" placeholder="Your Full Name" autocomplete="name"/>
+        <input type="email" id="hEmail" placeholder="Email Address" autocomplete="email"/>
+        <input type="tel" id="hPhone" placeholder="WhatsApp Number" autocomplete="tel"/>
+        <input type="hidden" name="course" value="HR Recruiter / Talent Acquisition Job-Ready Program with AI Tools">
+        <input type="hidden" name="purpose" value="course_enquiry">
+        <input type="hidden" name="source" value="hr_recruiter_landing_page">
+        <button class="btn-submit" onclick="submitHeroForm(this)">Get Free Demo Class 🎓</button>
+      </div>
+      <div class="success-msg" id="heroSuccess">✅ Thank you! We'll reach out shortly.</div>
+      <p class="form-note">🔒 100% free. No spam. Cancel anytime.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HIGHLIGHTS -->
+<section class="highlights">
+  <div class="section-inner fade-in">
+    <div class="section-tag">Program Highlights</div>
+    <h2 class="section-title">Everything You Need to Start Your HR Career</h2>
+    <div class="cards-grid">
+      <div class="card"><div class="card-icon">📅</div><h4>60-Day Program</h4><p>Structured day-wise learning plan designed for fast career entry.</p></div>
+      <div class="card"><div class="card-icon">🤖</div><h4>AI Integrated</h4><p>Use ChatGPT, AI resume tools & automation in real hiring workflows.</p></div>
+      <div class="card"><div class="card-icon">🎯</div><h4>Live Training</h4><p>Hands-on sessions with real recruiters & mock hiring simulations.</p></div>
+      <div class="card"><div class="card-icon">💼</div><h4>Placement Help</h4><p>Resume building, LinkedIn optimization & live job alerts.</p></div>
+      <div class="card"><div class="card-icon">🔗</div><h4>ATS & LinkedIn</h4><p>Master applicant tracking systems and LinkedIn Recruiter tools.</p></div>
+      <div class="card"><div class="card-icon">🌱</div><h4>Beginner Friendly</h4><p>Zero prior HR experience needed. Start from scratch confidently.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section>
+  <div class="section-inner fade-in">
+    <div class="section-tag">Tools You'll Master</div>
+    <h2 class="section-title">Industry Tools Used by Modern Recruiters</h2>
+    <div class="tools-scroll">
+      <div class="tool-card"><div class="tool-icon">🤖</div><span>ChatGPT</span></div>
+      <div class="tool-card"><div class="tool-icon">🔗</div><span>LinkedIn Recruiter</span></div>
+      <div class="tool-card"><div class="tool-icon">📋</div><span>Naukri</span></div>
+      <div class="tool-card"><div class="tool-icon">🔍</div><span>Indeed</span></div>
+      <div class="tool-card"><div class="tool-icon">⚙️</div><span>ATS Systems</span></div>
+      <div class="tool-card"><div class="tool-icon">📊</div><span>Excel</span></div>
+      <div class="tool-card"><div class="tool-icon">📄</div><span>AI Resume Tools</span></div>
+      <div class="tool-card"><div class="tool-icon">🔎</div><span>Boolean Search</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CURRICULUM -->
+<section id="curriculum">
+  <div class="section-inner fade-in">
+    <div class="section-tag">Course Curriculum</div>
+    <h2 class="section-title">60-Day Day-Wise Learning Plan</h2>
+    <p class="section-sub">A structured program built for real-world recruitment skills from Day 1.</p>
+    <div class="accordion" id="accordion">
+
+      <div class="acc-item">
+        <div class="acc-header" onclick="toggleAcc(this)">
+          <div><div class="acc-week">Week 1</div><div class="acc-title">HR Recruiter Foundation</div></div>
+          <span class="acc-icon">▾</span>
+        </div>
+        <div class="acc-body">
+          <ul class="day-list">
+            <li><span class="day-num">Day 1</span>HR Recruiter Role & Responsibilities</li>
+            <li><span class="day-num">Day 2</span>End-to-End Recruitment Lifecycle</li>
+            <li><span class="day-num">Day 3</span>Understanding Hiring Requirements</li>
+            <li><span class="day-num">Day 4</span>Corporate Communication for Recruiters</li>
+            <li><span class="day-num">Day 5</span>Recruiter Ethics & Confidentiality</li>
+            <li><span class="day-num">Day 6</span>Recruitment Lifecycle Assignment</li>
+            <li><span class="day-num day-off">Day 7</span><span class="day-off">Off Day</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <div class="acc-header" onclick="toggleAcc(this)">
+          <div><div class="acc-week">Week 2</div><div class="acc-title">Job Description & Candidate Sourcing</div></div>
+          <span class="acc-icon">▾</span>
+        </div>
+        <div class="acc-body">
+          <ul class="day-list">
+            <li><span class="day-num">Day 8</span>Job Analysis Basics</li>
+            <li><span class="day-num">Day 9</span>JD Writing (Manual + AI)</li>
+            <li><span class="day-num">Day 10</span>Sourcing Channels – Naukri, LinkedIn, Indeed</li>
+            <li><span class="day-num">Day 11</span>Boolean Search Techniques</li>
+            <li><span class="day-num">Day 12</span>LinkedIn Sourcing Practice</li>
+            <li><span class="day-num">Day 13</span>JD & Sourcing Assignment</li>
+            <li><span class="day-num day-off">Day 14</span><span class="day-off">Off Day</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <div class="acc-header" onclick="toggleAcc(this)">
+          <div><div class="acc-week">Week 3</div><div class="acc-title">Resume Screening & ATS</div></div>
+          <span class="acc-icon">▾</span>
+        </div>
+        <div class="acc-body">
+          <ul class="day-list">
+            <li><span class="day-num">Day 15</span>Resume Structure Understanding</li>
+            <li><span class="day-num">Day 16</span>Resume Screening Techniques</li>
+            <li><span class="day-num">Day 17</span>ATS Basics & Keyword Matching</li>
+            <li><span class="day-num">Day 18</span>Bulk vs Lateral Hiring</li>
+            <li><span class="day-num">Day 19</span>AI for Resume Screening</li>
+            <li><span class="day-num">Day 20</span>Resume Shortlisting Assignment</li>
+            <li><span class="day-num day-off">Day 21</span><span class="day-off">Off Day</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <div class="acc-header" onclick="toggleAcc(this)">
+          <div><div class="acc-week">Week 4</div><div class="acc-title">Interview & Candidate Management</div></div>
+          <span class="acc-icon">▾</span>
+        </div>
+        <div class="acc-body">
+          <ul class="day-list">
+            <li><span class="day-num">Day 22</span>Telephonic Screening Techniques</li>
+            <li><span class="day-num">Day 23</span>Interview Question Framing</li>
+            <li><span class="day-num">Day 24</span>Interview Scheduling & Coordination</li>
+            <li><span class="day-num">Day 25</span>Candidate Engagement & Follow-ups</li>
+            <li><span class="day-num">Day 26</span>Handling Rejections & Dropouts</li>
+            <li><span class="day-num">Day 27</span>Mock Screening Calls</li>
+            <li><span class="day-num day-off">Day 28</span><span class="day-off">Off Day</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <div class="acc-header" onclick="toggleAcc(this)">
+          <div><div class="acc-week">Week 5</div><div class="acc-title">Offer, Negotiation & Joining</div></div>
+          <span class="acc-icon">▾</span>
+        </div>
+        <div class="acc-body">
+          <ul class="day-list">
+            <li><span class="day-num">Day 29</span>Offer Rollout Process</li>
+            <li><span class="day-num">Day 30</span>Salary Structure Basics</li>
+            <li><span class="day-num">Day 31</span>Salary Negotiation Skills</li>
+            <li><span class="day-num">Day 32</span>Background Verification (BGV)</li>
+            <li><span class="day-num">Day 33</span>Joining & No-show Management</li>
+            <li><span class="day-num">Day 34</span>Offer & Negotiation Assignment</li>
+            <li><span class="day-num day-off">Day 35</span><span class="day-off">Off Day</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <div class="acc-header" onclick="toggleAcc(this)">
+          <div><div class="acc-week">Week 6</div><div class="acc-title">AI Tools for Recruiters</div></div>
+          <span class="acc-icon">▾</span>
+        </div>
+        <div class="acc-body">
+          <ul class="day-list">
+            <li><span class="day-num">Day 36</span>Introduction to AI in Recruitment</li>
+            <li><span class="day-num">Day 37</span>ChatGPT for Recruiters</li>
+            <li><span class="day-num">Day 38</span>AI Resume Parsing Tools</li>
+            <li><span class="day-num">Day 39</span>Recruitment Automation</li>
+            <li><span class="day-num">Day 40</span>Excel for Recruiters</li>
+            <li><span class="day-num">Day 41</span>AI Recruitment Assignment</li>
+            <li><span class="day-num day-off">Day 42</span><span class="day-off">Off Day</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <div class="acc-header" onclick="toggleAcc(this)">
+          <div><div class="acc-week">Week 7</div><div class="acc-title">Recruiter Performance & Industry Exposure</div></div>
+          <span class="acc-icon">▾</span>
+        </div>
+        <div class="acc-body">
+          <ul class="day-list">
+            <li><span class="day-num">Day 43</span>Recruitment KPIs & Metrics</li>
+            <li><span class="day-num">Day 44</span>Time-to-Hire & Cost-per-Hire</li>
+            <li><span class="day-num">Day 45</span>Vendor & Consultancy Hiring</li>
+            <li><span class="day-num">Day 46</span>Internal vs External Hiring</li>
+            <li><span class="day-num">Day 47</span>Recruiter Interview Preparation</li>
+            <li><span class="day-num">Day 48</span>End-to-End Hiring Simulation</li>
+            <li><span class="day-num day-off">Day 49</span><span class="day-off">Off Day</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="acc-item">
+        <div class="acc-header" onclick="toggleAcc(this)">
+          <div><div class="acc-week">Final 5 Days</div><div class="acc-title">Placement & Career Support</div></div>
+          <span class="acc-icon">▾</span>
+        </div>
+        <div class="acc-body">
+          <ul class="day-list">
+            <li><span class="day-num">Day 50</span>Recruiter Resume Building (ATS-Friendly)</li>
+            <li><span class="day-num">Day 51</span>LinkedIn Profile Optimization</li>
+            <li><span class="day-num">Day 52</span>Naukri Profile Optimization</li>
+            <li><span class="day-num">Day 53</span>Mock Interview – Recruiter Role</li>
+            <li><span class="day-num">Day 54</span>Final Mock Interview & Salary Discussion</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- OUTCOMES -->
+<section style="background:var(--light)">
+  <div class="section-inner fade-in">
+    <div class="section-tag">Program Outcomes</div>
+    <h2 class="section-title">What You'll Achieve</h2>
+    <div class="outcomes-grid">
+      <div class="outcome-card"><div class="outcome-icon">🎯</div><h4>Job-Ready Skills</h4><p>Complete recruiter skillset to start hiring from day one.</p></div>
+      <div class="outcome-card"><div class="outcome-icon">🔍</div><h4>Sourcing & Screening</h4><p>Strong sourcing from LinkedIn, Naukri & Boolean techniques.</p></div>
+      <div class="outcome-card"><div class="outcome-icon">🤖</div><h4>AI Expertise</h4><p>AI-powered recruitment tools for modern hiring workflows.</p></div>
+      <div class="outcome-card"><div class="outcome-icon">💼</div><h4>Placement Support</h4><p>Dedicated placement assistance & career guidance post-program.</p></div>
+      <div class="outcome-card"><div class="outcome-icon">🔔</div><h4>Live Job Alerts</h4><p>Get notified about real HR job openings from our network.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="why">
+  <div class="section-inner fade-in">
+    <div class="section-tag">Why Choose Us</div>
+    <h2 class="section-title">The Mindix Advantage</h2>
+    <div class="why-grid">
+      <div class="why-card"><div class="why-icon">🤖</div><h4>AI Integrated Learning</h4><p>Learn cutting-edge AI tools used by top recruiters worldwide.</p></div>
+      <div class="why-card"><div class="why-icon">🎯</div><h4>Practical Training</h4><p>Real hiring simulations, mock calls & live assignments every week.</p></div>
+      <div class="why-card"><div class="why-icon">🔗</div><h4>ATS & LinkedIn</h4><p>Deep exposure to applicant tracking systems and LinkedIn Recruiter.</p></div>
+      <div class="why-card"><div class="why-icon">🌱</div><h4>Beginner Friendly</h4><p>No experience needed. Start from zero and become job-ready in 60 days.</p></div>
+      <div class="why-card"><div class="why-icon">💼</div><h4>Placement Assistance</h4><p>Resume, LinkedIn, mock interviews and active job referrals.</p></div>
+      <div class="why-card"><div class="why-icon">🏭</div><h4>Industry Curriculum</h4><p>Built with inputs from HR professionals and real hiring managers.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CAREERS -->
+<section id="careers">
+  <div class="section-inner fade-in">
+    <div class="section-tag">Career Opportunities</div>
+    <h2 class="section-title">Roles You Can Target After This Program</h2>
+    <div class="careers-grid">
+      <div class="career-card"><div class="c-icon">👤</div><h4>HR Recruiter</h4></div>
+      <div class="career-card"><div class="c-icon">🎯</div><h4>Talent Acquisition Executive</h4></div>
+      <div class="career-card"><div class="c-icon">💻</div><h4>Technical Recruiter</h4></div>
+      <div class="career-card"><div class="c-icon">📋</div><h4>Recruitment Coordinator</h4></div>
+      <div class="career-card"><div class="c-icon">🏢</div><h4>HR Executive</h4></div>
+      <div class="career-card"><div class="c-icon">🌐</div><h4>Staffing Specialist</h4></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="section-inner fade-in">
+    <div class="section-tag">Student Reviews</div>
+    <h2 class="section-title">What Our Students Say</h2>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-top">
+          <div class="testi-avatar">P</div>
+          <div><div class="testi-name">Priya Sharma</div><div class="testi-role">Now: HR Recruiter at Infosys BPO</div></div>
+        </div>
+        <div class="stars">★★★★★</div>
+        <p>"The AI tools module changed how I approach sourcing. Got placed within 3 weeks of completing the program!"</p>
+      </div>
+      <div class="testi-card">
+        <div class="testi-top">
+          <div class="testi-avatar">R</div>
+          <div><div class="testi-name">Rahul Mehta</div><div class="testi-role">Now: TA Executive at Wipro</div></div>
+        </div>
+        <div class="stars">★★★★★</div>
+        <p>"Coming from a non-HR background, this program made everything crystal clear. The mock calls gave me real confidence."</p>
+      </div>
+      <div class="testi-card">
+        <div class="testi-top">
+          <div class="testi-avatar">A</div>
+          <div><div class="testi-name">Anjali Verma</div><div class="testi-role">Now: Staffing Specialist</div></div>
+        </div>
+        <div class="stars">★★★★★</div>
+        <p>"Mindix gave me not just skills but a complete recruiter mindset. The Boolean search and LinkedIn modules were gold!"</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section fade-in">
+  <h2>Start Your Recruitment Career Today</h2>
+  <p>Learn practical hiring skills & AI tools used by modern recruiters</p>
+  <div class="cta-btns">
+    <button class="btn-white" onclick="openPopup()">🚀 Enroll Now</button>
+    <button class="btn-ghost" onclick="openPopup()">💬 Talk to Advisor</button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo">Mindix <span>Education</span></div>
+      <p>Empowering careers through practical, AI-powered HR training programs designed for the modern workforce.</p>
+      <div class="socials">
+        <a class="social-btn" href="#">in</a>
+        <a class="social-btn" href="#">IG</a>
+        <a class="social-btn" href="#">YT</a>
+        <a class="social-btn" href="#">✉</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Quick Links</h5>
+      <a href="#">Home</a>
+      <a href="#curriculum">Curriculum</a>
+      <a href="#careers">Careers</a>
+      <a href="#" onclick="openPopup()">Enroll Now</a>
+    </div>
+    <div class="footer-col">
+      <h5>Contact Us</h5>
+      <a href="#">📧 info@mindixeducation.com</a>
+      <a href="#">📱 +91 88106 96963</a>
+      <a href="#">📍 India (Online Program)</a>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 Mindix Education. All rights reserved. | HR Recruiter Job-Ready Program</div>
+</footer>
+
+<!-- POPUP MODAL -->
+<div class="overlay" id="overlay" onclick="closePopupOutside(event)">
+  <div class="popup">
+    <button class="popup-close" onclick="closePopup()">✕</button>
+    <div id="popupFormWrap">
+      <h3>🎓 Get Free Demo Class</h3>
+      <p class="popup-sub">Fill in your details and we'll reach you within 24 hours</p>
+      <input type="text" id="pName" placeholder="Your Full Name" autocomplete="name"/>
+      <input type="email" id="pEmail" placeholder="Email Address" autocomplete="email"/>
+      <input type="tel" id="pPhone" placeholder="WhatsApp Number" autocomplete="tel"/>
+      <input type="hidden" name="course" value="HR Recruiter / Talent Acquisition Job-Ready Program with AI Tools">
+      <input type="hidden" name="purpose" value="course_enquiry">
+      <input type="hidden" name="source" value="hr_recruiter_landing_page">
+      <button class="btn-submit" onclick="submitPopupForm(this)">Get Free Demo Class 🚀</button>
+      <p class="popup-note">🔒 No spam. We respect your privacy.</p>
+    </div>
+    <div class="popup-success" id="popupSuccess">
+      <div class="check">✅</div>
+      <h4>You're In!</h4>
+      <p>Thank you! Our team will contact you shortly on WhatsApp.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── Navbar hamburger ──
+function toggleMenu(){
+  const m=document.getElementById('mobileMenu');
+  m.classList.toggle('open');
+}
+function closeMenu(){document.getElementById('mobileMenu').classList.remove('open')}
+
+// ── Smooth scroll helper ──
+function scrollTo(id){document.getElementById(id).scrollIntoView({behavior:'smooth'})}
+
+// ── Accordion ──
+function toggleAcc(header){
+  const body=header.nextElementSibling;
+  const icon=header.querySelector('.acc-icon');
+  const isOpen=body.classList.contains('open');
+  document.querySelectorAll('.acc-body.open').forEach(b=>b.classList.remove('open'));
+  document.querySelectorAll('.acc-icon.open').forEach(i=>i.classList.remove('open'));
+  if(!isOpen){body.classList.add('open');icon.classList.add('open')}
+}
+
+// ── Popup ──
+function openPopup(){
+  document.getElementById('overlay').classList.add('open');
+  document.body.style.overflow='hidden';
+  setTimeout(()=>{document.getElementById('pName').focus()},300);
+}
+function closePopup(){
+  document.getElementById('overlay').classList.remove('open');
+  document.body.style.overflow='';
+}
+function closePopupOutside(e){if(e.target===document.getElementById('overlay'))closePopup()}
+
+// ── Google Sheet scriptURL ──
+const scriptURL='https://script.google.com/macros/s/AKfycbwRgfC8GlXEMzQ1nvExSMbqwaKZHRqAHrnJQnH12-DAmeO4Jby077FE_6eGe3nw1Atv/exec';
+const COURSE='HR Recruiter / Talent Acquisition Job-Ready Program with AI Tools';
+
+function submitPopupForm(btn){
+  const name=document.getElementById('pName').value.trim();
+  const email=document.getElementById('pEmail').value.trim();
+  const phone=document.getElementById('pPhone').value.trim();
+  if(!name||!email||!phone){alert('Please fill all fields.');return}
+  btn.textContent='Sending...';btn.disabled=true;
+  const fd=new FormData();
+  fd.append('name',name);
+  fd.append('email',email);
+  fd.append('phone',phone);
+  fd.append('course',COURSE);
+  fd.append('purpose','course_enquiry');
+  fd.append('source','hr_recruiter_landing_page');
+  fetch(scriptURL,{
+    method:'POST',
+    body:new URLSearchParams(Object.fromEntries(fd)),
+    mode:'no-cors'
+  })
+    .then(()=>{showPopupSuccess()})
+    .catch(()=>showPopupSuccess());
+}
+function showPopupSuccess(){
+  document.getElementById('popupFormWrap').style.display='none';
+  document.getElementById('popupSuccess').style.display='block';
+  setTimeout(()=>{closePopup();resetPopup();window.location.href='ty8k2m9x-success-confirmation.html';},2000);
+}
+function resetPopup(){
+  document.getElementById('popupFormWrap').style.display='block';
+  document.getElementById('popupSuccess').style.display='none';
+  document.getElementById('pName').value='';
+  document.getElementById('pEmail').value='';
+  document.getElementById('pPhone').value='';
+  document.querySelectorAll('.btn-submit').forEach(b=>{b.textContent='Get Free Demo Class 🚀';b.disabled=false});
+}
+
+function submitHeroForm(btn){
+  const name=document.getElementById('hName').value.trim();
+  const email=document.getElementById('hEmail').value.trim();
+  const phone=document.getElementById('hPhone').value.trim();
+  if(!name||!email||!phone){alert('Please fill all fields.');return}
+  btn.textContent='Sending...';btn.disabled=true;
+  const fd=new FormData();
+  fd.append('name',name);
+  fd.append('email',email);
+  fd.append('phone',phone);
+  fd.append('course',COURSE);
+  fd.append('purpose','course_enquiry');
+  fd.append('source','hr_recruiter_landing_page');
+  fetch(scriptURL,{
+    method:'POST',
+    body:new URLSearchParams(Object.fromEntries(fd)),
+    mode:'no-cors'
+  })
+    .then(()=>{document.getElementById('heroFormWrap').style.display='none';document.getElementById('heroSuccess').style.display='block';setTimeout(()=>{window.location.href='ty8k2m9x-success-confirmation.html';},2000);})
+    .catch(()=>{document.getElementById('heroFormWrap').style.display='none';document.getElementById('heroSuccess').style.display='block'});
+}
+
+// ── Fade-in on scroll ──
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
+},{threshold:.12});
+document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
