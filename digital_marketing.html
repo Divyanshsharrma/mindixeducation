@@ -4,6 +4,23 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Mindix Education – Digital Marketing (AI Integrated)</title>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '970933495494749');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=970933495494749&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -258,12 +275,16 @@ footer{background:#0f0a1e;color:rgba(255,255,255,.7);padding:48px 24px 24px}
       <div class="free-tag">🎁 FREE Demo Class</div>
       <h3>Start Your Journey Today</h3>
       <p>Fill in your details and we'll reach out with everything you need</p>
-      <div class="form-group"><input type="text" id="heroName" placeholder="Your Full Name"/></div>
-      <div class="form-group"><input type="email" id="heroEmail" placeholder="Email Address"/></div>
-      <div class="form-group"><input type="tel" id="heroPhone" placeholder="WhatsApp Number"/></div>
-      <input type="hidden" id="heroCourse" name="course" value="Digital Marketing (AI Integrated) – 60 Days Job Ready Program">
-      <button class="btn-submit" onclick="submitHeroForm()">Get Free Demo Class ✨</button>
-      <div class="success-msg" id="heroSuccess">🎉 Awesome! We'll contact you shortly.</div>
+      <form id="heroContactForm" onsubmit="return false;">
+        <div class="form-group"><input type="text" id="heroName" name="name" placeholder="Your Full Name" required/></div>
+        <div class="form-group"><input type="email" id="heroEmail" name="email" placeholder="Email Address" required/></div>
+        <div class="form-group"><input type="tel" id="heroPhone" name="phone" placeholder="WhatsApp Number" required/></div>
+        <input type="hidden" id="heroCourse" name="course" value="Digital Marketing (AI Integrated) – 60 Days Job Ready Program">
+        <input type="hidden" name="purpose" value="course_enquiry">
+        <input type="hidden" name="source" value="digital_marketing_landing_page">
+        <button type="submit" class="btn-submit">Get Free Demo Class ✨</button>
+      </form>
+      <div class="success-msg" id="heroFormMessage">🎉 Awesome! We'll contact you shortly.</div>
       <p class="form-note">🔒 100% free & no spam. We respect your privacy.</p>
     </div>
   </div>
@@ -453,12 +474,16 @@ footer{background:#0f0a1e;color:rgba(255,255,255,.7);padding:48px 24px 24px}
     <button class="popup-close" onclick="closePopup()">✕</button>
     <h3>🚀 Enroll in Free Demo</h3>
     <p class="sub">Digital Marketing (AI Integrated) – 60 Days Job Ready Program</p>
-    <div class="form-group"><input type="text" id="popName" placeholder="Your Full Name"/></div>
-    <div class="form-group"><input type="email" id="popEmail" placeholder="Email Address"/></div>
-    <div class="form-group"><input type="tel" id="popPhone" placeholder="WhatsApp Number"/></div>
-    <input type="hidden" id="popCourse" name="course" value="Digital Marketing (AI Integrated) – 60 Days Job Ready Program">
-    <button class="btn-submit" id="popBtn" onclick="submitPopupForm()">Get Free Demo Class ✨</button>
-    <div class="success-msg" id="popSuccess">🎉 Great! We'll reach out to you soon on WhatsApp.</div>
+    <form id="popupContactForm" onsubmit="return false;">
+      <div class="form-group"><input type="text" id="popName" name="name" placeholder="Your Full Name" required/></div>
+      <div class="form-group"><input type="email" id="popEmail" name="email" placeholder="Email Address" required/></div>
+      <div class="form-group"><input type="tel" id="popPhone" name="phone" placeholder="WhatsApp Number" required/></div>
+      <input type="hidden" id="popCourse" name="course" value="Digital Marketing (AI Integrated) – 60 Days Job Ready Program">
+      <input type="hidden" name="purpose" value="course_enquiry">
+      <input type="hidden" name="source" value="digital_marketing_landing_page">
+      <button type="submit" class="btn-submit">Get Free Demo Class ✨</button>
+    </form>
+    <div class="success-msg" id="popupFormMessage">🎉 Great! We'll reach out to you soon on WhatsApp.</div>
     <p class="form-note">🔒 No spam. 100% confidential.</p>
   </div>
 </div>
@@ -487,54 +512,107 @@ function openPopup(){
 function closePopup(){
   document.getElementById('popupOverlay').classList.remove('show');
   document.body.style.overflow='';
-  document.getElementById('popSuccess').style.display='none';
-  document.getElementById('popBtn').style.display='block';
+  const popupMessage = document.getElementById('popupFormMessage');
+  if (popupMessage) {
+    popupMessage.style.display='none';
+  }
+  const popupBtn = document.querySelector('#popupContactForm button[type="submit"]');
+  if (popupBtn) {
+    popupBtn.innerHTML = 'Get Free Demo Class ✨';
+    popupBtn.disabled = false;
+  }
 }
 function handleOverlayClick(e){if(e.target===document.getElementById('popupOverlay'))closePopup();}
 
 // ── FORM SUBMIT ──
-async function submitForm(name,email,phone,course,successEl,btnEl){
-  if(!name||!email||!phone){alert('Please fill all fields.');return;}
-  if(btnEl){btnEl.textContent='Sending...';btnEl.disabled=true;}
-  const fd=new FormData();
-  fd.append('Name',name);
-  fd.append('Email',email);
-  fd.append('Phone',phone);
-  fd.append('Course',course || COURSE);
-  fd.append('Timestamp',new Date().toLocaleString('en-IN'));
-  fd.append('Source','digital_marketing_landing_page');
-  try{
-    await fetch(scriptURL,{method:'POST',body:fd,mode:'no-cors'});
-    if(successEl){successEl.style.display='block';}
-    if(btnEl){btnEl.style.display='none';}
-    // Redirect to thank you page after successful submission
-    setTimeout(() => {
-      window.location.href = 'ty8k2m9x-success-confirmation.html';
-    }, 2000);
-  }catch(e){
-    alert('Something went wrong. Please try again.');
-    if(btnEl){btnEl.textContent='Get Free Demo Class ✨';btnEl.disabled=false;}
-  }
+// Handle DOM content loaded
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupFormHandlers);
+} else {
+    setupFormHandlers();
 }
-function submitPopupForm(){
-  submitForm(
-    document.getElementById('popName').value.trim(),
-    document.getElementById('popEmail').value.trim(),
-    document.getElementById('popPhone').value.trim(),
-    document.getElementById('popCourse').value,
-    document.getElementById('popSuccess'),
-    document.getElementById('popBtn')
-  );
+
+function setupFormHandlers() {
+    // Handle hero form submission
+    const heroForm = document.getElementById('heroContactForm');
+    if (heroForm) {
+        heroForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            handleFormSubmission(this, 'heroFormMessage');
+        });
+    }
+    
+    // Handle popup form submission
+    const popupForm = document.getElementById('popupContactForm');
+    if (popupForm) {
+        popupForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            handleFormSubmission(this, 'popupFormMessage');
+        });
+    }
 }
-function submitHeroForm(){
-  const btn=document.querySelector('.enroll-card .btn-submit');
-  submitForm(
-    document.getElementById('heroName').value.trim(),
-    document.getElementById('heroEmail').value.trim(),
-    document.getElementById('heroPhone').value.trim(),
-    document.getElementById('heroCourse').value,
-    document.getElementById('heroSuccess'),btn
-  );
+
+function handleFormSubmission(form, messageId) {
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const formMessage = document.getElementById(messageId);
+    
+    // Show loading state
+    submitBtn.innerHTML = '<span class="loading"></span> Sending...';
+    submitBtn.disabled = true;
+    
+    // Get form data
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData);
+    
+    // Send to Google Sheet
+    fetch(scriptURL, {
+        method: 'POST',
+        body: new URLSearchParams(data),
+        mode: 'no-cors'
+    })
+    .then(() => {
+        // Track Meta Pixel conversion
+        if (typeof fbq !== 'undefined') {
+            fbq('track', 'Lead', {
+                content_name: 'Digital Marketing Form',
+                content_category: 'Lead Generation'
+            });
+        }
+        
+        // Success - show success message
+        submitBtn.innerHTML = '✅ Success!';
+        
+        if (formMessage) {
+            formMessage.className = 'success-msg';
+            formMessage.textContent = '🎉 Success! Redirecting...';
+            formMessage.style.display = 'block';
+        }
+        
+        // Reset form
+        form.reset();
+        
+        // Redirect to thank you page after 1.5 seconds
+        setTimeout(function() {
+            window.location.href = 'ty8k2m9x-success-confirmation.html';
+        }, 1500);
+    })
+    .catch((error) => {
+        console.error('Form submission error:', error);
+        
+        // Reset button and show error
+        submitBtn.innerHTML = 'Get Free Demo Class ✨';
+        submitBtn.disabled = false;
+        
+        if (formMessage) {
+            formMessage.className = 'success-msg';
+            formMessage.textContent = '❌ Something went wrong. Please try again.';
+            formMessage.style.display = 'block';
+        }
+        
+        setTimeout(() => {
+            formMessage.style.display = 'none';
+        }, 3000);
+    });
 }
 
 // ── CURRICULUM DATA ──
