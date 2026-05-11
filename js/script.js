@@ -194,7 +194,12 @@ document.querySelectorAll('.course-btn').forEach(btn => {
         else if (courseTitle.includes('HR Analyst with AI Integrated Tools')) {
             // Redirect to the dedicated HR Analyst course page
             window.location.href = 'hr_analyst.html';
-        } else {
+        }
+        else if (courseTitle.includes('Digital Marketing with AI Integrated Tools')) {
+            // Redirect to the dedicated Digital Marketing course page
+            window.location.href = 'digital_marketing.html';
+        }
+        else {
             // Show coming soon message for other courses
             alert('🚀 Coming Soon!\n\nWe are working on something amazing! Enrollment will be available shortly.\n\nFor inquiries, please contact us:\n📞 WhatsApp: 8810696963\n📧 Email: info@mindixeducation.com');
         }
