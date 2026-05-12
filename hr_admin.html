@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Mindix Education – HR Admin Job-Ready Program</title>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '970933495494749');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=970933495494749&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#6c3ff5;--primary-dark:#5530d4;--accent:#a78bfa;
+  --grad:linear-gradient(135deg,#6c3ff5 0%,#3b82f6 100%);
+  --grad-soft:linear-gradient(135deg,#f5f3ff 0%,#eff6ff 100%);
+  --shadow:0 4px 24px rgba(108,63,245,.13);
+  --radius:14px;--radius-sm:8px;
+  --text:#1e1b4b;--muted:#64748b;--light:#f8f7ff;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Poppins',sans-serif;color:var(--text);background:#fff;overflow-x:hidden}
+
+/* NAVBAR */
+nav{position:sticky;top:0;z-index:999;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid #ede9fe;padding:0 24px}
+.nav-inner{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;height:62px}
+.logo{font-size:1.25rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.logo span{font-weight:400}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{text-decoration:none;color:var(--text);font-size:.9rem;font-weight:500;transition:.2s}
+.nav-links a:hover{color:var(--primary)}
+.nav-cta{background:var(--grad);color:#fff;border:none;padding:9px 22px;border-radius:50px;font-family:inherit;font-weight:600;font-size:.88rem;cursor:pointer;transition:.2s}
+.nav-cta:hover{opacity:.88;transform:translateY(-1px)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:24px;height:2.5px;background:var(--text);border-radius:4px;transition:.3s}
+.hamburger.open span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
+.mobile-menu{display:none;flex-direction:column;background:#fff;border-bottom:1px solid #ede9fe;padding:12px 24px 20px}
+.mobile-menu a{text-decoration:none;color:var(--text);font-size:.95rem;font-weight:500;padding:10px 0;border-bottom:1px solid #f3f0ff}
+.mobile-menu a:last-child{border:none}
+.mobile-menu.show{display:flex}
+
+/* HERO */
+.hero{background:var(--grad-soft);padding:64px 24px 56px}
+.hero-inner{max-width:1200px;margin:auto;display:grid;grid-template-columns:1fr 420px;gap:48px;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:7px;background:#ede9fe;color:var(--primary);font-size:.78rem;font-weight:700;padding:6px 14px;border-radius:50px;margin-bottom:16px;letter-spacing:.4px}
+.badge::before{content:'✦';font-size:.7rem}
+.hero h1{font-size:2.4rem;font-weight:800;line-height:1.2;margin-bottom:14px;color:var(--text)}
+.hero h1 span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:1rem;color:var(--muted);margin-bottom:22px;line-height:1.6}
+.usps{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
+.usp{display:flex;align-items:center;gap:6px;background:#fff;border:1px solid #ede9fe;border-radius:50px;padding:6px 14px;font-size:.82rem;font-weight:600;color:var(--text)}
+.usp::before{content:'✓';color:var(--primary);font-weight:800}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn-primary{background:var(--grad);color:#fff;border:none;padding:13px 28px;border-radius:50px;font-family:inherit;font-size:.95rem;font-weight:700;cursor:pointer;transition:.22s;box-shadow:0 4px 16px rgba(108,63,245,.3)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 6px 22px rgba(108,63,245,.4)}
+.btn-outline{background:transparent;color:var(--primary);border:2px solid var(--primary);padding:11px 26px;border-radius:50px;font-family:inherit;font-size:.95rem;font-weight:700;cursor:pointer;transition:.22s}
+.btn-outline:hover{background:#f5f3ff;transform:translateY(-2px)}
+
+/* HERO FORM CARD */
+.hero-form-card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:32px 28px;border:1px solid #ede9fe}
+.form-card-title{font-size:1.1rem;font-weight:700;margin-bottom:4px}
+.form-card-sub{font-size:.82rem;color:var(--muted);margin-bottom:20px}
+.form-group{margin-bottom:14px}
+.form-group label{display:block;font-size:.8rem;font-weight:600;color:var(--text);margin-bottom:5px}
+.form-group input{width:100%;padding:11px 14px;border:1.5px solid #e2e0f0;border-radius:var(--radius-sm);font-family:inherit;font-size:.9rem;color:var(--text);transition:.2s;background:#fafafa}
+.form-group input:focus{outline:none;border-color:var(--primary);background:#fff}
+.submit-btn{width:100%;background:var(--grad);color:#fff;border:none;padding:13px;border-radius:50px;font-family:inherit;font-size:.95rem;font-weight:700;cursor:pointer;transition:.22s;box-shadow:0 4px 14px rgba(108,63,245,.3);margin-top:4px}
+.submit-btn:hover{opacity:.9;transform:translateY(-1px)}
+.submit-btn:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.form-note{text-align:center;font-size:.74rem;color:var(--muted);margin-top:10px}
+
+/* HIGHLIGHTS */
+.section{padding:64px 24px}
+.section.bg-light{background:var(--grad-soft)}
+.sec-tag{display:inline-block;background:#ede9fe;color:var(--primary);font-size:.75rem;font-weight:700;padding:4px 12px;border-radius:50px;margin-bottom:10px;letter-spacing:.4px}
+.sec-title{font-size:1.75rem;font-weight:800;margin-bottom:8px}
+.sec-sub{color:var(--muted);font-size:.95rem;max-width:540px;margin-bottom:36px;line-height:1.6}
+.container{max-width:1200px;margin:auto}
+.highlights-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.hl-card{background:#fff;border-radius:var(--radius);padding:22px;border:1px solid #ede9fe;box-shadow:0 2px 12px rgba(108,63,245,.07);transition:.25s;display:flex;align-items:flex-start;gap:14px}
+.hl-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.hl-icon{width:44px;height:44px;border-radius:10px;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:1.25rem;flex-shrink:0}
+.hl-text h4{font-size:.95rem;font-weight:700;margin-bottom:4px}
+.hl-text p{font-size:.8rem;color:var(--muted);line-height:1.5}
+
+/* TOOLS */
+.tools-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.tool-card{background:#fff;border-radius:var(--radius);padding:20px 16px;text-align:center;border:1px solid #ede9fe;box-shadow:0 2px 10px rgba(108,63,245,.06);transition:.25s}
+.tool-card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--accent)}
+.tool-icon{font-size:2rem;margin-bottom:10px}
+.tool-card h4{font-size:.88rem;font-weight:700;color:var(--text)}
+.tool-card p{font-size:.76rem;color:var(--muted);margin-top:4px}
+
+/* CURRICULUM */
+#curriculum{padding:64px 24px}
+.acc-week{margin-bottom:12px;border-radius:var(--radius);overflow:hidden;border:1px solid #ede9fe;box-shadow:0 2px 10px rgba(108,63,245,.06)}
+.acc-header{background:#fff;padding:16px 20px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;user-select:none;transition:.2s}
+.acc-header:hover{background:#f9f8ff}
+.acc-header-left{display:flex;align-items:center;gap:12px}
+.week-badge{background:var(--grad);color:#fff;font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:50px;white-space:nowrap}
+.acc-header h3{font-size:.97rem;font-weight:700}
+.acc-arrow{font-size:.9rem;color:var(--primary);transition:.3s}
+.acc-body{display:none;background:#fafafa;padding:16px 20px;border-top:1px solid #ede9fe}
+.acc-body.open{display:block}
+.day-list{list-style:none}
+.day-item{display:flex;gap:12px;padding:8px 0;border-bottom:1px dashed #ede9fe;font-size:.87rem}
+.day-item:last-child{border:none}
+.day-num{font-weight:700;color:var(--primary);min-width:50px;flex-shrink:0}
+.day-off{color:#94a3b8;font-style:italic}
+.day-special{background:linear-gradient(90deg,#ede9fe,#dbeafe);border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:8px;display:flex;gap:10px;align-items:center}
+.day-special .day-num{min-width:auto}
+
+/* OUTCOMES */
+.outcomes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.outcome-card{background:linear-gradient(135deg,#f5f3ff,#eff6ff);border-radius:var(--radius);padding:24px;border:1px solid #ddd6fe;transition:.25s}
+.outcome-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.outcome-icon{font-size:1.8rem;margin-bottom:12px}
+.outcome-card h4{font-size:.97rem;font-weight:700;margin-bottom:6px}
+.outcome-card p{font-size:.82rem;color:var(--muted);line-height:1.55}
+
+/* WHY US */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.why-card{background:#fff;border-radius:var(--radius);padding:22px;border:1px solid #ede9fe;box-shadow:0 2px 10px rgba(108,63,245,.07);transition:.25s;text-align:center}
+.why-card:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--accent)}
+.why-icon{font-size:2rem;margin-bottom:10px}
+.why-card h4{font-size:.97rem;font-weight:700;margin-bottom:6px}
+.why-card p{font-size:.8rem;color:var(--muted);line-height:1.5}
+
+/* CAREERS */
+.careers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.career-card{background:#fff;border-radius:var(--radius);padding:20px;border:1px solid #ede9fe;box-shadow:0 2px 10px rgba(108,63,245,.07);display:flex;align-items:center;gap:14px;transition:.25s}
+.career-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.career-dot{width:42px;height:42px;background:var(--grad);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.career-card h4{font-size:.95rem;font-weight:700}
+.career-card p{font-size:.78rem;color:var(--muted);margin-top:2px}
+
+/* TESTIMONIALS */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.testi-card{background:#fff;border-radius:var(--radius);padding:24px;border:1px solid #ede9fe;box-shadow:0 2px 12px rgba(108,63,245,.08);transition:.25s}
+.testi-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.testi-stars{color:#f59e0b;font-size:.9rem;margin-bottom:10px}
+.testi-text{font-size:.88rem;color:var(--muted);line-height:1.6;margin-bottom:16px;font-style:italic}
+.testi-author{display:flex;align-items:center;gap:10px}
+.testi-avatar{width:42px;height:42px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:.95rem}
+.testi-name{font-weight:700;font-size:.88rem}
+.testi-role{font-size:.76rem;color:var(--muted)}
+
+/* FINAL CTA */
+.final-cta{background:var(--grad);padding:72px 24px;text-align:center}
+.final-cta h2{font-size:2rem;font-weight:800;color:#fff;margin-bottom:10px}
+.final-cta p{color:rgba(255,255,255,.85);font-size:1rem;margin-bottom:32px}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn-white{background:#fff;color:var(--primary);border:none;padding:13px 28px;border-radius:50px;font-family:inherit;font-size:.95rem;font-weight:700;cursor:pointer;transition:.22s;box-shadow:0 4px 16px rgba(0,0,0,.15)}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 6px 22px rgba(0,0,0,.2)}
+.btn-outline-white{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.7);padding:11px 26px;border-radius:50px;font-family:inherit;font-size:.95rem;font-weight:700;cursor:pointer;transition:.22s}
+.btn-outline-white:hover{background:rgba(255,255,255,.1);transform:translateY(-2px)}
+
+/* FOOTER */
+footer{background:#0f0c29;color:#cbd5e1;padding:48px 24px 24px}
+.footer-inner{max-width:1200px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:32px}
+.footer-brand h3{font-size:1.2rem;font-weight:800;color:#fff;margin-bottom:8px}
+.footer-brand p{font-size:.82rem;line-height:1.65;color:#94a3b8}
+.footer-col h4{font-size:.9rem;font-weight:700;color:#fff;margin-bottom:14px}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:8px}
+.footer-col ul li a{text-decoration:none;color:#94a3b8;font-size:.84rem;transition:.2s}
+.footer-col ul li a:hover{color:#a78bfa}
+.footer-col p{font-size:.84rem;color:#94a3b8;line-height:1.7}
+.socials{display:flex;gap:10px;margin-top:14px}
+.social-btn{width:36px;height:36px;border-radius:50%;background:#1e1b4b;display:flex;align-items:center;justify-content:center;color:#a78bfa;font-size:.95rem;text-decoration:none;transition:.2s}
+.social-btn:hover{background:var(--primary);color:#fff}
+.footer-bottom{border-top:1px solid #1e1b4b;padding-top:20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.footer-bottom p{font-size:.8rem;color:#64748b}
+
+/* POPUP */
+.popup-overlay{display:none;position:fixed;inset:0;background:rgba(15,12,41,.6);z-index:9999;backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:16px}
+.popup-overlay.show{display:flex}
+.popup-box{background:#fff;border-radius:var(--radius);padding:36px 32px;width:100%;max-width:440px;position:relative;box-shadow:0 24px 64px rgba(0,0,0,.2);animation:popIn .28s ease}
+@keyframes popIn{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+.popup-close{position:absolute;top:14px;right:16px;background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--muted);transition:.2s}
+.popup-close:hover{color:var(--text)}
+.popup-title{font-size:1.2rem;font-weight:800;margin-bottom:4px}
+.popup-sub{font-size:.83rem;color:var(--muted);margin-bottom:22px}
+
+/* SUCCESS MSG */
+.success-msg{display:none;text-align:center;padding:16px 0}
+.success-msg .check{font-size:3rem;margin-bottom:10px}
+.success-msg h3{font-size:1.1rem;font-weight:700;margin-bottom:6px}
+.success-msg p{font-size:.85rem;color:var(--muted)}
+
+/* STATS BAR */
+.stats-bar{background:var(--grad);padding:20px 24px}
+.stats-inner{max-width:1200px;margin:auto;display:flex;justify-content:space-around;flex-wrap:wrap;gap:16px}
+.stat{text-align:center;color:#fff}
+.stat-num{font-size:1.6rem;font-weight:800}
+.stat-lbl{font-size:.78rem;opacity:.85;margin-top:2px}
+
+/* FADE IN */
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+
+/* SWIPE CARDS (mobile) */
+.swipe-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:12px;margin:0 -24px;padding-left:24px}
+.swipe-wrap::-webkit-scrollbar{height:4px}
+.swipe-wrap::-webkit-scrollbar-thumb{background:#ddd6fe;border-radius:4px}
+.swipe-row{display:flex;gap:14px;width:max-content}
+.swipe-card{width:200px;background:#fff;border-radius:var(--radius);padding:18px;border:1px solid #ede9fe;flex-shrink:0;box-shadow:0 2px 10px rgba(108,63,245,.07)}
+.swipe-card .hl-icon{margin-bottom:10px}
+.swipe-card h4{font-size:.9rem;font-weight:700}
+.swipe-card p{font-size:.76rem;color:var(--muted);margin-top:4px}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .highlights-grid,.tools-grid,.outcomes-grid,.why-grid,.careers-grid,.testi-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-inner{grid-template-columns:1fr 1fr}
+  .hero-inner{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  .nav-links,.nav-cta{display:none}
+  .hamburger{display:flex}
+  .hero h1{font-size:1.7rem}
+  .hero{padding:40px 20px 36px}
+  .sec-title{font-size:1.4rem}
+  .highlights-grid,.tools-grid,.outcomes-grid,.why-grid,.careers-grid,.testi-grid{display:none}
+  .swipe-section{display:block}
+  .outcomes-grid-wrap,.why-grid-wrap,.careers-grid-wrap,.testi-grid-wrap{display:block}
+  .footer-inner{grid-template-columns:1fr}
+  .final-cta h2{font-size:1.5rem}
+  .stats-inner{gap:8px}
+  .stat-num{font-size:1.25rem}
+  .hero-btns .btn-primary,.hero-btns .btn-outline{width:100%;text-align:center}
+  .hero-btns{flex-direction:column}
+  .popup-box{padding:28px 20px}
+}
+.swipe-section{display:none}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-inner">
+    <div class="logo">Mindix <span>Education</span></div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#curriculum">Curriculum</a></li>
+      <li><a href="#careers">Careers</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-cta" onclick="openPopup()">Enroll Now</button>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#" onclick="closeMenu()">Home</a>
+    <a href="#curriculum" onclick="closeMenu()">Curriculum</a>
+    <a href="#careers" onclick="closeMenu()">Careers</a>
+    <a href="#contact" onclick="closeMenu()">Contact</a>
+    <button class="btn-primary" style="margin-top:10px;width:100%;border-radius:50px" onclick="openPopup();closeMenu()">Enroll Now</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content fade-in">
+      <div class="badge">AI Integrated Program</div>
+      <h1>Become a Job-Ready <span>HR Admin Professional</span></h1>
+      <p class="hero-sub">Master HR Operations, Payroll Support, HRMS & AI Tools in <strong>60 Days</strong></p>
+      <div class="usps">
+        <div class="usp">Live Practical Training</div>
+        <div class="usp">AI Tools Included</div>
+        <div class="usp">Placement Assistance</div>
+        <div class="usp">Beginner Friendly</div>
+      </div>
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="openPopup()">🚀 Enroll Now</button>
+        <button class="btn-outline" onclick="document.getElementById('curriculum').scrollIntoView({behavior:'smooth'})">📋 View Curriculum</button>
+      </div>
+    </div>
+    <div class="hero-form-card fade-in">
+      <div class="form-card-title">Get Free Demo Class 🎓</div>
+      <div class="form-card-sub">Join 500+ students already enrolled</div>
+      <div id="heroFormWrap">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" id="hName" placeholder="Enter your name"/>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" id="hEmail" placeholder="Enter your email"/>
+        </div>
+        <div class="form-group">
+          <label>WhatsApp Number</label>
+          <input type="tel" id="hPhone" placeholder="Enter WhatsApp number"/>
+        </div>
+        <input type="hidden" name="course" value="HR Admin / HR Operations Job-Ready Program with AI Tools">
+        <input type="hidden" name="purpose" value="course_enquiry">
+        <input type="hidden" name="source" value="hr_admin_landing_page">
+        <button class="submit-btn" id="heroSubmitBtn" onclick="submitHeroForm()">Get Free Demo Class →</button>
+        <p class="form-note">🔒 100% free. No spam. No payment required.</p>
+      </div>
+      <div class="success-msg" id="heroSuccess">
+        <div class="check">🎉</div>
+        <h3>You're In!</h3>
+        <p>We'll contact you within 24 hours with demo class details.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat"><div class="stat-num">500+</div><div class="stat-lbl">Students Enrolled</div></div>
+    <div class="stat"><div class="stat-num">60</div><div class="stat-lbl">Day Program</div></div>
+    <div class="stat"><div class="stat-num">95%</div><div class="stat-lbl">Placement Rate</div></div>
+    <div class="stat"><div class="stat-num">7+</div><div class="stat-lbl">AI Tools Covered</div></div>
+    <div class="stat"><div class="stat-num">₹3L+</div><div class="stat-lbl">Avg Starting CTC</div></div>
+  </div>
+</div>
+
+<!-- HIGHLIGHTS -->
+<section class="section bg-light fade-in">
+  <div class="container">
+    <div class="sec-tag">Program Highlights</div>
+    <h2 class="sec-title">Everything You Need to Succeed</h2>
+    <p class="sec-sub">A structured 60-day program designed to make you job-ready from day one.</p>
+    <!-- Desktop Grid -->
+    <div class="highlights-grid">
+      <div class="hl-card"><div class="hl-icon">📅</div><div class="hl-text"><h4>60 Days Program</h4><p>Structured day-wise training covering all HR Admin topics systematically.</p></div></div>
+      <div class="hl-card"><div class="hl-icon">🤖</div><div class="hl-text"><h4>AI Integrated Learning</h4><p>Learn ChatGPT, automation tools, and AI-powered HR workflows.</p></div></div>
+      <div class="hl-card"><div class="hl-icon">🎯</div><div class="hl-text"><h4>Live Practical Training</h4><p>Real-time assignments and hands-on exercises, not just theory.</p></div></div>
+      <div class="hl-card"><div class="hl-icon">💼</div><div class="hl-text"><h4>Placement Assistance</h4><p>Resume building, LinkedIn, mock interviews & live job alerts.</p></div></div>
+      <div class="hl-card"><div class="hl-icon">🖥️</div><div class="hl-text"><h4>HRMS & Excel Training</h4><p>Industry-standard software and advanced Excel for HR operations.</p></div></div>
+      <div class="hl-card"><div class="hl-icon">🌱</div><div class="hl-text"><h4>Beginner Friendly</h4><p>No prior HR experience needed. Start from scratch, end job-ready.</p></div></div>
+    </div>
+    <!-- Mobile Swipe -->
+    <div class="swipe-section swipe-wrap">
+      <div class="swipe-row">
+        <div class="swipe-card"><div class="hl-icon">📅</div><h4>60 Days Program</h4><p>Structured day-wise training.</p></div>
+        <div class="swipe-card"><div class="hl-icon">🤖</div><h4>AI Integrated</h4><p>ChatGPT & automation tools.</p></div>
+        <div class="swipe-card"><div class="hl-icon">🎯</div><h4>Live Training</h4><p>Real-time assignments.</p></div>
+        <div class="swipe-card"><div class="hl-icon">💼</div><h4>Placement Help</h4><p>Resume, interviews & alerts.</p></div>
+        <div class="swipe-card"><div class="hl-icon">🖥️</div><h4>HRMS & Excel</h4><p>Industry-standard software.</p></div>
+        <div class="swipe-card"><div class="hl-icon">🌱</div><h4>Beginner Friendly</h4><p>No experience needed.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section class="section fade-in">
+  <div class="container">
+    <div class="sec-tag">Tools You'll Master</div>
+    <h2 class="sec-title">Industry Tools & Technologies</h2>
+    <p class="sec-sub">Get hands-on with the exact tools used by HR teams in modern companies.</p>
+    <div class="tools-grid">
+      <div class="tool-card"><div class="tool-icon">🧠</div><h4>ChatGPT</h4><p>AI for HR tasks</p></div>
+      <div class="tool-card"><div class="tool-icon">🗃️</div><h4>HRMS</h4><p>HR management systems</p></div>
+      <div class="tool-card"><div class="tool-icon">📊</div><h4>Excel</h4><p>Advanced spreadsheets</p></div>
+      <div class="tool-card"><div class="tool-icon">📋</div><h4>Attendance Systems</h4><p>Digital tracking</p></div>
+      <div class="tool-card"><div class="tool-icon">💰</div><h4>Payroll Tools</h4><p>Salary processing</p></div>
+      <div class="tool-card"><div class="tool-icon">🔏</div><h4>Biometric Systems</h4><p>Access & attendance</p></div>
+      <div class="tool-card"><div class="tool-icon">🎯</div><h4>ATS</h4><p>Applicant tracking</p></div>
+      <div class="tool-card"><div class="tool-icon">📈</div><h4>Reporting Tools</h4><p>MIS & dashboards</p></div>
+    </div>
+    <!-- Mobile swipe -->
+    <div class="swipe-section swipe-wrap">
+      <div class="swipe-row">
+        <div class="swipe-card"><div class="tool-icon">🧠</div><h4>ChatGPT</h4><p>AI for HR tasks</p></div>
+        <div class="swipe-card"><div class="tool-icon">🗃️</div><h4>HRMS</h4><p>HR management</p></div>
+        <div class="swipe-card"><div class="tool-icon">📊</div><h4>Excel</h4><p>Advanced sheets</p></div>
+        <div class="swipe-card"><div class="tool-icon">📋</div><h4>Attendance</h4><p>Digital tracking</p></div>
+        <div class="swipe-card"><div class="tool-icon">💰</div><h4>Payroll Tools</h4><p>Salary processing</p></div>
+        <div class="swipe-card"><div class="tool-icon">🎯</div><h4>ATS</h4><p>Applicant tracking</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CURRICULUM -->
+<section id="curriculum" class="section bg-light fade-in">
+  <div class="container">
+    <div class="sec-tag">Full Curriculum</div>
+    <h2 class="sec-title">60-Day Day-Wise Program</h2>
+    <p class="sec-sub">Every day is structured with purpose — practical learning from Week 1 to placement support.</p>
+
+    <div id="accordions">
+
+      <!-- WEEK 1 -->
+      <div class="acc-week">
+        <div class="acc-header" onclick="toggleAcc(this)">
+          <div class="acc-header-left"><span class="week-badge">Week 1</span><h3>HR Admin & Office Basics</h3></div>
+          <span class="acc-arrow">▼</span>
+        </div>
+        <div class="acc-body">
+          <ul class="day-list">
+            <li class="day-item"><span class="day-num">Day 1</span><span>HR Admin Role & Responsibilities</span></li>
+            <li class="day-item"><span class="day-num">Day 2</span><span>Office Administration Basics</span></li>
+            <li class="day-item"><span class="day-num">Day 3</span><span>Corporate Etiquette & Professional Conduct</span></li>
+            <li class="day-item"><span class="day-num">Day 4</span><span>Core HR Admin Responsibilities</span></li>
+            <li class="day-item"><span class="day-num">Day 5</span><span>HR Documentation Overview</span></li>
+            <li class="day-item"><span class="day-num">Day 6</span><span>📝 Office & HR Admin Assignment</span></li>
+            <li class="day-item"><span class="day-num day-off">Day 7</span><span class="day-off">Off</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- WEEK 2 -->
+      <div class="acc-week">
+        <div class="acc-header" onclick="toggleAcc(this)">
+          <div class="acc-header-left"><span class="week-badge">Week 2</span><h3>HR Documentation & Record Management</h3></div>
+          <span class="acc-arrow">▼</span>
+        </div>
+        <div class="acc-body">
+          <ul class="day-list">
+            <li class="day-item"><span class="day-num">Day 8</span><span>Employee File & Master Data Management</span></li>
+            <li class="day-item"><span class="day-num">Day 9</span><span>HR Letters & Formats</span></li>
+            <li class="day-item"><span class="day-num">Day 10</span><span>Attendance & Leave Policies</span></li>
+            <li class="day-item"><span class="day-num">Day 11</span><span>HR Registers & Records</span></li>
+            <li class="day-item"><span class="day-num">Day 12</span><span>Data Confidentiality & Security</span></li>
+            <li class="day-item"><span class="day-num">Day 13</span><span>📝 Documentation Assignment</span></li>
+            <li class="day-item"><span class="day-num day-off">Day 14</span><span class="day-off">Off</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- WEEK 3 -->
+      <div class="acc-week">
+        <div class="acc-header" onclick="toggleAcc(this)">
+          <div class="acc-header-left"><span class="week-badge">Week 3</span><h3>Attendance, Leave & Payroll Support</h3></div>
+          <span class="acc-arrow">▼</span>
+        </div>
+        <div class="acc-body">
+          <ul class="day-list">
+            <li class="day-item"><span class="day-num">Day 15</span><span>Attendance Systems (Manual & Biometric)</span></li>
+            <li class="day-item"><span class="day-num">Day 16</span><span>Leave Management Process</span></li>
+            <li class="day-item"><span class="day-num">Day 17</span><span>Payroll Basics for HR Admin</span></li>
+            <li class="day-item"><span class="day-num">Day 18</span><span>Statutory Basics – PF, ESI, PT</span></li>
+            <li class="day-item"><span class="day-num">Day 19</span><span>Payroll Coordination & Vendor Handling</span></li>
+            <li class="day-item"><span class="day-num">Day 20</span><span>📝 Attendance & Payroll Assignment</span></li>
+            <li class="day-item"><span class="day-num day-off">Day 21</span><span class="day-off">Off</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- WEEK 4 -->
+      <div class="acc-week">
+        <div class="acc-header" onclick="toggleAcc(this)">
+          <div class="acc-header-left"><span class="week-badge">Week 4</span><h3>HR Operations & Employee Coordination</h3></div>
+          <span class="acc-arrow">▼</span>
+        </div>
+        <div class="acc-body">
+          <ul class="day-list">
+            <li class="day-item"><span class="day-num">Day 22</span><span>Employee Onboarding Support</span></li>
+            <li class="day-item"><span class="day-num">Day 23</span><span>Induction & Orientation Coordination</span></li>
+            <li class="day-item"><span class="day-num">Day 24</span><span>Employee Communication & Notices</span></li>
+            <li class="day-item"><span class="day-num">Day 25</span><span>Grievance Handling (Admin Level)</span></li>
+            <li class="day-item"><span class="day-num">Day 26</span><span>Employee Engagement Support</span></li>
+            <li class="day-item"><span class="day-num">Day 27</span><span>📝 HR Operations Assignment</span></li>
+            <li class="day-item"><span class="day-num day-off">Day 28</span><span class="day-off">Off</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- WEEK 5 -->
+      <div class="acc-week">
+        <div class="acc-header" onclick="toggleAcc(this)">
+          <div class="acc-header-left"><span class="week-badge">Week 5</span><h3>Compliance, Audit & Exit Support</h3></div>
+          <span class="acc-arrow">▼</span>
+        </div>
+        <div class="acc-body">
+          <ul class="day-list">
+            <li class="day-item"><span class="day-num">Day 29</span><span>Labour Law Basics for HR Admin</span></li>
+            <li class="day-item"><span class="day-num">Day 30</span><span>HR Compliance Records & Registers</span></li>
+            <li class="day-item"><span class="day-num">Day 31</span><span>HR Audit Basics</span></li>
+            <li class="day-item"><span class="day-num">Day 32</span><span>Exit Process & Full & Final Support</span></li>
+            <li class="day-item"><span class="day-num">Day 33</span><span>Asset, ID & Inventory Management</span></li>
+            <li class="day-item"><span class="day-num">Day 34</span><span>📝 Compliance & Exit Assignment</span></li>
+            <li class="day-item"><span class="day-num day-off">Day 35</span><span class="day-off">Off</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- WEEK 6 -->
+      <div class="acc-week">
+        <div class="acc-header" onclick="toggleAcc(this)">
+          <div class="acc-header-left"><span class="week-badge">Week 6</span><h3>Excel, HRMS & AI for HR Admin</h3></div>
+          <span class="acc-arrow">▼</span>
+        </div>
+        <div class="acc-body">
+          <ul class="day-list">
+            <li class="day-item"><span class="day-num">Day 36</span><span>Excel Basics for HR Admin</span></li>
+            <li class="day-item"><span class="day-num">Day 37</span><span>Advanced Excel & Automation</span></li>
+            <li class="day-item"><span class="day-num">Day 38</span><span>HRMS & Admin Software Overview</span></li>
+            <li class="day-item"><span class="day-num">Day 39</span><span>AI Tools for HR Admin (ChatGPT)</span></li>
+            <li class="day-item"><span class="day-num">Day 40</span><span>Process Automation in HR Admin</span></li>
+            <li class="day-item"><span class="day-num">Day 41</span><span>📝 Excel & AI Assignment</span></li>
+            <li class="day-item"><span class="day-num day-off">Day 42</span><span class="day-off">Off</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- WEEK 7 -->
+      <div class="acc-week">
+        <div class="acc-header" onclick="toggleAcc(this)">
+          <div class="acc-header-left"><span class="week-badge">Week 7</span><h3>Real-Time HR Admin Work & Reporting</h3></div>
+          <span class="acc-arrow">▼</span>
+        </div>
+        <div class="acc-body">
+          <ul class="day-list">
+            <li class="day-item"><span class="day-num">Day 43</span><span>HR MIS & Monthly Reporting</span></li>
+            <li class="day-item"><span class="day-num">Day 44</span><span>Vendor & Facility Management</span></li>
+            <li class="day-item"><span class="day-num">Day 45</span><span>Inventory & Procurement Support</span></li>
+            <li class="day-item"><span class="day-num">Day 46</span><span>Audit & Inspection Handling</span></li>
+            <li class="day-item"><span class="day-num">Day 47</span><span>HR Admin Interview Preparation</span></li>
+            <li class="day-item"><span class="day-num">Day 48</span><span>End-to-End HR Admin Simulation</span></li>
+            <li class="day-item"><span class="day-num day-off">Day 49</span><span class="day-off">Off</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- PLACEMENT -->
+      <div class="acc-week">
+        <div class="acc-header" onclick="toggleAcc(this)">
+          <div class="acc-header-left"><span class="week-badge" style="background:linear-gradient(135deg,#f59e0b,#ef4444)">Days 50–54</span><h3>🏆 Placement & Career Support</h3></div>
+          <span class="acc-arrow">▼</span>
+        </div>
+        <div class="acc-body">
+          <ul class="day-list">
+            <li class="day-item"><span class="day-num">Day 50</span><span>HR Admin Resume (ATS-Friendly)</span></li>
+            <li class="day-item"><span class="day-num">Day 51</span><span>LinkedIn Profile Optimization</span></li>
+            <li class="day-item"><span class="day-num">Day 52</span><span>Naukri Profile Optimization</span></li>
+            <li class="day-item"><span class="day-num">Day 53</span><span>Mock Interview – HR Admin Role</span></li>
+            <li class="day-item"><span class="day-num">Day 54</span><span>Final Mock Interview & Salary Discussion</span></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- OUTCOMES -->
+<section class="section fade-in">
+  <div class="container">
+    <div class="sec-tag">Program Outcomes</div>
+    <h2 class="sec-title">What You'll Achieve</h2>
+    <p class="sec-sub">Leave the program with real, industry-ready skills that employers look for.</p>
+    <div class="outcomes-grid">
+      <div class="outcome-card"><div class="outcome-icon">🏆</div><h4>Job-Ready HR Admin Skills</h4><p>Comprehensive understanding of HR administration workflows and best practices.</p></div>
+      <div class="outcome-card"><div class="outcome-icon">📄</div><h4>Documentation & Reporting</h4><p>Strong command over HR documentation, MIS reports, and record management.</p></div>
+      <div class="outcome-card"><div class="outcome-icon">💰</div><h4>Payroll & Compliance</h4><p>Practical knowledge of payroll processing, PF, ESI, PT and statutory compliance.</p></div>
+      <div class="outcome-card"><div class="outcome-icon">🤖</div><h4>Excel & AI-Powered Skills</h4><p>Master advanced Excel, HRMS software, and AI tools like ChatGPT for HR.</p></div>
+      <div class="outcome-card"><div class="outcome-icon">🎓</div><h4>Placement Assistance</h4><p>Dedicated support with resume, LinkedIn, Naukri, and live job alerts.</p></div>
+      <div class="outcome-card"><div class="outcome-icon">🌐</div><h4>Industry Recognition</h4><p>Certificate of completion recognized by recruiters and HR industry partners.</p></div>
+    </div>
+    <!-- Mobile -->
+    <div class="swipe-section swipe-wrap">
+      <div class="swipe-row">
+        <div class="swipe-card"><div class="outcome-icon">🏆</div><h4>Job-Ready Skills</h4><p>Complete HR Admin workflows.</p></div>
+        <div class="swipe-card"><div class="outcome-icon">📄</div><h4>Documentation</h4><p>MIS & record management.</p></div>
+        <div class="swipe-card"><div class="outcome-icon">💰</div><h4>Payroll & Compliance</h4><p>PF, ESI, PT handling.</p></div>
+        <div class="swipe-card"><div class="outcome-icon">🤖</div><h4>AI & Excel</h4><p>ChatGPT & advanced Excel.</p></div>
+        <div class="swipe-card"><div class="outcome-icon">🎓</div><h4>Placement Help</h4><p>Resume, LinkedIn, jobs.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="section bg-light fade-in">
+  <div class="container">
+    <div class="sec-tag">Why Mindix</div>
+    <h2 class="sec-title">Why Choose Our Program?</h2>
+    <p class="sec-sub">We don't just teach — we prepare you for the real world of HR.</p>
+    <div class="why-grid">
+      <div class="why-card"><div class="why-icon">🤖</div><h4>AI Integrated Learning</h4><p>First-of-its-kind AI tools training for HR professionals in India.</p></div>
+      <div class="why-card"><div class="why-icon">🎯</div><h4>Practical HR Training</h4><p>Assignments and simulations that mirror real HR operations.</p></div>
+      <div class="why-card"><div class="why-icon">🖥️</div><h4>Excel & HRMS Exposure</h4><p>Hands-on training with tools used by actual HR departments.</p></div>
+      <div class="why-card"><div class="why-icon">🌱</div><h4>Beginner Friendly</h4><p>Zero prior experience needed. Our curriculum starts from the basics.</p></div>
+      <div class="why-card"><div class="why-icon">💼</div><h4>Placement Assistance</h4><p>Dedicated career team to help you land your first HR job.</p></div>
+      <div class="why-card"><div class="why-icon">📋</div><h4>Industry Curriculum</h4><p>Built with inputs from working HR professionals and recruiters.</p></div>
+    </div>
+    <!-- Mobile -->
+    <div class="swipe-section swipe-wrap">
+      <div class="swipe-row">
+        <div class="swipe-card"><div class="why-icon">🤖</div><h4>AI Learning</h4><p>First in India.</p></div>
+        <div class="swipe-card"><div class="why-icon">🎯</div><h4>Practical</h4><p>Real simulations.</p></div>
+        <div class="swipe-card"><div class="why-icon">🖥️</div><h4>HRMS & Excel</h4><p>Hands-on tools.</p></div>
+        <div class="swipe-card"><div class="why-icon">🌱</div><h4>Beginner OK</h4><p>Start from zero.</p></div>
+        <div class="swipe-card"><div class="why-icon">💼</div><h4>Placement</h4><p>Career support.</p></div>
+        <div class="swipe-card"><div class="why-icon">📋</div><h4>Industry Built</h4><p>Expert curriculum.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAREERS -->
+<section id="careers" class="section fade-in">
+  <div class="container">
+    <div class="sec-tag">Career Opportunities</div>
+    <h2 class="sec-title">Jobs You Can Apply For</h2>
+    <p class="sec-sub">Our graduates are placed across top companies in these HR roles.</p>
+    <div class="careers-grid">
+      <div class="career-card"><div class="career-dot">👩‍💼</div><div><h4>HR Admin Executive</h4><p>₹2.5L – ₹4L/yr</p></div></div>
+      <div class="career-card"><div class="career-dot">⚙️</div><div><h4>HR Operations Executive</h4><p>₹3L – ₹5L/yr</p></div></div>
+      <div class="career-card"><div class="career-dot">💰</div><div><h4>Payroll Coordinator</h4><p>₹2.8L – ₹4.5L/yr</p></div></div>
+      <div class="career-card"><div class="career-dot">🤝</div><div><h4>HR Coordinator</h4><p>₹2.5L – ₹4L/yr</p></div></div>
+      <div class="career-card"><div class="career-dot">🏢</div><div><h4>Admin Executive</h4><p>₹2.4L – ₹3.8L/yr</p></div></div>
+      <div class="career-card"><div class="career-dot">🛠️</div><div><h4>HR Support Executive</h4><p>₹2.2L – ₹3.5L/yr</p></div></div>
+    </div>
+    <!-- Mobile -->
+    <div class="swipe-section swipe-wrap">
+      <div class="swipe-row">
+        <div class="swipe-card"><div class="career-dot" style="margin-bottom:8px">👩‍💼</div><h4>HR Admin Executive</h4><p>₹2.5L – ₹4L/yr</p></div>
+        <div class="swipe-card"><div class="career-dot" style="margin-bottom:8px">⚙️</div><h4>HR Operations</h4><p>₹3L – ₹5L/yr</p></div>
+        <div class="swipe-card"><div class="career-dot" style="margin-bottom:8px">💰</div><h4>Payroll Coord.</h4><p>₹2.8L – ₹4.5L/yr</p></div>
+        <div class="swipe-card"><div class="career-dot" style="margin-bottom:8px">🤝</div><h4>HR Coordinator</h4><p>₹2.5L – ₹4L/yr</p></div>
+        <div class="swipe-card"><div class="career-dot" style="margin-bottom:8px">🏢</div><h4>Admin Executive</h4><p>₹2.4L – ₹3.8L/yr</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section bg-light fade-in">
+  <div class="container">
+    <div class="sec-tag">Student Reviews</div>
+    <h2 class="sec-title">What Our Students Say</h2>
+    <p class="sec-sub">Real experiences from our graduates now working in HR roles.</p>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"The AI tools module was a game-changer. I now use ChatGPT daily in my HR role. Got placed within 3 weeks of completing the course!"</p>
+        <div class="testi-author"><div class="testi-avatar">P</div><div><div class="testi-name">Priya Sharma</div><div class="testi-role">HR Admin Executive, Noida</div></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"As a fresher, I was nervous. But the beginner-friendly approach and mock interviews gave me the confidence to crack my first job interview!"</p>
+        <div class="testi-author"><div class="testi-avatar">R</div><div><div class="testi-name">Rahul Verma</div><div class="testi-role">HR Coordinator, Gurgaon</div></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"The payroll and compliance training was super practical. I joined a company handling payroll for 200+ employees right after the course."</p>
+        <div class="testi-author"><div class="testi-avatar">A</div><div><div class="testi-name">Anjali Mishra</div><div class="testi-role">Payroll Coordinator, Delhi</div></div></div>
+      </div>
+    </div>
+    <!-- Mobile -->
+    <div class="swipe-section swipe-wrap">
+      <div class="swipe-row">
+        <div class="swipe-card" style="width:260px"><div class="testi-stars">★★★★★</div><p style="font-size:.8rem;color:var(--muted);margin-bottom:10px;font-style:italic">"AI tools module was a game-changer. Got placed in 3 weeks!"</p><div class="testi-name" style="font-size:.84rem;font-weight:700">Priya Sharma</div><div style="font-size:.74rem;color:var(--muted)">HR Admin Executive</div></div>
+        <div class="swipe-card" style="width:260px"><div class="testi-stars">★★★★★</div><p style="font-size:.8rem;color:var(--muted);margin-bottom:10px;font-style:italic">"Beginner-friendly approach gave me confidence to crack my first interview!"</p><div class="testi-name" style="font-size:.84rem;font-weight:700">Rahul Verma</div><div style="font-size:.74rem;color:var(--muted)">HR Coordinator</div></div>
+        <div class="swipe-card" style="width:260px"><div class="testi-stars">★★★★★</div><p style="font-size:.8rem;color:var(--muted);margin-bottom:10px;font-style:italic">"Joined handling payroll for 200+ employees right after the course."</p><div class="testi-name" style="font-size:.84rem;font-weight:700">Anjali Mishra</div><div style="font-size:.74rem;color:var(--muted)">Payroll Coordinator</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta fade-in">
+  <h2>Start Your HR Operations Career Today</h2>
+  <p>Learn practical HR Admin skills & AI tools used by modern companies</p>
+  <div class="cta-btns">
+    <button class="btn-white" onclick="openPopup()">🚀 Enroll Now</button>
+    <button class="btn-outline-white" onclick="openPopup()">📞 Talk to Advisor</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>Mindix Education</h3>
+      <p>Empowering students with job-ready skills through practical, AI-integrated training programs.</p>
+      <div class="socials">
+        <a href="#" class="social-btn">in</a>
+        <a href="#" class="social-btn">📸</a>
+        <a href="#" class="social-btn">▶</a>
+        <a href="#" class="social-btn">✉</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#curriculum">Curriculum</a></li>
+        <li><a href="#careers">Careers</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <p>📧 info@mindixeducation.com<br/>📱 +91 98765 43210<br/>📍 Noida, Uttar Pradesh</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Mindix Education. All rights reserved.</p>
+    <p>HR Admin / HR Operations Job-Ready Program</p>
+  </div>
+</footer>
+
+<!-- POPUP FORM -->
+<div class="popup-overlay" id="popupOverlay" onclick="handleOverlayClick(event)">
+  <div class="popup-box">
+    <button class="popup-close" onclick="closePopup()">✕</button>
+    <div id="popupFormWrap">
+      <div class="popup-title">Enroll in the Program 🎓</div>
+      <div class="popup-sub">Fill in your details to get started for free</div>
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" id="pName" placeholder="Enter your name" autocomplete="name"/>
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" id="pEmail" placeholder="Enter your email" autocomplete="email"/>
+      </div>
+      <div class="form-group">
+        <label>WhatsApp Number</label>
+        <input type="tel" id="pPhone" placeholder="Enter WhatsApp number" autocomplete="tel"/>
+      </div>
+      <input type="hidden" name="course" value="HR Admin / HR Operations Job-Ready Program with AI Tools">
+      <input type="hidden" name="purpose" value="course_enquiry">
+      <input type="hidden" name="source" value="hr_admin_landing_page">
+      <button class="submit-btn" id="popupSubmitBtn" onclick="submitPopupForm()">Get Free Demo Class →</button>
+      <p class="form-note">🔒 100% free. No spam. No payment required.</p>
+    </div>
+    <div class="success-msg" id="popupSuccess">
+      <div class="check">🎉</div>
+      <h3>Registration Successful!</h3>
+      <p>We'll reach out on WhatsApp within 24 hours.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── Google Sheet URL ─────────────────────────────────────────────────────────
+// SAME scriptURL as index.html
+const scriptURL = "https://script.google.com/macros/s/AKfycbwRgfC8GlXEMzQ1nvExSMbqwaKZHRqAHrnJQnH12-DAmeO4Jby077FE_6eGe3nw1Atv/exec";
+const COURSE_NAME = "HR Admin / HR Operations Job-Ready Program with AI Tools";
+
+// ── NAVBAR ───────────────────────────────────────────────────────────────────
+function toggleMenu(){
+  document.getElementById('hamburger').classList.toggle('open');
+  document.getElementById('mobileMenu').classList.toggle('show');
+}
+function closeMenu(){
+  document.getElementById('hamburger').classList.remove('open');
+  document.getElementById('mobileMenu').classList.remove('show');
+}
+
+// ── POPUP ────────────────────────────────────────────────────────────────────
+function openPopup(){
+  document.getElementById('popupOverlay').classList.add('show');
+  document.body.style.overflow='hidden';
+  setTimeout(()=>{ document.getElementById('pName').focus(); },200);
+}
+function closePopup(){
+  document.getElementById('popupOverlay').classList.remove('show');
+  document.body.style.overflow='';
+}
+function handleOverlayClick(e){
+  if(e.target===document.getElementById('popupOverlay')) closePopup();
+}
+document.addEventListener('keydown', e=>{ if(e.key==='Escape') closePopup(); });
+
+// ── FORM SUBMIT ───────────────────────────────────────────────────────────────
+function buildFormData(name, email, phone){
+  const fd = new FormData();
+  fd.append('name', name);
+  fd.append('email', email);
+  fd.append('phone', phone);
+  fd.append('course', COURSE_NAME);
+  fd.append('purpose', 'course_enquiry');
+  fd.append('source', 'hr_admin_landing_page');
+  return new URLSearchParams(Object.fromEntries(fd));
+}
+
+function validate(name, email, phone){
+  if(!name.trim()){ alert('Please enter your name.'); return false; }
+  if(!email.trim() || !email.includes('@')){ alert('Please enter a valid email.'); return false; }
+  if(!phone.trim() || phone.replace(/\D/g,'').length < 10){ alert('Please enter a valid 10-digit WhatsApp number.'); return false; }
+  return true;
+}
+
+function submitHeroForm(){
+  const name = document.getElementById('hName').value;
+  const email = document.getElementById('hEmail').value;
+  const phone = document.getElementById('hPhone').value;
+  if(!validate(name,email,phone)) return;
+  const btn = document.getElementById('heroSubmitBtn');
+  btn.disabled=true; btn.textContent='Sending...';
+  fetch(scriptURL,{ 
+    method:'POST', 
+    body: buildFormData(name,email,phone),
+    mode: 'no-cors'
+  })
+    .then(()=>{ 
+      fbq('track', 'Lead', {
+        content_name: 'HR Admin / HR Operations Job-Ready Program with AI Tools',
+        content_category: 'Course Enquiry'
+      });
+      showHeroSuccess(); 
+      setTimeout(() => { window.location.href = 'ty8k2m9x-success-confirmation.html'; }, 2000); 
+    })
+    .catch(()=>{ 
+      fbq('track', 'Lead', {
+        content_name: 'HR Admin / HR Operations Job-Ready Program with AI Tools',
+        content_category: 'Course Enquiry'
+      });
+      showHeroSuccess(); 
+      setTimeout(() => { window.location.href = 'ty8k2m9x-success-confirmation.html'; }, 2000); 
+    });
+}
+
+function showHeroSuccess(){
+  document.getElementById('heroFormWrap').style.display='none';
+  document.getElementById('heroSuccess').style.display='block';
+}
+
+function submitPopupForm(){
+  const name = document.getElementById('pName').value;
+  const email = document.getElementById('pEmail').value;
+  const phone = document.getElementById('pPhone').value;
+  if(!validate(name,email,phone)) return;
+  const btn = document.getElementById('popupSubmitBtn');
+  btn.disabled=true; btn.textContent='Sending...';
+  fetch(scriptURL,{ 
+    method:'POST', 
+    body: buildFormData(name,email,phone),
+    mode: 'no-cors'
+  })
+    .then(()=>{ 
+      fbq('track', 'Lead', {
+        content_name: 'HR Admin / HR Operations Job-Ready Program with AI Tools',
+        content_category: 'Course Enquiry'
+      });
+      showPopupSuccess(); 
+      setTimeout(() => { window.location.href = 'ty8k2m9x-success-confirmation.html'; }, 2000); 
+    })
+    .catch(()=>{ 
+      fbq('track', 'Lead', {
+        content_name: 'HR Admin / HR Operations Job-Ready Program with AI Tools',
+        content_category: 'Course Enquiry'
+      });
+      showPopupSuccess(); 
+      setTimeout(() => { window.location.href = 'ty8k2m9x-success-confirmation.html'; }, 2000); 
+    });
+}
+
+function showPopupSuccess(){
+  document.getElementById('popupFormWrap').style.display='none';
+  document.getElementById('popupSuccess').style.display='block';
+  setTimeout(()=>{ closePopup(); resetPopup(); }, 3200);
+}
+
+function resetPopup(){
+  document.getElementById('popupFormWrap').style.display='block';
+  document.getElementById('popupSuccess').style.display='none';
+  document.getElementById('pName').value='';
+  document.getElementById('pEmail').value='';
+  document.getElementById('pPhone').value='';
+  const btn = document.getElementById('popupSubmitBtn');
+  btn.disabled=false; btn.textContent='Get Free Demo Class →';
+}
+
+// ── ACCORDION ─────────────────────────────────────────────────────────────────
+function toggleAcc(header){
+  const body = header.nextElementSibling;
+  const arrow = header.querySelector('.acc-arrow');
+  const isOpen = body.classList.contains('open');
+  // close all
+  document.querySelectorAll('.acc-body').forEach(b=>b.classList.remove('open'));
+  document.querySelectorAll('.acc-arrow').forEach(a=>a.style.transform='rotate(0deg)');
+  if(!isOpen){
+    body.classList.add('open');
+    arrow.style.transform='rotate(180deg)';
+  }
+}
+
+// ── FADE IN OBSERVER ──────────────────────────────────────────────────────────
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); }});
+},{threshold:0.1});
+document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
